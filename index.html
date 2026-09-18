@@ -95,69 +95,6 @@
 
 <script>
 
-const USERNAME = "TagtTheSpellCaster";
-
-async function getRepositories() {
-
-    const repositories = [];
-
-    let page = 1;
-
-    while (true) {
-
-        const response = await fetch(
-            `https://api.github.com/users/${USERNAME}/repos?per_page=100&page=${page}&type=public`
-        );
-
-        if (!response.ok) {
-            throw new Error(
-                `GitHub API: HTTP ${response.status}`
-            );
-        }
-
-        const data = await response.json();
-
-        if (data.length === 0) {
-            break;
-        }
-
-        repositories.push(...data);
-
-        if (data.length < 100) {
-            break;
-        }
-
-        page++;
-    }
-
-    return repositories;
-}
-
-
-async function hasGitHubPages(repository) {
-
-    const url =
-        `https://api.github.com/repos/${USERNAME}/${repository.name}/pages`;
-
-    try {
-
-        const response = await fetch(url);
-
-        if (!response.ok) {
-            return null;
-        }
-
-        const data = await response.json();
-
-        return data.html_url || null;
-
-    } catch (error) {
-
-        return null;
-    }
-}
-
-
 async function loadProjects() {
 
     const status = document.getElementById("status");
@@ -165,35 +102,17 @@ async function loadProjects() {
 
     try {
 
-        const repositories = await getRepositories();
+        const response = await fetch("repositories.json");
 
-        /*
-         * Controlliamo i repository in parallelo.
-         */
-        const results = await Promise.all(
-
-            repositories.map(async repository => {
-
-                const pagesUrl =
-                    await hasGitHubPages(repository);
-
-                return {
-                    repository,
-                    pagesUrl
-                };
-
-            })
-
-        );
-
-        const projects = results
-            .filter(item => item.pagesUrl)
-            .sort((a, b) =>
-                a.repository.name.localeCompare(
-                    b.repository.name,
-                    "it"
-                )
+        if (!response.ok) {
+            throw new Error(
+                `repositories.json: HTTP ${response.status}`
             );
+        }
+
+        const data = await response.json();
+
+        const projects = data.projects || [];
 
 
         if (projects.length === 0) {
@@ -215,18 +134,16 @@ async function loadProjects() {
 
             const link = document.createElement("a");
 
-            link.href = project.pagesUrl;
+            link.href = project.url;
             link.target = "_blank";
             link.rel = "noopener noreferrer";
 
-            link.textContent =
-                project.repository.name;
-
+            link.textContent = project.name;
 
             li.appendChild(link);
 
 
-            if (project.repository.description) {
+            if (project.description) {
 
                 const description =
                     document.createElement("div");
@@ -235,7 +152,7 @@ async function loadProjects() {
                     "description";
 
                 description.textContent =
-                    project.repository.description;
+                    project.description;
 
                 li.appendChild(description);
             }
@@ -248,7 +165,7 @@ async function loadProjects() {
     } catch (error) {
 
         status.textContent =
-            "Impossibile recuperare i dati da GitHub.";
+            "Impossibile recuperare l'elenco dei progetti.";
 
         status.className = "error";
 
