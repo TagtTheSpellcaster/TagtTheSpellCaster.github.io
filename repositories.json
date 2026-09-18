@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "name": "convertitore-cartelle",
+      "url": "https://tagtthespellcaster.github.io/convertitore-cartelle",
+      "description": "Convertitore cartelle->parole e parole->cartelle",
+      "repository": "https://github.com/TagtTheSpellcaster/convertitore-cartelle"
+    },
+    {
+      "name": "GrainLayer",
+      "url": "https://tagtthespellcaster.github.io/GrainLayer",
+      "description": "A grain layer overlay inspired by Deckle by Akshat Katiyar",
+      "repository": "https://github.com/TagtTheSpellcaster/GrainLayer"
+    },
+    {
+      "name": "scorporo-iva",
+      "url": "https://tagtthespellcaster.github.io/scorporo-iva",
+      "description": "Calcolatrice per lo scorporo dell'IVA.",
+      "repository": "https://github.com/TagtTheSpellcaster/scorporo-iva"
+    }
+  ]
+}
