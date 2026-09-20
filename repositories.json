@@ -17,6 +17,12 @@
       "url": "https://tagtthespellcaster.github.io/scorporo-iva",
       "description": "Calcolatrice per lo scorporo dell'IVA.",
       "repository": "https://github.com/TagtTheSpellcaster/scorporo-iva"
+    },
+    {
+      "name": "scoundrel",
+      "url": "https://tagtthespellcaster.github.io/scoundrel",
+      "description": "Gioco di carte roguelike per giocatore singolo",
+      "repository": "https://github.com/TagtTheSpellcaster/scoundrel"
     }
   ]
 }
