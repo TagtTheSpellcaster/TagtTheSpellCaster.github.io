@@ -13,6 +13,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/GrainLayer"
     },
     {
+      "name": "i-ching",
+      "url": "https://tagtthespellcaster.github.io/i-ching",
+      "description": "Consultazione I-Ching online",
+      "repository": "https://github.com/TagtTheSpellcaster/i-ching"
+    },
+    {
       "name": "scorporo-iva",
       "url": "https://tagtthespellcaster.github.io/scorporo-iva",
       "description": "Calcolatrice per lo scorporo dell'IVA.",
