@@ -19,6 +19,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/i-ching"
     },
     {
+      "name": "Nuova-Asterisko",
+      "url": "https://tagtthespellcaster.github.io/Nuova-Asterisko",
+      "description": "Sito istituzionale statico di Nuova Asterisko SRLs",
+      "repository": "https://github.com/TagtTheSpellcaster/Nuova-Asterisko"
+    },
+    {
       "name": "scorporo-iva",
       "url": "https://tagtthespellcaster.github.io/scorporo-iva",
       "description": "Calcolatrice per lo scorporo dell'IVA.",
