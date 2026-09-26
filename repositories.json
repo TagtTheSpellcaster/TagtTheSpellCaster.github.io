@@ -7,6 +7,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/convertitore-cartelle"
     },
     {
+      "name": "font-inspector",
+      "url": "https://tagtthespellcaster.github.io/font-inspector",
+      "description": "An easy font inspector and glyph analyzer",
+      "repository": "https://github.com/TagtTheSpellcaster/font-inspector"
+    },
+    {
       "name": "GrainLayer",
       "url": "https://tagtthespellcaster.github.io/GrainLayer",
       "description": "A grain layer overlay inspired by Deckle by Akshat Katiyar",
