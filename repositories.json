@@ -1,6 +1,18 @@
 {
   "projects": [
     {
+      "name": "Arcane",
+      "url": "https://tagtthespellcaster.github.io/Arcane",
+      "description": "Arcane – Strumenti per il Game Master",
+      "repository": "https://github.com/TagtTheSpellcaster/Arcane"
+    },
+    {
+      "name": "Conlang-Generator",
+      "url": "https://tagtthespellcaster.github.io/Conlang-Generator",
+      "description": "A simple yet useful parametric ConLang (Constructed Language) generator",
+      "repository": "https://github.com/TagtTheSpellcaster/Conlang-Generator"
+    },
+    {
       "name": "convertitore-cartelle",
       "url": "https://tagtthespellcaster.github.io/convertitore-cartelle",
       "description": "Convertitore cartelle->parole e parole->cartelle",
