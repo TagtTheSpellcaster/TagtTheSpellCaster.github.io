@@ -37,6 +37,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/i-ching"
     },
     {
+      "name": "Meditation-Timer",
+      "url": "https://tagtthespellcaster.github.io/Meditation-Timer",
+      "description": "A simple, Open Source meditation timer.",
+      "repository": "https://github.com/TagtTheSpellcaster/Meditation-Timer"
+    },
+    {
       "name": "Nuova-Asterisko",
       "url": "https://tagtthespellcaster.github.io/Nuova-Asterisko",
       "description": "Sito istituzionale statico di Nuova Asterisko SRLs",
@@ -53,6 +59,12 @@
       "url": "https://tagtthespellcaster.github.io/scoundrel",
       "description": "Gioco di carte roguelike per giocatore singolo",
       "repository": "https://github.com/TagtTheSpellcaster/scoundrel"
+    },
+    {
+      "name": "StrumPad",
+      "url": "https://tagtthespellcaster.github.io/StrumPad",
+      "description": "Inspired by the Suzuki Omnichord – sort of",
+      "repository": "https://github.com/TagtTheSpellcaster/StrumPad"
     }
   ]
 }
