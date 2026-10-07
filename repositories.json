@@ -63,7 +63,7 @@
     {
       "name": "StrumPad",
       "url": "https://tagtthespellcaster.github.io/StrumPad",
-      "description": "Inspired by the Suzuki Omnichord – sort of",
+      "description": "A browser-based vintage chord machine & analog synthesizer for harmonic exploration. Features an interactive Circle of Fifths chord matrix, Harmonic Progression Assistant, and smooth voice leading.",
       "repository": "https://github.com/TagtTheSpellcaster/StrumPad"
     }
   ]
