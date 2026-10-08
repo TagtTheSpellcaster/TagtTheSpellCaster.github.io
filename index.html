@@ -99,25 +99,6 @@
         min-height: 100vh;
     }
 
-    /* Filigrana in Line Art dal file bg-pattern.png */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        pointer-events: none;
-        z-index: 0;
-        opacity: var(--bg-art-opacity);
-        filter: var(--bg-art-filter);
-        background-image: url('bg-pattern.png');
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        background-size: contain;
-        transition: opacity 0.2s ease, filter 0.2s ease;
-    }
-
     main {
         max-width: 800px;
         margin: 0 auto;
