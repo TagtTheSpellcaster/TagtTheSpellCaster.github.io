@@ -1,137 +1,297 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-theme="system">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>TagtTheSpellCaster — GitHub Pages</title>
+<title>Tagt The Spellcaster — GitHub Pages</title>
 
 <style>
+    :root {
+        --bg: #f3f6f4;
+        --surface: #ffffff;
+        --surface-border: #dbe4dd;
+        --text: #1d2722;
+        --text-muted: #5e6e64;
+        --primary: #234b36;
+        --primary-light: #447257;
+        --primary-accent: #6f9b7d;
+        --accent-bg: #eaf1ed;
+        --card-hover-border: #a4beac;
+        --card-shadow: 0 4px 20px rgba(25, 45, 33, 0.05);
+        --card-shadow-hover: 0 10px 28px rgba(25, 45, 33, 0.12);
+        --grid-line: rgba(35, 75, 54, 0.03);
+    }
+
+    [data-theme="dark"] {
+        --bg: #121714;
+        --surface: #1a221d;
+        --surface-border: #2a372e;
+        --text: #e2e8e4;
+        --text-muted: #8e9e94;
+        --primary: #82b392;
+        --primary-light: #a3ccb1;
+        --primary-accent: #3f684e;
+        --accent-bg: #222d26;
+        --card-hover-border: #4e6e59;
+        --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
+        --grid-line: rgba(255, 255, 255, 0.02);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        [data-theme="system"] {
+            --bg: #121714;
+            --surface: #1a221d;
+            --surface-border: #2a372e;
+            --text: #e2e8e4;
+            --text-muted: #8e9e94;
+            --primary: #82b392;
+            --primary-light: #a3ccb1;
+            --primary-accent: #3f684e;
+            --accent-bg: #222d26;
+            --card-hover-border: #4e6e59;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
+            --grid-line: rgba(255, 255, 255, 0.02);
+        }
+    }
+
     * {
         box-sizing: border-box;
     }
 
     body {
         margin: 0;
-        padding: 56px 20px;
-        background: #f1f5f2;
-        color: #26332c;
-        font-family: Arial, sans-serif;
+        padding: 56px 20px 80px;
+        background-color: var(--bg);
+        background-image: 
+            linear-gradient(var(--grid-line) 1px, transparent 1px),
+            linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+        background-size: 32px 32px;
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     main {
-        max-width: 760px;
+        max-width: 800px;
         margin: 0 auto;
+    }
+
+    header {
+        position: relative;
+        margin-bottom: 32px;
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
     }
 
     h1 {
         margin: 0;
-        color: #234b36;
-        font-size: 30px;
-        font-weight: 600;
-        letter-spacing: -0.4px;
+        color: var(--primary);
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: -0.6px;
     }
 
     h1::after {
         content: "";
         display: block;
-        width: 42px;
+        width: 48px;
         height: 3px;
-        margin-top: 12px;
-        background: #6f9b7d;
+        margin-top: 14px;
+        background: var(--primary-light);
         border-radius: 3px;
     }
 
+    .theme-selector {
+        display: inline-flex;
+        align-items: center;
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 6px;
+        padding: 2px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        box-shadow: var(--card-shadow);
+    }
+
+    .theme-option {
+        padding: 5px 10px;
+        cursor: pointer;
+        color: var(--text-muted);
+        border-radius: 4px;
+        transition: color 0.15s ease, background 0.15s ease;
+        user-select: none;
+    }
+
+    .theme-option:hover {
+        color: var(--text);
+    }
+
+    .theme-option.active {
+        background: var(--accent-bg);
+        color: var(--primary);
+    }
+
+    .theme-separator {
+        color: var(--surface-border);
+        font-weight: 300;
+        padding: 0 1px;
+    }
+
     .subtitle {
-        margin: 16px 0 32px;
-        color: #68766d;
+        margin: 16px 0 0;
+        color: var(--text-muted);
+        font-size: 15px;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    @media (min-width: 500px) {
+        .controls {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    .search-box {
+        position: relative;
+        flex: 1;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 10px 16px;
+        border: 1px solid var(--surface-border);
+        background: var(--surface);
+        color: var(--text);
+        border-radius: 8px;
         font-size: 14px;
-        line-height: 1.5;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .search-box input:focus {
+        border-color: var(--primary-light);
+        box-shadow: 0 0 0 3px var(--accent-bg);
     }
 
     #status {
-        margin-bottom: 14px;
-        color: #718078;
+        color: var(--text-muted);
         font-size: 13px;
+        font-weight: 500;
     }
 
     ul {
         list-style: none;
         padding: 0;
         margin: 0;
+        display: grid;
+        gap: 16px;
     }
 
     li {
         position: relative;
-        margin-bottom: 12px;
-        padding: 17px 48px 17px 18px;
-        background: #ffffff;
-        border: 1px solid #dce5df;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(35, 75, 54, 0.04);
-        transition:
-            border-color 0.15s ease,
-            box-shadow 0.15s ease,
-            transform 0.15s ease;
+        padding: 20px 52px 20px 20px;
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 12px;
+        box-shadow: var(--card-shadow);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
     }
 
     li::after {
         content: "↗";
         position: absolute;
-        top: 50%;
-        right: 18px;
-        color: #9aaba0;
-        font-size: 16px;
-        transform: translateY(-50%);
-        transition:
-            color 0.15s ease,
-            transform 0.15s ease;
+        top: 22px;
+        right: 20px;
+        color: var(--text-muted);
+        font-size: 18px;
+        line-height: 1;
+        transition: color 0.2s ease, transform 0.2s ease;
     }
 
     li:hover {
-        border-color: #b9cdbf;
-        box-shadow: 0 4px 14px rgba(35, 75, 54, 0.08);
-        transform: translateY(-1px);
+        border-color: var(--card-hover-border);
+        box-shadow: var(--card-shadow-hover);
+        transform: translateY(-2px);
     }
 
     li:hover::after {
-        color: #3f7655;
-        transform: translate(2px, -50%);
+        color: var(--primary);
+        transform: translate(2px, -2px);
     }
 
-    li a {
-        color: #2f6245;
+    .card-title {
+        margin: 0 0 6px;
+    }
+
+    .card-title a {
+        color: var(--primary);
         text-decoration: none;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 600;
     }
 
-    li a:hover {
-        color: #234b36;
+    .card-title a::after {
+        content: "";
+        position: absolute;
+        inset: 0;
     }
 
     .description {
-        margin-top: 6px;
-        color: #718078;
-        font-size: 13px;
-        line-height: 1.45;
+        color: var(--text-muted);
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .tag {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        padding: 3px 8px;
+        border-radius: 4px;
+        background: var(--accent-bg);
+        color: var(--primary-light);
     }
 
     .error {
-        color: #a04b4b;
+        color: #c94a4a;
     }
 
     @media (max-width: 600px) {
         body {
-            padding: 36px 16px;
+            padding: 36px 16px 40px;
         }
 
         h1 {
-            font-size: 27px;
+            font-size: 26px;
         }
 
         li {
-            padding: 15px 42px 15px 16px;
+            padding: 16px 44px 16px 16px;
         }
     }
 </style>
@@ -140,100 +300,143 @@
 <body>
 
 <main>
-    <h1>Tagt The Spellcaster – GitHub Pages</h1>
+    <header>
+        <div class="top-bar">
+            <h1>Tagt The Spellcaster</h1>
+            <div class="theme-selector">
+                <span class="theme-option" id="optLight">Light Mode</span>
+                <span class="theme-separator">|</span>
+                <span class="theme-option" id="optDark">Dark Mode</span>
+            </div>
+        </div>
+        <p class="subtitle">
+            Progetti, utility e strumenti pubblicati su GitHub Pages
+        </p>
+    </header>
 
-    <p class="subtitle">
-        Progetti e strumenti pubblicati su GitHub Pages
-    </p>
-
-    <div id="status">Ricerca dei progetti...</div>
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cerca tra i progetti..." aria-label="Cerca progetti">
+        </div>
+        <div id="status">Ricerca dei progetti...</div>
+    </div>
 
     <ul id="projects"></ul>
 </main>
 
 <script>
+let allProjects = [];
+
+const optLight = document.getElementById('optLight');
+const optDark = document.getElementById('optDark');
+
+function getEffectiveTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+
+    if (theme === 'dark') {
+        optDark.classList.add('active');
+        optLight.classList.remove('active');
+    } else {
+        optLight.classList.add('active');
+        optDark.classList.remove('active');
+    }
+}
+
+optLight.addEventListener('click', () => applyTheme('light'));
+optDark.addEventListener('click', () => applyTheme('dark'));
+
+applyTheme(getEffectiveTheme());
 
 async function loadProjects() {
-
     const status = document.getElementById("status");
-    const list = document.getElementById("projects");
 
     try {
-
         const response = await fetch("repositories.json");
-
         if (!response.ok) {
-            throw new Error(
-                `repositories.json: HTTP ${response.status}`
-            );
+            throw new Error(`repositories.json: HTTP ${response.status}`);
         }
-
         const data = await response.json();
-
-        const projects = data.projects || [];
-
-
-        if (projects.length === 0) {
-
-            status.textContent =
-                "Nessun progetto GitHub Pages trovato.";
-
-            return;
-        }
-
-
-        status.textContent =
-            `${projects.length} progetti pubblicati`;
-
-
-        for (const project of projects) {
-
-            const li = document.createElement("li");
-
-            const link = document.createElement("a");
-
-            link.href = project.url;
-            link.target = "_blank";
-            link.rel = "noopener noreferrer";
-
-            link.textContent = project.name;
-
-            li.appendChild(link);
-
-
-            if (project.description) {
-
-                const description =
-                    document.createElement("div");
-
-                description.className =
-                    "description";
-
-                description.textContent =
-                    project.description;
-
-                li.appendChild(description);
-            }
-
-
-            list.appendChild(li);
-        }
-
-
+        allProjects = data.projects || [];
+        renderProjects(allProjects);
     } catch (error) {
-
-        status.textContent =
-            "Impossibile recuperare l'elenco dei progetti.";
-
+        status.textContent = "Impossibile recuperare l'elenco dei progetti.";
         status.className = "error";
-
         console.error(error);
     }
 }
 
+function renderProjects(projects) {
+    const status = document.getElementById("status");
+    const list = document.getElementById("projects");
+    list.innerHTML = "";
+
+    if (projects.length === 0) {
+        status.textContent = "Nessun progetto trovato.";
+        return;
+    }
+
+    status.textContent = `${projects.length} programm${projects.length === 1 ? 'o' : 'i'}`;
+
+    for (const project of projects) {
+        const li = document.createElement("li");
+
+        const title = document.createElement("div");
+        title.className = "card-title";
+
+        const link = document.createElement("a");
+        link.href = project.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = project.name;
+        title.appendChild(link);
+        li.appendChild(title);
+
+        if (project.description) {
+            const description = document.createElement("div");
+            description.className = "description";
+            description.textContent = project.description;
+            li.appendChild(description);
+        }
+
+        if (project.tags && Array.isArray(project.tags) && project.tags.length > 0) {
+            const tagsContainer = document.createElement("div");
+            tagsContainer.className = "tags";
+            project.tags.forEach(tagText => {
+                const tag = document.createElement("span");
+                tag.className = "tag";
+                tag.textContent = tagText;
+                tagsContainer.appendChild(tag);
+            });
+            li.appendChild(tagsContainer);
+        }
+
+        list.appendChild(li);
+    }
+}
+
+document.getElementById("searchInput").addEventListener("input", (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    if (!query) {
+        renderProjects(allProjects);
+        return;
+    }
+    const filtered = allProjects.filter(p => {
+        const matchName = p.name && p.name.toLowerCase().includes(query);
+        const matchDesc = p.description && p.description.toLowerCase().includes(query);
+        const matchTags = p.tags && p.tags.some(t => t.toLowerCase().includes(query));
+        return matchName || matchDesc || matchTags;
+    });
+    renderProjects(filtered);
+});
 
 loadProjects();
-
 </script>
 
 </body>
