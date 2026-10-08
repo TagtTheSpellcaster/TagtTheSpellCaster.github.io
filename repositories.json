@@ -7,6 +7,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/Arcane"
     },
     {
+      "name": "BioMetaCalc",
+      "url": "https://tagtthespellcaster.github.io/BioMetaCalc",
+      "description": "Calcolatrice di dati biometrici e metabolici",
+      "repository": "https://github.com/TagtTheSpellcaster/BioMetaCalc"
+    },
+    {
       "name": "Conlang-Generator",
       "url": "https://tagtthespellcaster.github.io/Conlang-Generator",
       "description": "A simple yet useful parametric ConLang (Constructed Language) generator",
@@ -49,6 +55,18 @@
       "repository": "https://github.com/TagtTheSpellcaster/Nuova-Asterisko"
     },
     {
+      "name": "One-After",
+      "url": "https://tagtthespellcaster.github.io/One-After",
+      "description": "Another 606-808-909 emulator (and maybe 303) you don't really need.",
+      "repository": "https://github.com/TagtTheSpellcaster/One-After"
+    },
+    {
+      "name": "PicoMoog",
+      "url": "https://tagtthespellcaster.github.io/PicoMoog",
+      "description": "A pico moog emulator. Very pico.",
+      "repository": "https://github.com/TagtTheSpellcaster/PicoMoog"
+    },
+    {
       "name": "scorporo-iva",
       "url": "https://tagtthespellcaster.github.io/scorporo-iva",
       "description": "Calcolatrice per lo scorporo dell'IVA.",
@@ -65,6 +83,12 @@
       "url": "https://tagtthespellcaster.github.io/StrumPad",
       "description": "A browser-based vintage chord machine & analog synthesizer for harmonic exploration. Features an interactive Circle of Fifths chord matrix, Harmonic Progression Assistant, and smooth voice leading.",
       "repository": "https://github.com/TagtTheSpellcaster/StrumPad"
+    },
+    {
+      "name": "Syntoneo",
+      "url": "https://tagtthespellcaster.github.io/Syntoneo",
+      "description": "A very (VERY) simple monophonic synth.",
+      "repository": "https://github.com/TagtTheSpellcaster/Syntoneo"
     }
   ]
 }
