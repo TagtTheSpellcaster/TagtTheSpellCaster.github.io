@@ -20,8 +20,8 @@
         --card-shadow: 0 4px 20px rgba(25, 45, 33, 0.05);
         --card-shadow-hover: 0 10px 28px rgba(25, 45, 33, 0.12);
         --grid-line: rgba(35, 75, 54, 0.03);
-        --bg-art-opacity: 0.18;
-        --art-stroke: #234b36;
+        --bg-art-opacity: 0.15;
+        --bg-art-filter: none;
     }
 
     [data-theme="dark"] {
@@ -38,8 +38,8 @@
         --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
         --grid-line: rgba(255, 255, 255, 0.02);
-        --bg-art-opacity: 0.12;
-        --art-stroke: #82b392;
+        --bg-art-opacity: 0.10;
+        --bg-art-filter: invert(0.85) sepia(0.2) saturate(0.8) hue-rotate(85deg);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -57,8 +57,8 @@
             --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
             --grid-line: rgba(255, 255, 255, 0.02);
-            --bg-art-opacity: 0.12;
-            --art-stroke: #82b392;
+            --bg-art-opacity: 0.10;
+            --bg-art-filter: invert(0.85) sepia(0.2) saturate(0.8) hue-rotate(85deg);
         }
     }
 
@@ -81,22 +81,25 @@
         min-height: 100vh;
     }
 
-    /* SVG fisso sullo sfondo */
-    .bg-illustration {
+    /* Filigrana in Line Art dal file bg-pattern.png */
+    body::before {
+        content: "";
         position: fixed;
-        bottom: -20px;
-        right: -20px;
+        bottom: 0;
+        right: 0;
         width: 100%;
-        max-width: 520px;
-        height: auto;
+        max-width: 750px;
+        height: 55vh;
+        max-height: 550px;
         pointer-events: none;
         z-index: 0;
         opacity: var(--bg-art-opacity);
-        transition: opacity 0.25s ease;
-    }
-
-    .bg-illustration stroke {
-        transition: stroke 0.25s ease;
+        filter: var(--bg-art-filter);
+        background-image: url('bg-pattern.png');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: contain;
+        transition: opacity 0.25s ease, filter 0.25s ease;
     }
 
     main {
@@ -313,8 +316,8 @@
             padding: 36px 16px 40px;
         }
 
-        .bg-illustration {
-            max-width: 320px;
+        body::before {
+            height: 40vh;
         }
 
         h1 {
@@ -329,27 +332,6 @@
 </head>
 
 <body>
-
-<!-- Illustrazione SVG integrata (line art astratta: radici/rami, mente, connessioni open source) -->
-<svg class="bg-illustration" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M 450,480 C 420,400 380,360 320,320 C 270,285 240,240 250,180 C 258,130 300,90 350,100 C 390,108 420,140 410,180 C 400,220 360,240 320,230 C 280,220 260,180 270,140 C 280,100 320,70 370,75 C 430,80 470,130 460,190" stroke="var(--art-stroke)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3" />
-    <path d="M 320,320 C 250,340 180,310 140,260 C 100,210 110,140 160,100 C 210,60 280,70 320,120" stroke="var(--art-stroke)" stroke-width="1.5" stroke-linecap="round" />
-    <!-- Foglie / Elementi naturali -->
-    <path d="M 250,180 C 230,160 200,165 190,185 C 205,200 235,195 250,180 Z" stroke="var(--art-stroke)" stroke-width="1.2" fill="none" />
-    <path d="M 320,320 C 310,290 280,280 265,300 C 280,320 305,325 320,320 Z" stroke="var(--art-stroke)" stroke-width="1.2" fill="none" />
-    <path d="M 140,260 C 110,260 95,240 100,220 C 120,225 135,245 140,260 Z" stroke="var(--art-stroke)" stroke-width="1.2" fill="none" />
-    <!-- Nodi open source e stelle -->
-    <circle cx="320" cy="320" r="4" stroke="var(--art-stroke)" stroke-width="1.5" fill="var(--bg)" />
-    <circle cx="250" cy="180" r="3" stroke="var(--art-stroke)" stroke-width="1.5" fill="var(--bg)" />
-    <circle cx="140" cy="260" r="3" stroke="var(--art-stroke)" stroke-width="1.5" fill="var(--bg)" />
-    <circle cx="350" cy="100" r="3" stroke="var(--art-stroke)" stroke-width="1.5" fill="var(--bg)" />
-    <path d="M 180,80 L 180,90 M 175,85 L 185,85" stroke="var(--art-stroke)" stroke-width="1.2" stroke-linecap="round" />
-    <path d="M 420,280 L 420,290 M 415,285 L 425,285" stroke="var(--art-stroke)" stroke-width="1.2" stroke-linecap="round" />
-    <path d="M 100,150 L 100,156 M 97,153 L 103,153" stroke="var(--art-stroke)" stroke-width="1" stroke-linecap="round" />
-    <!-- Parentesi graffe astratte incorporee -->
-    <text x="210" y="240" fill="var(--art-stroke)" font-family="monospace" font-size="22" opacity="0.7">{</text>
-    <text x="360" y="340" fill="var(--art-stroke)" font-family="monospace" font-size="22" opacity="0.7">}</text>
-</svg>
 
 <main>
     <header>
