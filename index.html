@@ -6,6 +6,7 @@
 <title>Tagt The Spellcaster — GitHub Pages</title>
 
 <style>
+    /* 1. TEMA CHIARO (Default) */
     :root {
         --bg: #f3f6f4;
         --surface: #ffffff;
@@ -19,29 +20,14 @@
         --card-hover-border: #a4beac;
         --card-shadow: 0 4px 20px rgba(25, 45, 33, 0.05);
         --card-shadow-hover: 0 10px 28px rgba(25, 45, 33, 0.12);
-        --bg-art-opacity: 0.12;
+        --grid-line: rgba(35, 75, 54, 0.03);
+        --bg-art-opacity: 0.14;
         --bg-art-filter: none;
     }
 
-    [data-theme="dark"] {
-        --bg: #121714;
-        --surface: #1a221d;
-        --surface-border: #2a372e;
-        --text: #e2e8e4;
-        --text-muted: #8e9e94;
-        --primary: #82b392;
-        --primary-light: #a3ccb1;
-        --primary-accent: #3f684e;
-        --accent-bg: #222d26;
-        --card-hover-border: #4e6e59;
-        --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
-        --bg-art-opacity: 0.08;
-        --bg-art-filter: invert(0.85) sepia(0.2) saturate(0.8) hue-rotate(85deg);
-    }
-
+    /* 2. RILEVAMENTO AUTOMATICO TEMA SCURO DI SISTEMA */
     @media (prefers-color-scheme: dark) {
-        [data-theme="system"] {
+        :root[data-theme="system"] {
             --bg: #121714;
             --surface: #1a221d;
             --surface-border: #2a372e;
@@ -54,9 +40,48 @@
             --card-hover-border: #4e6e59;
             --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
-            --bg-art-opacity: 0.08;
+            --grid-line: rgba(255, 255, 255, 0.02);
+            --bg-art-opacity: 0.09;
             --bg-art-filter: invert(0.85) sepia(0.2) saturate(0.8) hue-rotate(85deg);
         }
+    }
+
+    /* 3. TEMA SCURO FORZATO DA CLIC (data-theme="dark") */
+    :root[data-theme="dark"] {
+        --bg: #121714;
+        --surface: #1a221d;
+        --surface-border: #2a372e;
+        --text: #e2e8e4;
+        --text-muted: #8e9e94;
+        --primary: #82b392;
+        --primary-light: #a3ccb1;
+        --primary-accent: #3f684e;
+        --accent-bg: #222d26;
+        --card-hover-border: #4e6e59;
+        --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
+        --grid-line: rgba(255, 255, 255, 0.02);
+        --bg-art-opacity: 0.09;
+        --bg-art-filter: invert(0.85) sepia(0.2) saturate(0.8) hue-rotate(85deg);
+    }
+
+    /* 4. TEMA CHIARO FORZATO DA CLIC (data-theme="light") */
+    :root[data-theme="light"] {
+        --bg: #f3f6f4;
+        --surface: #ffffff;
+        --surface-border: #dbe4dd;
+        --text: #1d2722;
+        --text-muted: #5e6e64;
+        --primary: #234b36;
+        --primary-light: #447257;
+        --primary-accent: #6f9b7d;
+        --accent-bg: #eaf1ed;
+        --card-hover-border: #a4beac;
+        --card-shadow: 0 4px 20px rgba(25, 45, 33, 0.05);
+        --card-shadow-hover: 0 10px 28px rgba(25, 45, 33, 0.12);
+        --grid-line: rgba(35, 75, 54, 0.03);
+        --bg-art-opacity: 0.14;
+        --bg-art-filter: none;
     }
 
     * {
@@ -70,11 +95,11 @@
         color: var(--text);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         line-height: 1.6;
-        transition: background-color 0.25s ease, color 0.25s ease;
+        transition: background-color 0.2s ease, color 0.2s ease;
         min-height: 100vh;
     }
 
-    /* Filigrana in Line Art dal file bg-pattern.png - centrata e bilanciata */
+    /* Filigrana in Line Art dal file bg-pattern.png */
     body::before {
         content: "";
         position: fixed;
@@ -90,7 +115,7 @@
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: contain;
-        transition: opacity 0.25s ease, filter 0.25s ease;
+        transition: opacity 0.2s ease, filter 0.2s ease;
     }
 
     main {
@@ -354,6 +379,7 @@ const optDark = document.getElementById('optDark');
 function getEffectiveTheme() {
     const saved = localStorage.getItem('theme');
     if (saved) return saved;
+    // Rileva e rispetta il tema impostato nel browser/sistema dell'utente
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
@@ -373,7 +399,130 @@ function applyTheme(theme) {
 optLight.addEventListener('click', () => applyTheme('light'));
 optDark.addEventListener('click', () => applyTheme('dark'));
 
+// Applica la preferenza salvata (o di sistema) al caricamento della pagina
 applyTheme(getEffectiveTheme());
+
+// Progetti Demo/Fallback nel caso in cui repositories.json manchi, sia in cache, o non sia raggiungibile
+const fallbackProjects = [
+    {
+        name: "Lumen - Spellcasting Toolkit",
+        url: "#",
+        description: "Un framework minimalista per visualizzare e organizzare snippet di codice, appunti e strumenti di automazione personali.",
+        tags: ["javascript", "html", "utility"]
+    },
+    {
+        name: "Aura Theme",
+        url: "#",
+        description: "Un'estensione e palette cromatica sognante, con sfumature di verde ardesia naturale e bosco, pensata per la massima leggibilità e relax visivo.",
+        tags: ["css", "design", "open-source"]
+    },
+    {
+        name: "Scribe - Markdown Editor",
+        url: "#",
+        description: "Un editor web focalizzato sul flusso di scrittura e privo di distrazioni. Salva i tuoi testi in locale in tempo reale.",
+        tags: ["web-app", "markdown", "creative"]
+    }
+];
 
 async function loadProjects() {
     const status = document.getElementById("status");
+
+    try {
+        const cacheBuster = new Date().getTime();
+        const response = await fetch(`./repositories.json?v=${cacheBuster}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (Array.isArray(data)) {
+            allProjects = data;
+        } else if (data && Array.isArray(data.projects)) {
+            allProjects = data.projects;
+        } else {
+            allProjects = [];
+        }
+
+        renderProjects(allProjects);
+    } catch (error) {
+        console.warn("Impossibile caricare repositories.json (Uso i progetti di cortesia):", error.message);
+        // Utilizza i progetti di default per non lasciare la pagina vuota in locale o se il JSON ha problemi
+        allProjects = fallbackProjects;
+        renderProjects(allProjects);
+        status.textContent = `${allProjects.length} idee in libertà (modalità demo)`;
+    }
+}
+
+function renderProjects(projects) {
+    const status = document.getElementById("status");
+    const list = document.getElementById("projects");
+    list.innerHTML = "";
+
+    if (projects.length === 0) {
+        status.textContent = "Nessun progetto trovato.";
+        return;
+    }
+
+    if (projects !== fallbackProjects) {
+        status.textContent = `${projects.length} programm${projects.length === 1 ? 'o' : 'i'}`;
+    }
+
+    for (const project of projects) {
+        const li = document.createElement("li");
+
+        const title = document.createElement("div");
+        title.className = "card-title";
+
+        const link = document.createElement("a");
+        link.href = project.url || "#";
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = project.name || "Senza nome";
+        title.appendChild(link);
+        li.appendChild(title);
+
+        if (project.description) {
+            const description = document.createElement("div");
+            description.className = "description";
+            description.textContent = project.description;
+            li.appendChild(description);
+        }
+
+        if (project.tags && Array.isArray(project.tags) && project.tags.length > 0) {
+            const tagsContainer = document.createElement("div");
+            tagsContainer.className = "tags";
+            project.tags.forEach(tagText => {
+                const tag = document.createElement("span");
+                tag.className = "tag";
+                tag.textContent = tagText;
+                tagsContainer.appendChild(tag);
+            });
+            li.appendChild(tagsContainer);
+        }
+
+        list.appendChild(li);
+    }
+}
+
+document.getElementById("searchInput").addEventListener("input", (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    if (!query) {
+        renderProjects(allProjects);
+        return;
+    }
+    const filtered = allProjects.filter(p => {
+        const matchName = p.name && p.name.toLowerCase().includes(query);
+        const matchDesc = p.description && p.description.toLowerCase().includes(query);
+        const matchTags = p.tags && p.tags.some(t => t.toLowerCase().includes(query));
+        return matchName || matchDesc || matchTags;
+    });
+    renderProjects(filtered);
+});
+
+loadProjects();
+</script>
+
+</body>
+</html>
