@@ -19,8 +19,7 @@
         --card-hover-border: #a4beac;
         --card-shadow: 0 4px 20px rgba(25, 45, 33, 0.05);
         --card-shadow-hover: 0 10px 28px rgba(25, 45, 33, 0.12);
-        --grid-line: rgba(35, 75, 54, 0.03);
-        --bg-art-opacity: 0.15;
+        --bg-art-opacity: 0.12;
         --bg-art-filter: none;
     }
 
@@ -37,8 +36,7 @@
         --card-hover-border: #4e6e59;
         --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
-        --grid-line: rgba(255, 255, 255, 0.02);
-        --bg-art-opacity: 0.10;
+        --bg-art-opacity: 0.08;
         --bg-art-filter: invert(0.85) sepia(0.2) saturate(0.8) hue-rotate(85deg);
     }
 
@@ -56,8 +54,7 @@
             --card-hover-border: #4e6e59;
             --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             --card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
-            --grid-line: rgba(255, 255, 255, 0.02);
-            --bg-art-opacity: 0.10;
+            --bg-art-opacity: 0.08;
             --bg-art-filter: invert(0.85) sepia(0.2) saturate(0.8) hue-rotate(85deg);
         }
     }
@@ -70,10 +67,6 @@
         margin: 0;
         padding: 56px 20px 80px;
         background-color: var(--bg);
-        background-image: 
-            linear-gradient(var(--grid-line) 1px, transparent 1px),
-            linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-        background-size: 32px 32px;
         color: var(--text);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         line-height: 1.6;
@@ -81,23 +74,21 @@
         min-height: 100vh;
     }
 
-    /* Filigrana in Line Art dal file bg-pattern.png */
+    /* Filigrana in Line Art dal file bg-pattern.png - centrata e bilanciata */
     body::before {
         content: "";
         position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        max-width: 750px;
-        height: 55vh;
-        max-height: 550px;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
         pointer-events: none;
         z-index: 0;
         opacity: var(--bg-art-opacity);
         filter: var(--bg-art-filter);
         background-image: url('bg-pattern.png');
         background-repeat: no-repeat;
-        background-position: bottom right;
+        background-position: center bottom;
         background-size: contain;
         transition: opacity 0.25s ease, filter 0.25s ease;
     }
@@ -316,10 +307,6 @@
             padding: 36px 16px 40px;
         }
 
-        body::before {
-            height: 40vh;
-        }
-
         h1 {
             font-size: 26px;
         }
@@ -390,88 +377,3 @@ applyTheme(getEffectiveTheme());
 
 async function loadProjects() {
     const status = document.getElementById("status");
-
-    try {
-        const response = await fetch("repositories.json");
-        if (!response.ok) {
-            throw new Error(`repositories.json: HTTP ${response.status}`);
-        }
-        const data = await response.json();
-        allProjects = data.projects || [];
-        renderProjects(allProjects);
-    } catch (error) {
-        status.textContent = "Impossibile recuperare l'elenco dei progetti.";
-        status.className = "error";
-        console.error(error);
-    }
-}
-
-function renderProjects(projects) {
-    const status = document.getElementById("status");
-    const list = document.getElementById("projects");
-    list.innerHTML = "";
-
-    if (projects.length === 0) {
-        status.textContent = "Nessun progetto trovato.";
-        return;
-    }
-
-    status.textContent = `${projects.length} programm${projects.length === 1 ? 'o' : 'i'}`;
-
-    for (const project of projects) {
-        const li = document.createElement("li");
-
-        const title = document.createElement("div");
-        title.className = "card-title";
-
-        const link = document.createElement("a");
-        link.href = project.url;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        link.textContent = project.name;
-        title.appendChild(link);
-        li.appendChild(title);
-
-        if (project.description) {
-            const description = document.createElement("div");
-            description.className = "description";
-            description.textContent = project.description;
-            li.appendChild(description);
-        }
-
-        if (project.tags && Array.isArray(project.tags) && project.tags.length > 0) {
-            const tagsContainer = document.createElement("div");
-            tagsContainer.className = "tags";
-            project.tags.forEach(tagText => {
-                const tag = document.createElement("span");
-                tag.className = "tag";
-                tag.textContent = tagText;
-                tagsContainer.appendChild(tag);
-            });
-            li.appendChild(tagsContainer);
-        }
-
-        list.appendChild(li);
-    }
-}
-
-document.getElementById("searchInput").addEventListener("input", (e) => {
-    const query = e.target.value.toLowerCase().trim();
-    if (!query) {
-        renderProjects(allProjects);
-        return;
-    }
-    const filtered = allProjects.filter(p => {
-        const matchName = p.name && p.name.toLowerCase().includes(query);
-        const matchDesc = p.description && p.description.toLowerCase().includes(query);
-        const matchTags = p.tags && p.tags.some(t => t.toLowerCase().includes(query));
-        return matchName || matchDesc || matchTags;
-    });
-    renderProjects(filtered);
-});
-
-loadProjects();
-</script>
-
-</body>
-</html>
