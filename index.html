@@ -24,6 +24,7 @@
         --card-hover-border: #a4beac;
         --card-shadow: 0 2px 10px rgba(35, 75, 54, 0.03);
         --card-shadow-hover: 0 8px 24px rgba(35, 75, 54, 0.08);
+        --pattern-stroke: rgba(35, 75, 54, 0.08); /* Colore procedurale per tema chiaro */
     }
 
     /* 2. TEMA SCURO DI SISTEMA */
@@ -40,6 +41,7 @@
             --card-hover-border: #3d5946;
             --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+            --pattern-stroke: rgba(126, 189, 147, 0.05); /* Colore procedurale per tema scuro */
         }
     }
 
@@ -56,6 +58,7 @@
         --card-hover-border: #3d5946;
         --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+        --pattern-stroke: rgba(126, 189, 147, 0.05);
     }
 
     /* 4. TEMA CHIARO FORZATO */
@@ -71,6 +74,7 @@
         --card-hover-border: #a4beac;
         --card-shadow: 0 2px 10px rgba(35, 75, 54, 0.03);
         --card-shadow-hover: 0 8px 24px rgba(35, 75, 54, 0.08);
+        --pattern-stroke: rgba(35, 75, 54, 0.08);
     }
 
     * {
@@ -87,11 +91,25 @@
         transition: background-color 0.2s ease, color 0.2s ease;
         min-height: 100vh;
         -webkit-font-smoothing: antialiased;
+        position: relative;
+    }
+
+    /* Canvas procedurale fisso a tutto schermo */
+    #proceduralCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
     }
 
     main {
         max-width: 720px;
         margin: 0 auto;
+        position: relative;
+        z-index: 1;
     }
 
     header {
@@ -215,13 +233,11 @@
         transition: color 0.15s ease, transform 0.15s ease;
     }
 
-    /* Risposta immediata al tocco su touch-screen */
     li:active {
         transform: scale(0.98);
         border-color: var(--card-hover-border);
     }
 
-    /* Effetto passaggio del mouse (solo per desktop con cursore reale) */
     @media (hover: hover) {
         li:hover {
             border-color: var(--card-hover-border);
@@ -299,6 +315,9 @@
 
 <body>
 
+<!-- Canvas per lo sfondo procedurale -->
+<canvas id="proceduralCanvas"></canvas>
+
 <main>
     <header>
         <div class="top-bar">
@@ -322,6 +341,74 @@
 </main>
 
 <script>
+// --- ALGORITMO DI GENERAZIONE PATTERN PROCEDURALE ---
+const canvas = document.getElementById('proceduralCanvas');
+const ctx = canvas.getContext('2d');
+
+function drawProceduralPattern() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    ctx.clearRect(0, 0, width, height);
+
+    // Legge il colore del tema corrente dalle variabili CSS
+    const strokeColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--pattern-stroke').trim() || 'rgba(35, 75, 54, 0.08)';
+
+    ctx.strokeStyle = strokeColor;
+    ctx.lineWidth = 1;
+
+    // Dimensione della griglia del pattern procedurale
+    const stepX = 220;
+    const stepY = 220;
+
+    for (let x = -20; x < width + stepX; x += stepX) {
+        for (let y = -20; y < height + stepY; y += stepY) {
+            ctx.save();
+            ctx.translate(x, y);
+
+            // 1. Disegna una spirale sognante
+            ctx.beginPath();
+            let a = 0;
+            let r = 2;
+            ctx.moveTo(0, 0);
+            for (let i = 0; i < 25; i++) {
+                a += 0.35;
+                r += 0.9;
+                let px = r * Math.cos(a);
+                let py = r * Math.sin(a);
+                ctx.lineTo(px, py);
+            }
+            ctx.stroke();
+
+            // 2. Disegna una curva morbida stile nuvola/foglia
+            ctx.beginPath();
+            ctx.moveTo(20, -10);
+            ctx.bezierCurveTo(40, -40, 80, -40, 100, -10);
+            ctx.bezierCurveTo(120, 20, 80, 50, 40, 30);
+            ctx.stroke();
+
+            // 3. Disegna un piccolo ramoscello/foglia organica
+            ctx.beginPath();
+            ctx.moveTo(-30, 40);
+            ctx.quadraticCurveTo(10, 80, 50, 60);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.ellipse(15, 62, 8, 3, Math.PI / 4, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            ctx.restore();
+        }
+    }
+}
+
+// Inizializza e ridisegna al ridimensionamento
+window.addEventListener('resize', drawProceduralPattern);
+
+// --- GESTIONE TEMA LIGHT / DARK ---
 let allProjects = [];
 
 const optLight = document.getElementById('optLight');
@@ -344,6 +431,9 @@ function applyTheme(theme) {
         optLight.classList.add('active');
         optDark.classList.remove('active');
     }
+
+    // Ridisegna il canvas per aggiornare il colore delle linee in base al tema
+    setTimeout(drawProceduralPattern, 10);
 }
 
 optLight.addEventListener('click', () => applyTheme('light'));
@@ -351,6 +441,7 @@ optDark.addEventListener('click', () => applyTheme('dark'));
 
 applyTheme(getEffectiveTheme());
 
+// --- CARICAMENTO PROGETTI ---
 async function loadProjects() {
     const status = document.getElementById("status");
 
@@ -430,6 +521,7 @@ function renderProjects(projects) {
 }
 
 loadProjects();
+drawProceduralPattern();
 </script>
 
 </body>
