@@ -199,6 +199,8 @@
         border: 1px solid var(--surface-border);
         border-radius: 10px;
         box-shadow: var(--card-shadow);
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
         transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
     }
 
@@ -213,23 +215,25 @@
         transition: color 0.15s ease, transform 0.15s ease;
     }
 
-    li:hover {
+    /* Risposta immediata al tocco su touch-screen */
+    li:active {
+        transform: scale(0.98);
         border-color: var(--card-hover-border);
-        box-shadow: var(--card-shadow-hover);
-        transform: translateY(-1px);
     }
 
-    li:hover::after {
-        color: var(--primary);
-        transform: translate(2px, -2px);
+    /* Effetto passaggio del mouse (solo per desktop con cursore reale) */
+    @media (hover: hover) {
+        li:hover {
+            border-color: var(--card-hover-border);
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-1px);
+        }
+
+        li:hover::after {
+            color: var(--primary);
+            transform: translate(2px, -2px);
+        }
     }
-
-li:active {
-    transform: scale(0.98);
-    border-color: var(--card-hover-border);
-    box-shadow: var(--card-shadow);
-}
-
 
     .card-title {
         margin: 0 0 4px;
