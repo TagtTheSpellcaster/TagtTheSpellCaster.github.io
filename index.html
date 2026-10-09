@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tagt The Spellcaster — GitHub Pages</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-    
+
+<!-- Favicon per il browser -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
 <!-- Font Google: Plus Jakarta Sans -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,6 +115,17 @@
         font-weight: 700;
         letter-spacing: -0.8px;
         line-height: 1.25;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Icona affiancata al titolo, alta esattamente quanto le lettere */
+    .title-icon {
+        height: 1em;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
     }
 
     h1::after {
@@ -124,6 +137,12 @@
         background: var(--primary-light);
         border-radius: 2px;
         opacity: 0.8;
+    }
+
+    /* Permette alla linea decorativa h1::after di andare a capo correttamente sotto al titolo */
+    .title-container {
+        display: flex;
+        flex-direction: column;
     }
 
     .theme-selector {
@@ -303,7 +322,12 @@
 <main>
     <header>
         <div class="top-bar">
-            <h1>Tagt The Spellcaster</h1>
+            <div class="title-container">
+                <h1>
+                    <img src="favicon.svg" alt="" class="title-icon">
+                    Tagt The Spellcaster
+                </h1>
+            </div>
             <div class="theme-selector">
                 <span class="theme-option" id="optLight">Light Mode</span>
                 <span class="theme-separator">|</span>
