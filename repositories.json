@@ -1,16 +1,16 @@
 {
   "projects": [
     {
+      "name": "Arcana-Narrativa",
+      "url": "https://tagtthespellcaster.github.io/Arcana-Narrativa",
+      "description": "Quando hai bisogno di un momento di ispirazione, tira fuori le carte.",
+      "repository": "https://github.com/TagtTheSpellcaster/Arcana-Narrativa"
+    },
+    {
       "name": "Arcane",
       "url": "https://tagtthespellcaster.github.io/Arcane",
       "description": "Arcane – Strumenti per il Game Master",
       "repository": "https://github.com/TagtTheSpellcaster/Arcane"
-    },
-    {
-      "name": "BioMetaCalc",
-      "url": "https://tagtthespellcaster.github.io/BioMetaCalc",
-      "description": "Calcolatrice di dati biometrici e metabolici",
-      "repository": "https://github.com/TagtTheSpellcaster/BioMetaCalc"
     },
     {
       "name": "Conlang-Generator",
@@ -55,10 +55,10 @@
       "repository": "https://github.com/TagtTheSpellcaster/Nuova-Asterisko"
     },
     {
-      "name": "One-After",
-      "url": "https://tagtthespellcaster.github.io/One-After",
-      "description": "Another 606-808-909 emulator (and maybe 303) you don't really need.",
-      "repository": "https://github.com/TagtTheSpellcaster/One-After"
+      "name": "Oblique-Strategies",
+      "url": "https://tagtthespellcaster.github.io/Oblique-Strategies",
+      "description": "A method to promote your creativity. English and Italian.",
+      "repository": "https://github.com/TagtTheSpellcaster/Oblique-Strategies"
     },
     {
       "name": "PicoMoog",
@@ -89,6 +89,12 @@
       "url": "https://tagtthespellcaster.github.io/Syntoneo",
       "description": "A very (VERY) simple monophonic synth.",
       "repository": "https://github.com/TagtTheSpellcaster/Syntoneo"
+    },
+    {
+      "name": "TapTempoPro",
+      "url": "https://tagtthespellcaster.github.io/TapTempoPro",
+      "description": "Very simple and straightforward Tap Tempo app. Can be played in browser or installed as a PWA.",
+      "repository": "https://github.com/TagtTheSpellcaster/TapTempoPro"
     }
   ]
 }
