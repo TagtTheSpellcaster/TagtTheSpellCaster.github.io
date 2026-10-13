@@ -13,6 +13,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/Arcane"
     },
     {
+      "name": "BioMetaCalc",
+      "url": "https://tagtthespellcaster.github.io/BioMetaCalc",
+      "description": "Single-file offline web app (HTML/CSS/JS) for BMI, body composition, calorie needs, weight-loss planning, workout tracking and macro calculation, with an embedded 846-item food database.",
+      "repository": "https://github.com/TagtTheSpellcaster/BioMetaCalc"
+    },
+    {
       "name": "Conlang-Generator",
       "url": "https://tagtthespellcaster.github.io/Conlang-Generator",
       "description": "A simple yet useful parametric ConLang (Constructed Language) generator",
