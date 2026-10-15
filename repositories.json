@@ -15,7 +15,7 @@
     {
       "name": "BioMetaCalc",
       "url": "https://tagtthespellcaster.github.io/BioMetaCalc",
-      "description": "Single-file offline web app (HTML/CSS/JS) for BMI, body composition, calorie needs, weight-loss planning, workout tracking and macro calculation, with an embedded 846-item food database.",
+      "description": "Offline web app for BMI, body composition, calorie needs, weight-loss planning, training logs, and nutrition calculators.",
       "repository": "https://github.com/TagtTheSpellcaster/BioMetaCalc"
     },
     {
