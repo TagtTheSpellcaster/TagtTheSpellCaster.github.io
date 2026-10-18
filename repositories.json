@@ -107,6 +107,12 @@
       "url": "https://tagtthespellcaster.github.io/TapTempoPro",
       "description": "Very simple and straightforward Tap Tempo app. Can be played in browser or installed as a PWA.",
       "repository": "https://github.com/TagtTheSpellcaster/TapTempoPro"
+    },
+    {
+      "name": "Web-Invaders",
+      "url": "https://tagtthespellcaster.github.io/Web-Invaders",
+      "description": "Another clone of Space 🌌 Invaders ",
+      "repository": "https://github.com/TagtTheSpellcaster/Web-Invaders"
     }
   ]
 }
