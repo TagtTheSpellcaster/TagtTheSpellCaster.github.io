@@ -37,6 +37,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/font-inspector"
     },
     {
+      "name": "Fortress-Raid",
+      "url": "https://tagtthespellcaster.github.io/Fortress-Raid",
+      "description": "A Zaxxon clone (sort of)",
+      "repository": "https://github.com/TagtTheSpellcaster/Fortress-Raid"
+    },
+    {
       "name": "GrainLayer",
       "url": "https://tagtthespellcaster.github.io/GrainLayer",
       "description": "A grain layer overlay inspired by Deckle by Akshat Katiyar",
@@ -109,10 +115,34 @@
       "repository": "https://github.com/TagtTheSpellcaster/TapTempoPro"
     },
     {
+      "name": "Vector-Odyssey",
+      "url": "https://tagtthespellcaster.github.io/Vector-Odyssey",
+      "description": "1980s wireframe vector-style space shooter",
+      "repository": "https://github.com/TagtTheSpellcaster/Vector-Odyssey"
+    },
+    {
       "name": "Web-Invaders",
       "url": "https://tagtthespellcaster.github.io/Web-Invaders",
       "description": "Another clone of Space 🌌 Invaders ",
       "repository": "https://github.com/TagtTheSpellcaster/Web-Invaders"
+    },
+    {
+      "name": "WebPong",
+      "url": "https://tagtthespellcaster.github.io/WebPong",
+      "description": "A Pong clone",
+      "repository": "https://github.com/TagtTheSpellcaster/WebPong"
+    },
+    {
+      "name": "Webreakout",
+      "url": "https://tagtthespellcaster.github.io/Webreakout",
+      "description": "A Breakout clone",
+      "repository": "https://github.com/TagtTheSpellcaster/Webreakout"
+    },
+    {
+      "name": "WebTank",
+      "url": "https://tagtthespellcaster.github.io/WebTank",
+      "description": "A clone of the classic \"Tank\" wireframe videogame",
+      "repository": "https://github.com/TagtTheSpellcaster/WebTank"
     }
   ]
 }
