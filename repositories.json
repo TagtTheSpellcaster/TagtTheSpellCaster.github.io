@@ -19,6 +19,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/BioMetaCalc"
     },
     {
+      "name": "Calcs-Conversions",
+      "url": "https://tagtthespellcaster.github.io/Calcs-Conversions",
+      "description": "Convertitore online di misure per Dungeons & Dragons",
+      "repository": "https://github.com/TagtTheSpellcaster/Calcs-Conversions"
+    },
+    {
       "name": "Conlang-Generator",
       "url": "https://tagtthespellcaster.github.io/Conlang-Generator",
       "description": "A simple yet useful parametric ConLang (Constructed Language) generator",
@@ -85,6 +91,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/PicoMoog"
     },
     {
+      "name": "Pole-Racer",
+      "url": "https://tagtthespellcaster.github.io/Pole-Racer",
+      "description": "A clone of Pole Position, 1982 car race game",
+      "repository": "https://github.com/TagtTheSpellcaster/Pole-Racer"
+    },
+    {
       "name": "scorporo-iva",
       "url": "https://tagtthespellcaster.github.io/scorporo-iva",
       "description": "Calcolatrice per lo scorporo dell'IVA.",
@@ -95,6 +107,12 @@
       "url": "https://tagtthespellcaster.github.io/scoundrel",
       "description": "Gioco di carte roguelike per giocatore singolo",
       "repository": "https://github.com/TagtTheSpellcaster/scoundrel"
+    },
+    {
+      "name": "Street-Crosser",
+      "url": "https://tagtthespellcaster.github.io/Street-Crosser",
+      "description": "A clone of Frogger",
+      "repository": "https://github.com/TagtTheSpellcaster/Street-Crosser"
     },
     {
       "name": "StrumPad",
@@ -121,10 +139,28 @@
       "repository": "https://github.com/TagtTheSpellcaster/Vector-Odyssey"
     },
     {
+      "name": "Web-Defender",
+      "url": "https://tagtthespellcaster.github.io/Web-Defender",
+      "description": "A clone of the 1981 game Defender",
+      "repository": "https://github.com/TagtTheSpellcaster/Web-Defender"
+    },
+    {
       "name": "Web-Invaders",
       "url": "https://tagtthespellcaster.github.io/Web-Invaders",
       "description": "Another clone of Space 🌌 Invaders ",
       "repository": "https://github.com/TagtTheSpellcaster/Web-Invaders"
+    },
+    {
+      "name": "WebLaga",
+      "url": "https://tagtthespellcaster.github.io/WebLaga",
+      "description": "A clone of the classic Galaga videogame",
+      "repository": "https://github.com/TagtTheSpellcaster/WebLaga"
+    },
+    {
+      "name": "WebLander",
+      "url": "https://tagtthespellcaster.github.io/WebLander",
+      "description": "A more or less precise clone of Lunar Lander",
+      "repository": "https://github.com/TagtTheSpellcaster/WebLander"
     },
     {
       "name": "WebPong",
