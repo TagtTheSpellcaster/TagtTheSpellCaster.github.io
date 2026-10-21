@@ -13,6 +13,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/Arcane"
     },
     {
+      "name": "Aura-432",
+      "url": "https://tagtthespellcaster.github.io/Aura-432",
+      "description": "432-hertz ambient music generator",
+      "repository": "https://github.com/TagtTheSpellcaster/Aura-432"
+    },
+    {
       "name": "BioMetaCalc",
       "url": "https://tagtthespellcaster.github.io/BioMetaCalc",
       "description": "Offline web app for BMI, body composition, calorie needs, weight-loss planning, training logs, and nutrition calculators.",
