@@ -43,6 +43,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/convertitore-cartelle"
     },
     {
+      "name": "Dust-Racer",
+      "url": "https://tagtthespellcaster.github.io/Dust-Racer",
+      "description": "An offroad car racer, inspired by 1982 Pole Position",
+      "repository": "https://github.com/TagtTheSpellcaster/Dust-Racer"
+    },
+    {
       "name": "font-inspector",
       "url": "https://tagtthespellcaster.github.io/font-inspector",
       "description": "An easy font inspector and glyph analyzer",
