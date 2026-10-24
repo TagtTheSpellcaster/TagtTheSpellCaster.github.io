@@ -145,6 +145,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/TapTempoPro"
     },
     {
+      "name": "Vector-Cockpit",
+      "url": "https://tagtthespellcaster.github.io/Vector-Cockpit",
+      "description": "A wireframe flight simulator inspired by Sublogic's 1980 Flight Simulator",
+      "repository": "https://github.com/TagtTheSpellcaster/Vector-Cockpit"
+    },
+    {
       "name": "Vector-Odyssey",
       "url": "https://tagtthespellcaster.github.io/Vector-Odyssey",
       "description": "1980s wireframe vector-style space shooter",
