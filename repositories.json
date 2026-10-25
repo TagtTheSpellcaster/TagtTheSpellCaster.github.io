@@ -61,6 +61,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/Fortress-Raid"
     },
     {
+      "name": "Galaxy-Game-1971",
+      "url": "https://tagtthespellcaster.github.io/Galaxy-Game-1971",
+      "description": "A clone of the first coin-op videogame of history.",
+      "repository": "https://github.com/TagtTheSpellcaster/Galaxy-Game-1971"
+    },
+    {
       "name": "GrainLayer",
       "url": "https://tagtthespellcaster.github.io/GrainLayer",
       "description": "A grain layer overlay inspired by Deckle by Akshat Katiyar",
