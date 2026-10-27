@@ -31,6 +31,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/Calcs-Conversions"
     },
     {
+      "name": "Calendario-dell-Astinenza",
+      "url": "https://tagtthespellcaster.github.io/Calendario-dell-Astinenza",
+      "description": "Un calendario dell'astinenza per i membri di Overeaters Anonymous",
+      "repository": "https://github.com/TagtTheSpellcaster/Calendario-dell-Astinenza"
+    },
+    {
       "name": "Conlang-Generator",
       "url": "https://tagtthespellcaster.github.io/Conlang-Generator",
       "description": "A simple yet useful parametric ConLang (Constructed Language) generator",
@@ -65,6 +71,12 @@
       "url": "https://tagtthespellcaster.github.io/Galaxy-Game-1971",
       "description": "A clone of the first coin-op videogame of history.",
       "repository": "https://github.com/TagtTheSpellcaster/Galaxy-Game-1971"
+    },
+    {
+      "name": "Giallo-alla-Tenuta",
+      "url": "https://tagtthespellcaster.github.io/Giallo-alla-Tenuta",
+      "description": "Un gioco di investigazione per un giocatore contro il computer",
+      "repository": "https://github.com/TagtTheSpellcaster/Giallo-alla-Tenuta"
     },
     {
       "name": "GrainLayer",
