@@ -79,6 +79,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/Giallo-alla-Tenuta"
     },
     {
+      "name": "Gioco-Reale-di-Ur",
+      "url": "https://tagtthespellcaster.github.io/Gioco-Reale-di-Ur",
+      "description": "Una versione elettronica online del Gioco Reale di Ur, antenato del Backgammon, con due set di regole (Finkel e Bell)",
+      "repository": "https://github.com/TagtTheSpellcaster/Gioco-Reale-di-Ur"
+    },
+    {
       "name": "GrainLayer",
       "url": "https://tagtthespellcaster.github.io/GrainLayer",
       "description": "A grain layer overlay inspired by Deckle by Akshat Katiyar",
