@@ -16,6 +16,12 @@ button,.file-label{border:1px solid var(--accent);background:var(--accent);color
 button.secondary,.file-label.secondary{background:white;color:var(--accent)}button:disabled{opacity:.5;cursor:not-allowed}
 input[type=search]{flex:1;min-width:210px;padding:10px 12px;border:1px solid var(--line);border-radius:7px;font:inherit}
 #fileInput{display:none}.summary{padding:12px 16px;margin-bottom:14px;color:var(--muted)}
+.add-project{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+.add-project h2{font-size:1rem;margin:0 0 12px}
+.add-project-fields{display:grid;grid-template-columns:1fr 1fr 1.4fr auto;gap:10px;align-items:end}
+.add-project-fields button{white-space:nowrap}
+@media(max-width:720px){.add-project-fields{grid-template-columns:1fr 1fr}.add-project-fields button{grid-column:1/-1}}
+@media(max-width:480px){.add-project-fields{grid-template-columns:1fr}}
 #status{font-weight:600;color:var(--accent)}.warning{color:var(--danger)}
 .projects{display:grid;gap:10px}.project{padding:14px 16px;display:grid;grid-template-columns:minmax(160px,1fr) minmax(180px,1fr) minmax(220px,1.4fr);gap:12px;align-items:center}
 .name{font-weight:650;overflow-wrap:anywhere}.repo{font-size:.82rem;color:var(--muted);margin-top:3px}
@@ -39,6 +45,24 @@ input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border
     <input id="fileInput" type="file" accept=".json,application/json">
     <button id="download" type="button" disabled>Scarica project-categories.json</button>
   </div>
+  <section class="add-project" aria-labelledby="addProjectTitle">
+    <h2 id="addProjectTitle">Aggiungi un progetto non ancora rilevato</h2>
+    <div class="add-project-fields">
+      <div>
+        <label for="newName">Nome del repository</label>
+        <input id="newName" type="text" placeholder="Es. Pluto">
+      </div>
+      <div>
+        <label for="newCategory">Categoria</label>
+        <input id="newCategory" type="text" placeholder="Es. Giochi">
+      </div>
+      <div>
+        <label for="newTags">Tag (separati da virgola)</label>
+        <input id="newTags" type="text" placeholder="Es. Strategia, Spazio">
+      </div>
+      <button id="addProject" type="button">Aggiungi</button>
+    </div>
+  </section>
   <div class="summary">
     <div id="status">Caricamento…</div>
     <div id="counts"></div>
@@ -98,8 +122,37 @@ input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border
     updateCounts();
   }
   function updateCounts() {
-    const cats = new Set(repositories.map(p => (config[p.name]?.category || p.category || "Altri progetti").trim()).filter(Boolean));
-    $("counts").textContent = repositories.length + " progetti · " + cats.size + " categorie" + (dirty ? " · modifiche non scaricate" : "");
+    const cats = new Set(Object.values(config).map(v => v?.category).filter(Boolean));
+    const pending = Object.keys(config).filter(name => !repositories.some(p => p.name === name)).length;
+    $("counts").textContent = repositories.length + " progetti · " + cats.size + " categorie" +
+      (pending ? " · " + pending + " in attesa del repository" : "") +
+      (dirty ? " · modifiche non scaricate" : "");
+  }
+  function addProject() {
+    const name = $("newName").value.trim();
+    const category = $("newCategory").value.trim();
+    const tags = $("newTags").value.split(",").map(x => x.trim()).filter(Boolean);
+    if (!name) {
+      status("Inserisci il nome del repository.", true);
+      $("newName").focus();
+      return;
+    }
+    if (repositories.some(p => p.name.toLowerCase() === name.toLowerCase())) {
+      status("Questo progetto è già presente nell'elenco dei repository.", true);
+      return;
+    }
+    const existingName = Object.keys(config).find(key => key.toLowerCase() === name.toLowerCase());
+    const key = existingName || name;
+    config[key] = {
+      category: category || "Altri progetti",
+      tags: [...new Set(tags)]
+    };
+    dirty = true;
+    $("newName").value = "";
+    $("newCategory").value = "";
+    $("newTags").value = "";
+    render();
+    status("Voce preliminare aggiunta. Scarica il JSON per conservarla.");
   }
   function render() {
     const term = $("search").value.trim().toLocaleLowerCase("it");
@@ -132,6 +185,43 @@ input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border
       card.append(title,catWrap,tagWrap);
       root.append(card);
     }
+    // Mostra anche le voci preliminari, non ancora presenti in repositories.json.
+    for (const [name, saved] of Object.entries(config)) {
+      if (repositories.some(p => p.name === name)) continue;
+      const card = document.createElement("article");
+      card.className = "project";
+      const title = document.createElement("div");
+      const projectName = document.createElement("div");
+      projectName.className = "name";
+      projectName.textContent = name;
+      const note = document.createElement("div");
+      note.className = "repo";
+      note.textContent = "In attesa che GitHub Pages rilevi il repository";
+      title.append(projectName, note);
+
+      const catWrap = document.createElement("div");
+      const catLabel = document.createElement("label");
+      catLabel.textContent = "Categoria";
+      const cat = document.createElement("input");
+      cat.type = "text";
+      cat.value = saved?.category || "Altri progetti";
+      cat.setAttribute("list", "categoryOptions");
+      cat.addEventListener("input", () => setField(name, "category", cat.value.trim() || "Altri progetti"));
+      catWrap.append(catLabel, cat);
+
+      const tagWrap = document.createElement("div");
+      tagWrap.className = "tags";
+      const tagLabel = document.createElement("label");
+      tagLabel.textContent = "Tag (separati da virgola)";
+      const tag = document.createElement("input");
+      tag.type = "text";
+      tag.value = Array.isArray(saved?.tags) ? saved.tags.join(", ") : "";
+      const saveTags = () => setField(name, "tags", tag.value.split(",").map(x => x.trim()).filter(Boolean));
+      tag.addEventListener("input", saveTags);
+      tagWrap.append(tagLabel, tag);
+      card.append(title, catWrap, tagWrap);
+      root.append(card);
+    }
     const dl = document.createElement("datalist"); dl.id="categoryOptions";
     [...new Set([...repositories.map(p=>config[p.name]?.category || p.category),...Object.values(config).map(v=>v?.category)])]
       .filter(Boolean).sort((a,b)=>a.localeCompare(b,"it")).forEach(value=>{const o=document.createElement("option");o.value=value;dl.append(o);});
@@ -139,6 +229,8 @@ input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border
     if (!visible.length) {const empty=document.createElement("p");empty.className="help";empty.textContent="Nessun progetto corrispondente.";root.append(empty);}
     updateCounts();
   }
+  $("addProject").addEventListener("click", addProject);
+  $("newName").addEventListener("keydown", event => { if (event.key === "Enter") addProject(); });
   $("search").addEventListener("input",render);
   $("reload").addEventListener("click",load);
   $("fileInput").addEventListener("change",async event=>{
@@ -151,13 +243,19 @@ input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border
     event.target.value="";
   });
   $("download").addEventListener("click",()=>{
-    // Include only current repositories, keeping category/tag assignments.
+    // Include repositories rilevati e voci preliminari non ancora rilevate.
     const output={};
     for(const p of repositories){
       const item=config[p.name] || {};
-      const category=(item.category ?? p.category ?? "Altri progetti").trim();
+      const category=String(item.category ?? p.category ?? "Altri progetti").trim();
       const tags=Array.isArray(item.tags)?item.tags:[];
       output[p.name]={category:category || "Altri progetti",tags:[...new Set(tags.map(t=>String(t).trim()).filter(Boolean))]};
+    }
+    for(const [name,item] of Object.entries(config)){
+      if(Object.prototype.hasOwnProperty.call(output,name)) continue;
+      const category=String(item?.category || "Altri progetti").trim();
+      const tags=Array.isArray(item?.tags)?item.tags:[];
+      output[name]={category:category || "Altri progetti",tags:[...new Set(tags.map(t=>String(t).trim()).filter(Boolean))]};
     }
     const blob=new Blob([JSON.stringify(output,null,2)+"\n"],{type:"application/json;charset=utf-8"});
     const url=URL.createObjectURL(blob);
