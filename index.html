@@ -466,8 +466,8 @@
 
     .category-card.active,
     .category-card.active:hover {
-        /* Tab e pannello condividono lo stesso tratto di bordo da 1px.
-           Nessuna traslazione o ombra sul lato di giunzione. */
+        /* Tab e pannello condividono il bordo esterno; il filetto interno
+           viene disattivato per evitare angoli e segmenti residui. */
         z-index: 2;
         outline: none;
         border: 1px solid var(--category-color);
@@ -477,9 +477,11 @@
         transform: none;
     }
 
-    .category-card.active::before {
-        border-bottom: 0;
-        border-radius: 4px 4px 0 0;
+    .category-card.active::before,
+    .category-card.active:hover::before {
+        /* Il filetto decorativo interno della carta non deve proseguire
+           lungo i fianchi quando la carta è usata come linguetta. */
+        display: none;
     }
 
     .category-band {
