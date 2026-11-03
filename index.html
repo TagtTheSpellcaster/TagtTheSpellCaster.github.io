@@ -646,6 +646,29 @@
         font-weight: 900;
     }
 
+
+    .site-footer {
+        max-width: 1120px;
+        margin: 28px auto 0;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 300;
+        color: var(--text-muted);
+    }
+
+    .site-footer a {
+        color: inherit;
+        font-weight: 300;
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity 0.15s ease;
+    }
+
+    .site-footer a:hover {
+        opacity: 1;
+        text-decoration: underline;
+    }
+
 </style>
 </head>
 
@@ -696,6 +719,10 @@
         <div id="projects"></div>
     </section>
 </main>
+
+<footer class="site-footer">
+    <a href="categories-editor.html">Editor di categorie</a>
+</footer>
 
 <script>
 let allProjects = [];
