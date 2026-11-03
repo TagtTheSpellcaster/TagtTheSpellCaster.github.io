@@ -117,10 +117,32 @@ input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border
       status("Errore: " + e.message + " — verifica che l'editor sia pubblicato nella stessa cartella di repositories.json.", true);
     }
   }
+  function refreshCategoryOptions() {
+    let dl = $("categoryOptions");
+    if (!dl) {
+      dl = document.createElement("datalist");
+      dl.id = "categoryOptions";
+      document.body.append(dl);
+    }
+    dl.replaceChildren();
+    const values = new Set([
+      ...repositories.map(p => config[p.name]?.category ?? p.category),
+      ...Object.values(config).map(item => item?.category)
+    ]);
+    [...values].filter(value => typeof value === "string" && value.trim())
+      .map(value => value.trim())
+      .sort((a, b) => a.localeCompare(b, "it"))
+      .forEach(value => {
+        const option = document.createElement("option");
+        option.value = value;
+        dl.append(option);
+      });
+  }
   function setField(name, key, value) {
     if (!config[name] || typeof config[name] !== "object") config[name] = {};
     config[name][key] = value;
     dirty = true;
+    if (key === "category") refreshCategoryOptions();
     updateCounts();
   }
   function updateCounts() {
@@ -239,10 +261,7 @@ input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border
       card.append(title, catWrap, tagWrap, actions);
       root.append(card);
     }
-    const dl = document.createElement("datalist"); dl.id="categoryOptions";
-    [...new Set([...repositories.map(p=>config[p.name]?.category || p.category),...Object.values(config).map(v=>v?.category)])]
-      .filter(Boolean).sort((a,b)=>a.localeCompare(b,"it")).forEach(value=>{const o=document.createElement("option");o.value=value;dl.append(o);});
-    root.append(dl);
+    refreshCategoryOptions();
     if (!visible.length) {const empty=document.createElement("p");empty.className="help";empty.textContent="Nessun progetto corrispondente.";root.append(empty);}
     updateCounts();
   }
