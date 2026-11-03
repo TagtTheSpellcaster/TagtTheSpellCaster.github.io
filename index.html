@@ -522,11 +522,24 @@
     }
 
     .category-mark {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 76px;
+        height: 58px;
         color: var(--category-color);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 31px;
-        font-weight: 700;
         line-height: 1;
+    }
+
+    .category-mark svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
     }
 
     .category-name {
@@ -780,16 +793,85 @@ function getCategoryColor(category, index) {
     return knownCategoryColors[category] || categoryColors[index % categoryColors.length];
 }
 
-function getCategoryMark(category) {
-    // Conserva la e commerciale e usa le iniziali di tutte le parole
-    // significative: "Creatività & Linguaggi" diventa "C&L".
-    const ignored = new Set(["da", "de", "del", "della", "delle", "dello", "di", "e", "il", "la", "le", "lo", "i", "gli", "un", "una"]);
-    const tokens = category.trim().split(/(\s*&\s*|\s+)/).filter(Boolean);
-    return tokens
-        .map(token => token.trim() === "&" ? "&" : token.trim())
-        .filter(token => token === "&" || (!ignored.has(token.toLocaleLowerCase("it")) && /[\p{L}\p{N}]/u.test(token)))
-        .map(token => token === "&" ? "&" : token[0].toLocaleUpperCase("it"))
-        .join("");
+const categoryIcons = {
+    "Tutti": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <path d="M13 15h36a7 7 0 0 1 7 7v29H20a7 7 0 0 1-7-7z"/>
+            <path d="M20 15v36M56 22h8a4 4 0 0 1 4 4v25H20"/>
+            <path d="M25 25h22M25 33h22M25 41h16"/>
+        </svg>`,
+    "Giochi Antichi": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <rect x="12" y="9" width="56" height="46" rx="4"/>
+            <path d="M26 9v46M40 9v46M54 9v46M12 24h56M12 40h56"/>
+            <circle cx="19" cy="17" r="3.5" fill="currentColor" stroke="none"/>
+            <circle cx="47" cy="32" r="3.5" fill="currentColor" stroke="none"/>
+            <circle cx="61" cy="47" r="3.5" fill="currentColor" stroke="none"/>
+        </svg>`,
+    "Giochi Arcade": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <path d="M21 8h38l5 8v39H16V16z"/>
+            <path d="M23 15h34v20H23z"/>
+            <path d="M29 43v7M25 47h8M49 43h7M52.5 39.5v7"/>
+            <circle cx="34" cy="25" r="4"/>
+            <path d="M43 21l7 8M50 21l-7 8"/>
+        </svg>`,
+    "Arcade": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <path d="M21 8h38l5 8v39H16V16z"/>
+            <path d="M23 15h34v20H23z"/>
+            <path d="M29 43v7M25 47h8M49 43h7M52.5 39.5v7"/>
+            <circle cx="34" cy="25" r="4"/>
+            <path d="M43 21l7 8M50 21l-7 8"/>
+        </svg>`,
+    "RPG & Game Master": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <path d="M40 5 65 19v27L40 60 15 46V19z"/>
+            <path d="m40 5 0 27 25-13M40 32 15 19M40 32v28M15 46l25-14 25 14"/>
+            <circle cx="40" cy="32" r="4" fill="currentColor" stroke="none"/>
+        </svg>`,
+    "Giochi da tavolo e di carte": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <rect x="15" y="13" width="35" height="43" rx="4" transform="rotate(-10 15 13)"/>
+            <rect x="32" y="10" width="35" height="43" rx="4" transform="rotate(8 32 10)"/>
+            <path d="M49 22c-5-7-15 0 0 13 15-13 5-20 0-13z"/>
+        </svg>`,
+    "Musica & Audio": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <path d="M47 11v33a8 8 0 1 1-5-7V19l24-6v25a8 8 0 1 1-5-7V7z"/>
+            <path d="M10 29h8l5-10 8 26 7-16h8"/>
+        </svg>`,
+    "Utility & Strumenti": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <path d="M14 17h52M14 32h52M14 47h52"/>
+            <circle cx="29" cy="17" r="6" fill="var(--surface)" />
+            <circle cx="51" cy="32" r="6" fill="var(--surface)" />
+            <circle cx="36" cy="47" r="6" fill="var(--surface)" />
+        </svg>`,
+    "Creatività & Linguaggi": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <path d="M40 17c-9-7-20-7-29-4v37c10-3 20-2 29 5 9-7 19-8 29-5V13c-9-3-20-3-29 4z"/>
+            <path d="M40 18v37M18 22c6-1 12 0 17 3M18 31c6-1 12 0 17 3M62 22c-6-1-12 0-17 3M62 31c-6-1-12 0-17 3"/>
+            <path d="m51 7 9-4-3 10-9 4z"/>
+        </svg>`,
+    "Siti & Web": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <rect x="9" y="9" width="62" height="46" rx="5"/>
+            <path d="M9 20h62M18 15h1M25 15h1M32 15h1"/>
+            <circle cx="40" cy="38" r="12"/>
+            <path d="M28 38h24M40 26c5 6 5 18 0 24M40 26c-5 6-5 18 0 24"/>
+        </svg>`,
+    "Altri progetti": `
+        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <circle cx="40" cy="32" r="25"/>
+            <circle cx="40" cy="32" r="16"/>
+            <path d="m40 11 5 17-5 25-5-25z"/>
+            <path d="m19 32 17-5 25 5-25 5z"/>
+        </svg>`
+};
+
+function getCategoryIcon(category) {
+    return categoryIcons[category] || categoryIcons["Altri progetti"];
 }
 
 function renderCategories() {
@@ -809,13 +891,11 @@ function renderCategories() {
     const cards = [{
         name: "Tutti",
         count: allProjects.length,
-        color: "#234b36",
-        mark: "ALL"
+        color: "#234b36"
     }, ...categories.map((category, index) => ({
         name: category,
         count: counts[category],
-        color: getCategoryColor(category, index),
-        mark: getCategoryMark(category)
+        color: getCategoryColor(category, index)
     }))];
 
     cards.forEach(card => {
@@ -835,7 +915,7 @@ function renderCategories() {
 
         const mark = document.createElement("span");
         mark.className = "category-mark";
-        mark.textContent = card.mark;
+        mark.innerHTML = getCategoryIcon(card.name);
 
         const name = document.createElement("span");
         name.className = "category-name";
