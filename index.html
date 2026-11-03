@@ -93,7 +93,7 @@
     }
 
     main {
-        max-width: 720px;
+        max-width: 1120px;
         margin: 0 auto;
     }
 
@@ -120,7 +120,6 @@
         gap: 10px;
     }
 
-    /* Icona affiancata al titolo, alta esattamente quanto le lettere */
     .title-icon {
         height: 1em;
         width: auto;
@@ -139,7 +138,6 @@
         opacity: 0.8;
     }
 
-    /* Permette alla linea decorativa h1::after di andare a capo correttamente sotto al titolo */
     .title-container {
         display: flex;
         flex-direction: column;
@@ -190,136 +188,6 @@
         letter-spacing: -0.1px;
     }
 
-    .section-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-
-    #status {
-        color: var(--text-muted);
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0.2px;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        gap: 14px;
-    }
-
-    li {
-        position: relative;
-        padding: 20px 48px 20px 22px;
-        background: var(--surface);
-        border: 1px solid var(--surface-border);
-        border-radius: 10px;
-        box-shadow: var(--card-shadow);
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
-        transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
-    }
-
-    li::after {
-        content: "↗";
-        position: absolute;
-        top: 22px;
-        right: 22px;
-        color: var(--text-muted);
-        font-size: 16px;
-        line-height: 1;
-        transition: color 0.15s ease, transform 0.15s ease;
-    }
-
-    /* Risposta immediata al tocco su touch-screen */
-    li:active {
-        transform: scale(0.98);
-        border-color: var(--card-hover-border);
-    }
-
-    /* Effetto passaggio del mouse (solo per desktop con cursore reale) */
-    @media (hover: hover) {
-        li:hover {
-            border-color: var(--card-hover-border);
-            box-shadow: var(--card-shadow-hover);
-            transform: translateY(-1px);
-        }
-
-        li:hover::after {
-            color: var(--primary);
-            transform: translate(2px, -2px);
-        }
-    }
-
-    .card-title {
-        margin: 0 0 4px;
-    }
-
-    .card-title a {
-        color: var(--primary);
-        text-decoration: none;
-        font-size: 17px;
-        font-weight: 600;
-        letter-spacing: -0.3px;
-    }
-
-    .card-title a::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-    }
-
-    .description {
-        color: var(--text-muted);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.5;
-    }
-
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-top: 12px;
-    }
-
-    .tag {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.2px;
-        padding: 2px 8px;
-        border-radius: 4px;
-        background: var(--accent-bg);
-        color: var(--primary-light);
-    }
-
-    .error {
-        color: #c94a4a;
-    }
-
-    @media (max-width: 600px) {
-        body {
-            padding: 40px 18px 60px;
-        }
-
-        h1 {
-            font-size: 25px;
-        }
-
-        li {
-            padding: 18px 42px 18px 18px;
-        }
-    }
-
-    /* Portfolio organizzato per categorie */
-    main {
-        max-width: 1120px;
-    }
-
     .intro {
         margin: 30px 0 22px;
     }
@@ -343,6 +211,13 @@
         gap: 16px;
         justify-content: space-between;
         margin: 24px 0 18px;
+    }
+
+    #status {
+        color: var(--text-muted);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
     }
 
     .search-box {
@@ -376,51 +251,6 @@
     .search-box input::placeholder {
         color: var(--text-muted);
         opacity: 0.8;
-    }
-
-    .category-grid > section[aria-labelledby="projectsTitle"] {
-        grid-column: 1 / -1;
-        min-width: 0;
-        margin-top: -18px;
-        padding: 24px;
-        background: var(--surface);
-        border: 1px solid var(--panel-accent, var(--primary));
-        border-top: 0;
-        border-radius: 0 8px 8px 8px;
-        box-shadow: var(--card-shadow-hover);
-        position: relative;
-        transform-origin: top center;
-        animation: panel-open 220ms ease-out both;
-    }
-
-    .category-grid > section[aria-labelledby="projectsTitle"]::before {
-        content: "";
-        position: absolute;
-        top: -1px;
-        left: 0;
-        right: 0;
-        height: 1px;
-        pointer-events: none;
-        background: linear-gradient(
-            to right,
-            var(--panel-accent, var(--primary)) 0,
-            var(--panel-accent, var(--primary)) var(--tab-start, 0px),
-            transparent var(--tab-start, 0px),
-            transparent var(--tab-end, 0px),
-            var(--panel-accent, var(--primary)) var(--tab-end, 0px),
-            var(--panel-accent, var(--primary)) 100%
-        );
-    }
-
-    @keyframes panel-open {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .category-grid > section[aria-labelledby="projectsTitle"] {
-            animation: none;
-        }
     }
 
     .category-grid {
@@ -466,8 +296,6 @@
 
     .category-card.active,
     .category-card.active:hover {
-        /* Tab e pannello condividono il bordo esterno; il filetto interno
-           viene disattivato per evitare angoli e segmenti residui. */
         z-index: 2;
         outline: none;
         border: 1px solid var(--category-color);
@@ -479,8 +307,6 @@
 
     .category-card.active::before,
     .category-card.active:hover::before {
-        /* Il filetto decorativo interno della carta non deve proseguire
-           lungo i fianchi quando la carta è usata come linguetta. */
         display: none;
     }
 
@@ -544,6 +370,52 @@
         text-transform: uppercase;
     }
 
+    /* Pannello espanso sotto la griglia */
+    .category-grid > section[aria-labelledby="projectsTitle"] {
+        grid-column: 1 / -1;
+        min-width: 0;
+        margin-top: -18px;
+        padding: 24px;
+        background: var(--surface);
+        border: 1px solid var(--panel-accent, var(--primary));
+        border-top: 0;
+        border-radius: 0 8px 8px 8px;
+        box-shadow: var(--card-shadow-hover);
+        position: relative;
+        transform-origin: top center;
+        animation: panel-open 220ms ease-out both;
+    }
+
+    .category-grid > section[aria-labelledby="projectsTitle"]::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        pointer-events: none;
+        background: linear-gradient(
+            to right,
+            var(--panel-accent, var(--primary)) 0,
+            var(--panel-accent, var(--primary)) var(--tab-start, 0px),
+            transparent var(--tab-start, 0px),
+            transparent var(--tab-end, 0px),
+            var(--panel-accent, var(--primary)) var(--tab-end, 0px),
+            var(--panel-accent, var(--primary)) 100%
+        );
+    }
+
+    @keyframes panel-open {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .category-grid > section[aria-labelledby="projectsTitle"] {
+            animation: none;
+        }
+    }
+
     .projects-heading {
         display: flex;
         align-items: baseline;
@@ -587,22 +459,87 @@
     }
 
     .project-list li {
+        position: relative;
         min-width: 0;
         padding: 16px 42px 16px 18px;
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
         border-radius: 8px;
+        box-shadow: var(--card-shadow);
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
     }
 
     .project-list li::after {
+        content: "↗";
+        position: absolute;
         top: 18px;
         right: 17px;
+        color: var(--text-muted);
+        font-size: 16px;
+        line-height: 1;
+        transition: color 0.15s ease, transform 0.15s ease;
     }
 
-    .project-list .card-title a {
+    .project-list li:active {
+        transform: scale(0.98);
+        border-color: var(--card-hover-border);
+    }
+
+    @media (hover: hover) {
+        .project-list li:hover {
+            border-color: var(--card-hover-border);
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-1px);
+        }
+
+        .project-list li:hover::after {
+            color: var(--primary);
+            transform: translate(2px, -2px);
+        }
+    }
+
+    .card-title {
+        margin: 0 0 4px;
+    }
+
+    .card-title a {
+        color: var(--primary);
+        text-decoration: none;
         font-size: 15px;
+        font-weight: 600;
+        letter-spacing: -0.3px;
     }
 
-    .project-list .description {
+    .card-title a::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+    }
+
+    .description {
+        color: var(--text-muted);
         font-size: 13px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 12px;
+    }
+
+    .tag {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        background: var(--accent-bg);
+        color: var(--primary-light);
     }
 
     .empty-state {
@@ -615,6 +552,10 @@
         text-align: center;
     }
 
+    .error {
+        color: #c94a4a;
+    }
+
     @media (max-width: 800px) {
         .category-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -624,6 +565,10 @@
     @media (max-width: 600px) {
         body {
             padding: 40px 18px 60px;
+        }
+
+        h1 {
+            font-size: 25px;
         }
 
         .catalog-toolbar {
@@ -665,7 +610,6 @@
             margin-top: -12px;
         }
     }
-
 </style>
 </head>
 
@@ -841,13 +785,6 @@ const categoryIcons = {
             <path d="M40 18v37M18 22c6-1 12 0 17 3M18 31c6-1 12 0 17 3M62 22c-6-1-12 0-17 3M62 31c-6-1-12 0-17 3"/>
             <path d="m51 7 9-4-3 10-9 4z"/>
         </svg>`,
-    "Siti & Web": `
-        <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
-            <rect x="9" y="9" width="62" height="46" rx="5"/>
-            <path d="M9 20h62M18 15h1M25 15h1M32 15h1"/>
-            <circle cx="40" cy="38" r="12"/>
-            <path d="M28 38h24M40 26c5 6 5 18 0 24M40 26c-5 6-5 18 0 24"/>
-        </svg>`,
     "Altri progetti": `
         <svg viewBox="0 0 80 64" aria-hidden="true" focusable="false">
             <circle cx="40" cy="32" r="25"/>
@@ -863,8 +800,6 @@ function getCategoryIcon(category) {
 
 function renderCategories() {
     const container = document.getElementById("categories");
-    // La sezione dei risultati viene inserita nella griglia solo quando
-    // una carta è selezionata.
     container.innerHTML = "";
 
     const categories = getCategories();
@@ -916,7 +851,6 @@ function renderCategories() {
         button.append(band, body);
 
         button.addEventListener("click", () => {
-            // Un secondo clic sulla stessa carta chiude la categoria.
             activeCategory = activeCategory === card.name ? null : card.name;
             renderCategories();
             renderProjects();
@@ -942,16 +876,15 @@ function renderCategories() {
         const nextCard = buttons[lastIndexInRow]?.nextSibling || null;
         container.insertBefore(resultsSection, nextCard);
 
-        // Interrompe la linea superiore del pannello esattamente sotto
-        // la carta attiva: i due tratti laterali arrivano ai suoi bordi.
         const activeButton = [...buttons].find(button =>
             button.getAttribute("aria-pressed") === "true"
         );
         if (activeButton) {
             const panelRect = resultsSection.getBoundingClientRect();
             const tabRect = activeButton.getBoundingClientRect();
-            const start = Math.max(0, tabRect.left - panelRect.left);
-            const end = Math.min(panelRect.width, tabRect.right - panelRect.left);
+            // Uso di Math.floor e Math.ceil per evitare micro-gap da sub-pixel rendering
+            const start = Math.floor(Math.max(0, tabRect.left - panelRect.left));
+            const end = Math.ceil(Math.min(panelRect.width, tabRect.right - panelRect.left));
             resultsSection.style.setProperty("--tab-start", `${start}px`);
             resultsSection.style.setProperty("--tab-end", `${end}px`);
         }
