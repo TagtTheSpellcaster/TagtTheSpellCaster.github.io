@@ -378,6 +378,11 @@
         opacity: 0.8;
     }
 
+    .category-grid > section[aria-labelledby="projectsTitle"] {
+        grid-column: 1 / -1;
+        min-width: 0;
+    }
+
     .category-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -707,13 +712,22 @@ function getCategoryColor(category, index) {
 }
 
 function getCategoryMark(category) {
-    const words = category.trim().split(/\s+/).filter(Boolean);
-    if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
-    return (words[0][0] + words[1][0]).toUpperCase();
+    // Conserva la e commerciale e usa le iniziali di tutte le parole
+    // significative: "Creatività & Linguaggi" diventa "C&L".
+    const ignored = new Set(["da", "de", "del", "della", "delle", "dello", "di", "e", "il", "la", "le", "lo", "i", "gli", "un", "una"]);
+    const tokens = category.trim().split(/(\s*&\s*|\s+)/).filter(Boolean);
+    return tokens
+        .map(token => token.trim() === "&" ? "&" : token.trim())
+        .filter(token => token === "&" || (!ignored.has(token.toLocaleLowerCase("it")) && /[\p{L}\p{N}]/u.test(token)))
+        .map(token => token === "&" ? "&" : token[0].toLocaleUpperCase("it"))
+        .join("");
 }
 
 function renderCategories() {
     const container = document.getElementById("categories");
+    // La sezione dei risultati viene inserita nella griglia subito dopo
+    // la riga che contiene la carta selezionata.
+    const resultsSection = document.querySelector('section[aria-labelledby="projectsTitle"]');
     container.innerHTML = "";
 
     const categories = getCategories();
@@ -774,6 +788,18 @@ function renderCategories() {
 
         container.appendChild(button);
     });
+
+    const columns = window.matchMedia("(max-width: 800px)").matches ? 2 : 3;
+    const selectedIndex = activeCategory === "Tutti"
+        ? 0
+        : categories.indexOf(activeCategory) + 1;
+    const lastIndexInRow = Math.min(
+        cards.length - 1,
+        Math.floor(selectedIndex / columns) * columns + columns - 1
+    );
+    const buttons = container.querySelectorAll(".category-card");
+    const nextCard = buttons[lastIndexInRow]?.nextSibling || null;
+    container.insertBefore(resultsSection, nextCard);
 }
 
 function projectMatchesSearch(project) {
