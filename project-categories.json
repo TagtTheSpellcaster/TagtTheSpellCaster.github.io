@@ -1,0 +1,22 @@
+{
+  "Gioco-Reale-di-Ur": {
+    "category": "Giochi Antichi",
+    "tags": ["Strategia", "Mesopotamia"]
+  },
+  "Senet": {
+    "category": "Giochi Antichi",
+    "tags": ["Strategia", "Antico Egitto"]
+  },
+  "Wari": {
+    "category": "Giochi Antichi",
+    "tags": ["Mancala", "Strategia"]
+  },
+  "Scoundrel": {
+    "category": "Giochi da tavolo e di carte",
+    "tags": ["Roguelike", "Carte"]
+  },
+  "StrumPad": {
+    "category": "Musica & Audio",
+    "tags": ["Accordi", "Sintetizzatore"]
+  }
+}
