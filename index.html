@@ -271,8 +271,8 @@
         text-align: left;
         color: var(--text);
         background: var(--surface);
-        border: 1px solid var(--surface-border);
-        border-radius: 8px;
+        border: 2px solid var(--surface-border);
+        border-radius: 10px;
         box-shadow: var(--card-shadow);
         cursor: pointer;
         font: inherit;
@@ -285,9 +285,15 @@
         transform: translateY(-2px);
     }
 
+    /* La scheda attiva fa da "linguetta" fusa al pannello sottostante */
     .category-card.active {
-        border: 2px solid var(--category-color);
-        box-shadow: var(--card-shadow-hover);
+        z-index: 2;
+        border: 2px solid var(--panel-accent, var(--category-color));
+        border-bottom: 2px solid transparent; /* Si fonde senza riga orizzontale divisoria */
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: none;
+        transform: none;
     }
 
     .category-band {
@@ -350,11 +356,11 @@
         text-transform: uppercase;
     }
 
-    /* Pannello dei risultati indipendente e pulito (zero glitch) */
+    /* Pannello dei risultati: vero effetto scheda di biblioteca unificata */
     .category-grid > section[aria-labelledby="projectsTitle"] {
         grid-column: 1 / -1;
         min-width: 0;
-        margin-top: 8px;
+        margin-top: -18px; /* Riaggancia perfettamente la linguetta sopra */
         padding: 28px;
         background: var(--surface);
         border: 2px solid var(--panel-accent, var(--primary));
@@ -365,7 +371,7 @@
     }
 
     @keyframes panel-open {
-        from { opacity: 0; transform: translateY(-6px); }
+        from { opacity: 0; transform: translateY(-4px); }
         to { opacity: 1; transform: translateY(0); }
     }
 
@@ -423,7 +429,7 @@
         min-width: 0;
         padding: 16px 42px 16px 18px;
         background: var(--surface);
-        border: 1px solid var(--surface-border);
+        border: 2px solid var(--surface-border);
         border-radius: 8px;
         box-shadow: var(--card-shadow);
         touch-action: manipulation;
@@ -506,7 +512,7 @@
         padding: 24px;
         color: var(--text-muted);
         background: var(--surface);
-        border: 1px solid var(--surface-border);
+        border: 2px solid var(--surface-border);
         border-radius: 8px;
         font-size: 14px;
         text-align: center;
@@ -567,7 +573,7 @@
 
         .category-grid > section[aria-labelledby="projectsTitle"] {
             padding: 18px 14px;
-            margin-top: 4px;
+            margin-top: -12px;
         }
     }
 </style>
