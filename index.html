@@ -381,6 +381,40 @@
     .category-grid > section[aria-labelledby="projectsTitle"] {
         grid-column: 1 / -1;
         min-width: 0;
+        margin-top: -18px;
+        padding: 24px;
+        background: var(--surface);
+        border: 2px solid var(--panel-accent, var(--primary));
+        border-top: 0;
+        border-radius: 0 9px 9px 9px;
+        box-shadow: var(--card-shadow-hover);
+        transform-origin: top center;
+        animation: panel-open 280ms cubic-bezier(.2,.75,.25,1) both;
+    }
+
+    @keyframes panel-open {
+        from {
+            opacity: 0;
+            transform: translateY(-9px) scaleY(.94);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scaleY(1);
+        }
+    }
+
+    .category-card.active {
+        z-index: 1;
+        border-bottom-color: var(--panel-accent, var(--category-color));
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .category-grid > section[aria-labelledby="projectsTitle"] {
+            animation: none;
+        }
     }
 
     .category-grid {
@@ -596,6 +630,11 @@
         .projects-heading h2 {
             font-size: 19px;
         }
+
+        .category-grid > section[aria-labelledby="projectsTitle"] {
+            padding: 17px 13px;
+            margin-top: -12px;
+        }
     }
 
 </style>
@@ -793,6 +832,8 @@ function renderCategories() {
     if (activeCategory === null) {
         resultsSection.remove();
     } else {
+        const selectedCard = cards.find(card => card.name === activeCategory);
+        resultsSection.style.setProperty("--panel-accent", selectedCard?.color || "#234b36");
         const columns = window.matchMedia("(max-width: 800px)").matches ? 2 : 3;
         const selectedIndex = activeCategory === "Tutti"
             ? 0
