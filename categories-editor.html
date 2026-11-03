@@ -13,6 +13,8 @@ main{max-width:1120px;margin:28px auto;padding:0 18px 50px}
 .toolbar,.summary,.project{background:var(--panel);border:1px solid var(--line);border-radius:10px}
 .toolbar{padding:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
 button,.file-label{border:1px solid var(--accent);background:var(--accent);color:white;border-radius:7px;padding:9px 13px;font:inherit;cursor:pointer}
+button.delete-pending{background:white;color:var(--danger);border-color:var(--danger);padding:7px 10px;font-size:.85rem}
+button.delete-pending:hover{background:#f8eeed}
 button.secondary,.file-label.secondary{background:white;color:var(--accent)}button:disabled{opacity:.5;cursor:not-allowed}
 input[type=search]{flex:1;min-width:210px;padding:10px 12px;border:1px solid var(--line);border-radius:7px;font:inherit}
 #fileInput{display:none}.summary{padding:12px 16px;margin-bottom:14px;color:var(--muted)}
@@ -219,7 +221,22 @@ input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border
       const saveTags = () => setField(name, "tags", tag.value.split(",").map(x => x.trim()).filter(Boolean));
       tag.addEventListener("input", saveTags);
       tagWrap.append(tagLabel, tag);
-      card.append(title, catWrap, tagWrap);
+
+      const actions = document.createElement("div");
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "delete-pending";
+      remove.textContent = "Elimina voce";
+      remove.setAttribute("aria-label", "Elimina la voce preliminare " + name);
+      remove.addEventListener("click", () => {
+        if (!Object.prototype.hasOwnProperty.call(config, name)) return;
+        delete config[name];
+        dirty = true;
+        render();
+        status("Voce preliminare " + name + " eliminata. Scarica il JSON per conservare la modifica.");
+      });
+      actions.append(remove);
+      card.append(title, catWrap, tagWrap, actions);
       root.append(card);
     }
     const dl = document.createElement("datalist"); dl.id="categoryOptions";
