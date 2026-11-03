@@ -279,16 +279,6 @@
         transition: box-shadow 0.15s ease, border-color 0.15s ease;
     }
 
-    .category-card::before {
-        content: "";
-        position: absolute;
-        inset: 5px;
-        border: 1px solid var(--surface-border);
-        border-radius: 4px;
-        pointer-events: none;
-        opacity: 0.7;
-    }
-
     .category-card:hover {
         border-color: var(--category-color);
         box-shadow: var(--card-shadow-hover);
@@ -303,11 +293,6 @@
         border-radius: 8px 8px 0 0;
         box-shadow: none;
         transform: none;
-    }
-
-    .category-card.active::before,
-    .category-card.active:hover::before {
-        display: none;
     }
 
     .category-band {
@@ -370,7 +355,7 @@
         text-transform: uppercase;
     }
 
-    /* Pannello espanso sotto la griglia */
+    /* Pannello espanso sotto la griglia - Semplificato per evitare glitch di gradiente */
     .category-grid > section[aria-labelledby="projectsTitle"] {
         grid-column: 1 / -1;
         min-width: 0;
@@ -378,31 +363,10 @@
         padding: 24px;
         background: var(--surface);
         border: 1px solid var(--panel-accent, var(--primary));
-        border-top: 0;
         border-radius: 0 8px 8px 8px;
         box-shadow: var(--card-shadow-hover);
         position: relative;
-        transform-origin: top center;
         animation: panel-open 220ms ease-out both;
-    }
-
-    .category-grid > section[aria-labelledby="projectsTitle"]::before {
-        content: "";
-        position: absolute;
-        top: -1px;
-        left: 0;
-        right: 0;
-        height: 1px;
-        pointer-events: none;
-        background: linear-gradient(
-            to right,
-            var(--panel-accent, var(--primary)) 0,
-            var(--panel-accent, var(--primary)) var(--tab-start, 0px),
-            transparent var(--tab-start, 0px),
-            transparent var(--tab-end, 0px),
-            var(--panel-accent, var(--primary)) var(--tab-end, 0px),
-            var(--panel-accent, var(--primary)) 100%
-        );
     }
 
     @keyframes panel-open {
@@ -875,19 +839,6 @@ function renderCategories() {
         const buttons = container.querySelectorAll(".category-card");
         const nextCard = buttons[lastIndexInRow]?.nextSibling || null;
         container.insertBefore(resultsSection, nextCard);
-
-        const activeButton = [...buttons].find(button =>
-            button.getAttribute("aria-pressed") === "true"
-        );
-        if (activeButton) {
-            const panelRect = resultsSection.getBoundingClientRect();
-            const tabRect = activeButton.getBoundingClientRect();
-            // Uso di Math.floor e Math.ceil per evitare micro-gap da sub-pixel rendering
-            const start = Math.floor(Math.max(0, tabRect.left - panelRect.left));
-            const end = Math.ceil(Math.min(panelRect.width, tabRect.right - panelRect.left));
-            resultsSection.style.setProperty("--tab-start", `${start}px`);
-            resultsSection.style.setProperty("--tab-end", `${end}px`);
-        }
     }
 }
 
