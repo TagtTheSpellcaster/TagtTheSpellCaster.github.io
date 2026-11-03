@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="system">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tagt The Spellcaster — GitHub Pages</title>
+
+<!-- Favicon per il browser -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- Font Google: Plus Jakarta Sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    /* 1. TEMA CHIARO (Default) */
+    :root {
+        --bg: #f4f7f5;
+        --surface: #ffffff;
+        --surface-border: #e0e8e2;
+        --text: #1b2620;
+        --text-muted: #627267;
+        --primary: #234b36;
+        --primary-light: #3e6b50;
+        --accent-bg: #eaf1ed;
+        --card-hover-border: #a4beac;
+        --card-shadow: 0 2px 10px rgba(35, 75, 54, 0.03);
+        --card-shadow-hover: 0 8px 24px rgba(35, 75, 54, 0.08);
+    }
+
+    /* 2. TEMA SCURO DI SISTEMA */
+    @media (prefers-color-scheme: dark) {
+        :root[data-theme="system"] {
+            --bg: #111613;
+            --surface: #18201b;
+            --surface-border: #26332a;
+            --text: #e2e8e4;
+            --text-muted: #84968a;
+            --primary: #7ebd93;
+            --primary-light: #9ed1af;
+            --accent-bg: #202c24;
+            --card-hover-border: #3d5946;
+            --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    /* 3. TEMA SCURO FORZATO */
+    :root[data-theme="dark"] {
+        --bg: #111613;
+        --surface: #18201b;
+        --surface-border: #26332a;
+        --text: #e2e8e4;
+        --text-muted: #84968a;
+        --primary: #7ebd93;
+        --primary-light: #9ed1af;
+        --accent-bg: #202c24;
+        --card-hover-border: #3d5946;
+        --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 4. TEMA CHIARO FORZATO */
+    :root[data-theme="light"] {
+        --bg: #f4f7f5;
+        --surface: #ffffff;
+        --surface-border: #e0e8e2;
+        --text: #1b2620;
+        --text-muted: #627267;
+        --primary: #234b36;
+        --primary-light: #3e6b50;
+        --accent-bg: #eaf1ed;
+        --card-hover-border: #a4beac;
+        --card-shadow: 0 2px 10px rgba(35, 75, 54, 0.03);
+        --card-shadow-hover: 0 8px 24px rgba(35, 75, 54, 0.08);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 64px 24px 96px;
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.6;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    header {
+        margin-bottom: 40px;
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    h1 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.8px;
+        line-height: 1.25;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Icona affiancata al titolo, alta esattamente quanto le lettere */
+    .title-icon {
+        height: 1em;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    h1::after {
+        content: "";
+        display: block;
+        width: 36px;
+        height: 3px;
+        margin-top: 16px;
+        background: var(--primary-light);
+        border-radius: 2px;
+        opacity: 0.8;
+    }
+
+    /* Permette alla linea decorativa h1::after di andare a capo correttamente sotto al titolo */
+    .title-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .theme-selector {
+        display: inline-flex;
+        align-items: center;
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 6px;
+        padding: 3px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1px;
+        box-shadow: var(--card-shadow);
+    }
+
+    .theme-option {
+        padding: 4px 10px;
+        cursor: pointer;
+        color: var(--text-muted);
+        border-radius: 4px;
+        transition: color 0.15s ease, background 0.15s ease;
+        user-select: none;
+    }
+
+    .theme-option:hover {
+        color: var(--text);
+    }
+
+    .theme-option.active {
+        background: var(--accent-bg);
+        color: var(--primary);
+    }
+
+    .theme-separator {
+        color: var(--surface-border);
+        font-weight: 300;
+        padding: 0 1px;
+    }
+
+    .subtitle {
+        margin: 18px 0 0;
+        color: var(--text-muted);
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: -0.1px;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    #status {
+        color: var(--text-muted);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 14px;
+    }
+
+    li {
+        position: relative;
+        padding: 20px 48px 20px 22px;
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+
+    li::after {
+        content: "↗";
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        color: var(--text-muted);
+        font-size: 16px;
+        line-height: 1;
+        transition: color 0.15s ease, transform 0.15s ease;
+    }
+
+    /* Risposta immediata al tocco su touch-screen */
+    li:active {
+        transform: scale(0.98);
+        border-color: var(--card-hover-border);
+    }
+
+    /* Effetto passaggio del mouse (solo per desktop con cursore reale) */
+    @media (hover: hover) {
+        li:hover {
+            border-color: var(--card-hover-border);
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-1px);
+        }
+
+        li:hover::after {
+            color: var(--primary);
+            transform: translate(2px, -2px);
+        }
+    }
+
+    .card-title {
+        margin: 0 0 4px;
+    }
+
+    .card-title a {
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: -0.3px;
+    }
+
+    .card-title a::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+    }
+
+    .description {
+        color: var(--text-muted);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 12px;
+    }
+
+    .tag {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        background: var(--accent-bg);
+        color: var(--primary-light);
+    }
+
+    .error {
+        color: #c94a4a;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            padding: 40px 18px 60px;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        li {
+            padding: 18px 42px 18px 18px;
+        }
+    }
+
+    /* Portfolio organizzato per categorie */
+    main {
+        max-width: 1120px;
+    }
+
+    .intro {
+        margin: 30px 0 22px;
+    }
+
+    .intro h2 {
+        margin: 0 0 5px;
+        color: var(--primary);
+        font-size: 21px;
+        letter-spacing: -0.4px;
+    }
+
+    .intro p {
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 14px;
+    }
+
+    .catalog-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        justify-content: space-between;
+        margin: 24px 0 18px;
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        width: min(100%, 360px);
+        padding: 10px 13px;
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 8px;
+        box-shadow: var(--card-shadow);
+    }
+
+    .search-box span {
+        color: var(--text-muted);
+        font-size: 15px;
+    }
+
+    .search-box input {
+        width: 100%;
+        min-width: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: var(--text);
+        font: inherit;
+        font-size: 13px;
+    }
+
+    .search-box input::placeholder {
+        color: var(--text-muted);
+        opacity: 0.8;
+    }
+
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin: 0 0 34px;
+    }
+
+    .category-card {
+        --category-color: #39744e;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 190px;
+        padding: 0;
+        overflow: hidden;
+        text-align: left;
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 8px;
+        box-shadow: var(--card-shadow);
+        cursor: pointer;
+        font: inherit;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .category-card::before {
+        content: "";
+        position: absolute;
+        inset: 5px;
+        border: 1px solid var(--surface-border);
+        border-radius: 4px;
+        pointer-events: none;
+        opacity: 0.7;
+    }
+
+    .category-card:hover,
+    .category-card.active {
+        border-color: var(--category-color);
+        box-shadow: var(--card-shadow-hover);
+    }
+
+    .category-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .category-card.active {
+        outline: 2px solid var(--category-color);
+        outline-offset: 2px;
+    }
+
+    .category-band {
+        display: block;
+        padding: 10px 12px;
+        color: #fff;
+        background: var(--category-color);
+        text-align: center;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        line-height: 1.35;
+        text-transform: uppercase;
+    }
+
+    .category-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 18px 14px 15px;
+        text-align: center;
+    }
+
+    .category-mark {
+        color: var(--category-color);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 31px;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .category-name {
+        color: var(--primary);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .category-count {
+        color: var(--text-muted);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    .projects-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 0 0 18px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--surface-border);
+    }
+
+    .projects-heading h2 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 21px;
+        letter-spacing: -0.4px;
+    }
+
+    .projects-heading span {
+        color: var(--text-muted);
+        font-size: 12px;
+    }
+
+    .project-group {
+        margin: 0 0 30px;
+    }
+
+    .project-group h3 {
+        margin: 0 0 12px;
+        color: var(--primary);
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .project-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .project-list li {
+        min-width: 0;
+        padding: 16px 42px 16px 18px;
+        border-radius: 8px;
+    }
+
+    .project-list li::after {
+        top: 18px;
+        right: 17px;
+    }
+
+    .project-list .card-title a {
+        font-size: 15px;
+    }
+
+    .project-list .description {
+        font-size: 13px;
+    }
+
+    .empty-state {
+        padding: 24px;
+        color: var(--text-muted);
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 8px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    @media (max-width: 800px) {
+        .category-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 600px) {
+        body {
+            padding: 40px 18px 60px;
+        }
+
+        .catalog-toolbar {
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .search-box {
+            width: 100%;
+        }
+
+        .category-grid {
+            gap: 12px;
+        }
+
+        .category-card {
+            min-height: 165px;
+        }
+
+        .category-band {
+            font-size: 10px;
+            padding: 9px 7px;
+        }
+
+        .category-name {
+            font-size: 14px;
+        }
+
+        .project-list {
+            grid-template-columns: 1fr;
+        }
+
+        .projects-heading h2 {
+            font-size: 19px;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+<main>
+    <header>
+        <div class="top-bar">
+            <div class="title-container">
+                <h1>
+                    <img src="favicon.svg" alt="" class="title-icon">
+                    Tagt The Spellcaster
+                </h1>
+            </div>
+            <div class="theme-selector" aria-label="Selezione tema">
+                <span class="theme-option" id="optLight" role="button" tabindex="0">Light Mode</span>
+                <span class="theme-separator">|</span>
+                <span class="theme-option" id="optDark" role="button" tabindex="0">Dark Mode</span>
+            </div>
+        </div>
+        <p class="subtitle">
+            Progetti, utility e strumenti pubblicati su GitHub Pages
+        </p>
+    </header>
+
+    <section class="intro">
+        <h2>Esplora i progetti</h2>
+        <p>Seleziona una categoria oppure cerca direttamente un programma.</p>
+    </section>
+
+    <div class="catalog-toolbar">
+        <div id="status" aria-live="polite">Ricerca dei progetti...</div>
+        <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="Cerca per nome, descrizione o tag..." autocomplete="off">
+        </label>
+    </div>
+
+    <nav id="categories" class="category-grid" aria-label="Categorie dei progetti"></nav>
+
+    <section aria-labelledby="projectsTitle">
+        <div class="projects-heading">
+            <h2 id="projectsTitle">Tutti i progetti</h2>
+            <span id="visibleCount"></span>
+        </div>
+        <div id="projects"></div>
+    </section>
+</main>
+
+<script>
+let allProjects = [];
+let activeCategory = "Tutti";
+let searchTerm = "";
+
+const optLight = document.getElementById("optLight");
+const optDark = document.getElementById("optDark");
+const searchInput = document.getElementById("searchInput");
+
+function getEffectiveTheme() {
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+
+    optDark.classList.toggle("active", theme === "dark");
+    optLight.classList.toggle("active", theme === "light");
+}
+
+optLight.addEventListener("click", () => applyTheme("light"));
+optDark.addEventListener("click", () => applyTheme("dark"));
+
+[optLight, optDark].forEach(option => {
+    option.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            option.click();
+        }
+    });
+});
+
+applyTheme(getEffectiveTheme());
+
+const categoryColors = [
+    "#9a4c3b", "#39744e", "#416b9b", "#a58a43",
+    "#76558e", "#9a6b36", "#527b82", "#8a5968"
+];
+
+const knownCategoryColors = {
+    "Giochi Antichi": "#9a4c3b",
+    "Giochi Arcade": "#416b9b",
+    "Arcade": "#416b9b",
+    "RPG & Game Master": "#a58a43",
+    "Giochi da tavolo e di carte": "#76558e",
+    "Musica & Audio": "#39744e",
+    "Utility & Strumenti": "#527b82",
+    "Creatività & Linguaggi": "#9a6b36",
+    "Altri progetti": "#777d78"
+};
+
+function getCategories() {
+    return [...new Set(
+        allProjects.map(project => project.category || "Altri progetti")
+    )].sort((a, b) => a.localeCompare(b, "it"));
+}
+
+function getCategoryColor(category, index) {
+    return knownCategoryColors[category] || categoryColors[index % categoryColors.length];
+}
+
+function getCategoryMark(category) {
+    const words = category.trim().split(/\s+/).filter(Boolean);
+    if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function renderCategories() {
+    const container = document.getElementById("categories");
+    container.innerHTML = "";
+
+    const categories = getCategories();
+    const counts = {};
+    categories.forEach(category => {
+        counts[category] = allProjects.filter(
+            project => (project.category || "Altri progetti") === category
+        ).length;
+    });
+
+    const cards = [{
+        name: "Tutti",
+        count: allProjects.length,
+        color: "#234b36",
+        mark: "ALL"
+    }, ...categories.map((category, index) => ({
+        name: category,
+        count: counts[category],
+        color: getCategoryColor(category, index),
+        mark: getCategoryMark(category)
+    }))];
+
+    cards.forEach(card => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "category-card";
+        button.classList.toggle("active", activeCategory === card.name);
+        button.style.setProperty("--category-color", card.color);
+        button.setAttribute("aria-pressed", String(activeCategory === card.name));
+
+        const band = document.createElement("span");
+        band.className = "category-band";
+        band.textContent = card.name === "Tutti" ? "COLLEZIONE COMPLETA" : card.name;
+
+        const body = document.createElement("span");
+        body.className = "category-body";
+
+        const mark = document.createElement("span");
+        mark.className = "category-mark";
+        mark.textContent = card.mark;
+
+        const name = document.createElement("span");
+        name.className = "category-name";
+        name.textContent = card.name === "Tutti" ? "Tutti i progetti" : card.name;
+
+        const count = document.createElement("span");
+        count.className = "category-count";
+        count.textContent = `${card.count} ${card.count === 1 ? "progetto" : "progetti"}`;
+
+        body.append(mark, name, count);
+        button.append(band, body);
+
+        button.addEventListener("click", () => {
+            activeCategory = card.name;
+            renderCategories();
+            renderProjects();
+        });
+
+        container.appendChild(button);
+    });
+}
+
+function projectMatchesSearch(project) {
+    if (!searchTerm) return true;
+
+    const searchable = [
+        project.name || "",
+        project.description || "",
+        project.category || "",
+        ...(Array.isArray(project.tags) ? project.tags : [])
+    ].join(" ").toLocaleLowerCase("it");
+
+    return searchable.includes(searchTerm);
+}
+
+function renderProjects() {
+    const container = document.getElementById("projects");
+    const title = document.getElementById("projectsTitle");
+    const count = document.getElementById("visibleCount");
+    const status = document.getElementById("status");
+
+    container.innerHTML = "";
+
+    let filtered = allProjects.filter(project => {
+        const category = project.category || "Altri progetti";
+        const categoryMatches = activeCategory === "Tutti" || category === activeCategory;
+        return categoryMatches && projectMatchesSearch(project);
+    });
+
+    title.textContent = activeCategory === "Tutti" ? "Tutti i progetti" : activeCategory;
+    count.textContent = `${filtered.length} ${filtered.length === 1 ? "risultato" : "risultati"}`;
+    status.textContent = `${allProjects.length} progetti pubblicati`;
+
+    if (filtered.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "empty-state";
+        empty.textContent = "Nessun progetto corrisponde ai criteri di ricerca.";
+        container.appendChild(empty);
+        return;
+    }
+
+    const grouped = new Map();
+    filtered.forEach(project => {
+        const category = project.category || "Altri progetti";
+        if (!grouped.has(category)) grouped.set(category, []);
+        grouped.get(category).push(project);
+    });
+
+    const orderedCategories = [...grouped.keys()].sort((a, b) => a.localeCompare(b, "it"));
+
+    orderedCategories.forEach(category => {
+        const group = document.createElement("section");
+        group.className = "project-group";
+
+        if (activeCategory === "Tutti") {
+            const heading = document.createElement("h3");
+            heading.textContent = category;
+            group.appendChild(heading);
+        }
+
+        const list = document.createElement("ul");
+        list.className = "project-list";
+
+        grouped.get(category)
+            .sort((a, b) => (a.name || "").localeCompare(b.name || "", "it"))
+            .forEach(project => {
+                const li = document.createElement("li");
+
+                const title = document.createElement("div");
+                title.className = "card-title";
+
+                const link = document.createElement("a");
+                link.href = project.url || "#";
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                link.textContent = project.name || "Senza nome";
+                title.appendChild(link);
+                li.appendChild(title);
+
+                if (project.description) {
+                    const description = document.createElement("div");
+                    description.className = "description";
+                    description.textContent = project.description;
+                    li.appendChild(description);
+                }
+
+                if (Array.isArray(project.tags) && project.tags.length > 0) {
+                    const tagsContainer = document.createElement("div");
+                    tagsContainer.className = "tags";
+
+                    project.tags.forEach(tagText => {
+                        const tag = document.createElement("span");
+                        tag.className = "tag";
+                        tag.textContent = tagText;
+                        tagsContainer.appendChild(tag);
+                    });
+
+                    li.appendChild(tagsContainer);
+                }
+
+                list.appendChild(li);
+            });
+
+        group.appendChild(list);
+        container.appendChild(group);
+    });
+}
+
+searchInput.addEventListener("input", () => {
+    searchTerm = searchInput.value.trim().toLocaleLowerCase("it");
+    renderProjects();
+});
+
+async function loadProjects() {
+    const status = document.getElementById("status");
+
+    try {
+        const cacheBuster = new Date().getTime();
+        const response = await fetch(`./repositories.json?v=${cacheBuster}`);
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (Array.isArray(data)) {
+            allProjects = data;
+        } else if (data && Array.isArray(data.projects)) {
+            allProjects = data.projects;
+        } else {
+            allProjects = [];
+        }
+
+        renderCategories();
+        renderProjects();
+    } catch (error) {
+        status.textContent = "Impossibile recuperare l'elenco dei progetti.";
+        status.className = "error";
+        console.error("Errore durante il caricamento dei progetti:", error);
+    }
+}
+
+loadProjects();
+</script>
+
+</body>
+</html>
