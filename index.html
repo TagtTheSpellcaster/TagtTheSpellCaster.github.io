@@ -276,23 +276,18 @@
         box-shadow: var(--card-shadow);
         cursor: pointer;
         font: inherit;
-        transition: box-shadow 0.15s ease, border-color 0.15s ease;
+        transition: box-shadow 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
     }
 
     .category-card:hover {
         border-color: var(--category-color);
         box-shadow: var(--card-shadow-hover);
+        transform: translateY(-2px);
     }
 
-    .category-card.active,
-    .category-card.active:hover {
-        z-index: 2;
-        outline: none;
-        border: 1px solid var(--category-color);
-        border-bottom: 0;
-        border-radius: 8px 8px 0 0;
-        box-shadow: none;
-        transform: none;
+    .category-card.active {
+        border: 2px solid var(--category-color);
+        box-shadow: var(--card-shadow-hover);
     }
 
     .category-band {
@@ -355,23 +350,23 @@
         text-transform: uppercase;
     }
 
-    /* Pannello espanso sotto la griglia - Semplificato per evitare glitch di gradiente */
+    /* Pannello dei risultati indipendente e pulito (zero glitch) */
     .category-grid > section[aria-labelledby="projectsTitle"] {
         grid-column: 1 / -1;
         min-width: 0;
-        margin-top: -18px;
-        padding: 24px;
+        margin-top: 8px;
+        padding: 28px;
         background: var(--surface);
-        border: 1px solid var(--panel-accent, var(--primary));
-        border-radius: 0 8px 8px 8px;
+        border: 2px solid var(--panel-accent, var(--primary));
+        border-radius: 10px;
         box-shadow: var(--card-shadow-hover);
         position: relative;
         animation: panel-open 220ms ease-out both;
     }
 
     @keyframes panel-open {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from { opacity: 0; transform: translateY(-6px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -386,8 +381,8 @@
         justify-content: space-between;
         gap: 12px;
         margin: 0 0 18px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--surface-border);
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--surface-border);
     }
 
     .projects-heading h2 {
@@ -400,6 +395,7 @@
     .projects-heading span {
         color: var(--text-muted);
         font-size: 12px;
+        font-weight: 600;
     }
 
     .project-group {
@@ -570,8 +566,8 @@
         }
 
         .category-grid > section[aria-labelledby="projectsTitle"] {
-            padding: 17px 13px;
-            margin-top: -12px;
+            padding: 18px 14px;
+            margin-top: 4px;
         }
     }
 </style>
@@ -828,6 +824,7 @@ function renderCategories() {
     } else {
         const selectedCard = cards.find(card => card.name === activeCategory);
         resultsSection.style.setProperty("--panel-accent", selectedCard?.color || "#234b36");
+        
         const columns = window.matchMedia("(max-width: 800px)").matches ? 2 : 3;
         const selectedIndex = activeCategory === "Tutti"
             ? 0
