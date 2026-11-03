@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Editor categorie progetti</title>
+<style>
+:root{color-scheme:light;--bg:#f4f6f3;--panel:#fff;--ink:#202a24;--muted:#68736c;--line:#d8dfd9;--accent:#426b50;--accent2:#e6eee7;--danger:#9a443b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:#263c30;color:#f5f7f4;padding:24px max(20px,calc((100% - 1120px)/2))}
+header h1{font-size:1.5rem;margin:0 0 5px;font-weight:650}header p{margin:0;color:#d5dfd7}
+main{max-width:1120px;margin:28px auto;padding:0 18px 50px}
+.toolbar,.summary,.project{background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.toolbar{padding:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+button,.file-label{border:1px solid var(--accent);background:var(--accent);color:white;border-radius:7px;padding:9px 13px;font:inherit;cursor:pointer}
+button.secondary,.file-label.secondary{background:white;color:var(--accent)}button:disabled{opacity:.5;cursor:not-allowed}
+input[type=search]{flex:1;min-width:210px;padding:10px 12px;border:1px solid var(--line);border-radius:7px;font:inherit}
+#fileInput{display:none}.summary{padding:12px 16px;margin-bottom:14px;color:var(--muted)}
+#status{font-weight:600;color:var(--accent)}.warning{color:var(--danger)}
+.projects{display:grid;gap:10px}.project{padding:14px 16px;display:grid;grid-template-columns:minmax(160px,1fr) minmax(180px,1fr) minmax(220px,1.4fr);gap:12px;align-items:center}
+.name{font-weight:650;overflow-wrap:anywhere}.repo{font-size:.82rem;color:var(--muted);margin-top:3px}
+label{display:block;font-size:.78rem;color:var(--muted);margin-bottom:4px}
+input[type=text]{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;font:inherit;min-width:0}
+.help{font-size:.85rem;color:var(--muted);margin:14px 2px}
+@media(max-width:720px){.project{grid-template-columns:1fr 1fr}.project .tags{grid-column:1/-1}}
+@media(max-width:480px){.project{grid-template-columns:1fr}.project .tags{grid-column:auto}header{padding:20px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Editor delle categorie</h1>
+  <p>Gestione di categorie e tag per i progetti GitHub Pages.</p>
+</header>
+<main>
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Filtra i progetti…" aria-label="Filtra i progetti">
+    <button id="reload" class="secondary" type="button">Ricarica dati</button>
+    <label class="file-label secondary" for="fileInput">Importa JSON</label>
+    <input id="fileInput" type="file" accept=".json,application/json">
+    <button id="download" type="button" disabled>Scarica project-categories.json</button>
+  </div>
+  <div class="summary">
+    <div id="status">Caricamento…</div>
+    <div id="counts"></div>
+  </div>
+  <section id="projects" class="projects" aria-live="polite"></section>
+  <p class="help">Le modifiche restano nella memoria di questa pagina finché non scarichi il file. Il programma non modifica il repository GitHub: sostituisci manualmente project-categories.json con il file scaricato e avvia il workflow di aggiornamento.</p>
+</main>
+<script>
+(() => {
+  "use strict";
+  const REPOS_URL = "./repositories.json";
+  const CATEGORIES_URL = "./project-categories.json";
+  let repositories = [];
+  let config = {};
+  let dirty = false;
+  const $ = id => document.getElementById(id);
+  const status = (message, warning=false) => {
+    $("status").textContent = message;
+    $("status").className = warning ? "warning" : "";
+  };
+  function normalizeProjects(data) {
+    const list = Array.isArray(data) ? data : data && Array.isArray(data.projects) ? data.projects : null;
+    if (!list) throw new Error("repositories.json non contiene un array di progetti.");
+    return list.filter(p => p && p.name).sort((a,b) => a.name.localeCompare(b.name,"it"));
+  }
+  async function fetchJson(url) {
+    const response = await fetch(url + "?v=" + Date.now(), {cache:"no-store"});
+    if (!response.ok) throw new Error(url + ": HTTP " + response.status);
+    return response.json();
+  }
+  async function load() {
+    status("Caricamento dei file…");
+    try {
+      const reposData = await fetchJson(REPOS_URL);
+      repositories = normalizeProjects(reposData);
+      try {
+        const existing = await fetchJson(CATEGORIES_URL);
+        config = existing && typeof existing === "object" && !Array.isArray(existing) ? existing : {};
+      } catch (e) {
+        config = {};
+      }
+      dirty = false;
+      $("download").disabled = false;
+      render();
+      status("Dati caricati.");
+    } catch (e) {
+      repositories = [];
+      $("projects").replaceChildren();
+      $("download").disabled = true;
+      status("Errore: " + e.message + " — verifica che l'editor sia pubblicato nella stessa cartella di repositories.json.", true);
+    }
+  }
+  function setField(name, key, value) {
+    if (!config[name] || typeof config[name] !== "object") config[name] = {};
+    config[name][key] = value;
+    dirty = true;
+    updateCounts();
+  }
+  function updateCounts() {
+    const cats = new Set(repositories.map(p => (config[p.name]?.category || p.category || "Altri progetti").trim()).filter(Boolean));
+    $("counts").textContent = repositories.length + " progetti · " + cats.size + " categorie" + (dirty ? " · modifiche non scaricate" : "");
+  }
+  function render() {
+    const term = $("search").value.trim().toLocaleLowerCase("it");
+    const root = $("projects");
+    root.replaceChildren();
+    const visible = repositories.filter(p => p.name.toLocaleLowerCase("it").includes(term) ||
+      (p.description || "").toLocaleLowerCase("it").includes(term));
+    for (const p of visible) {
+      const saved = config[p.name] || {};
+      const category = saved.category ?? p.category ?? "Altri progetti";
+      const tags = Array.isArray(saved.tags) ? saved.tags.join(", ") : "";
+      const card = document.createElement("article");
+      card.className = "project";
+      const title = document.createElement("div");
+      const name = document.createElement("div"); name.className="name"; name.textContent=p.name;
+      const repo = document.createElement("div"); repo.className="repo"; repo.textContent=p.description || "Nessuna descrizione";
+      title.append(name,repo);
+      const catWrap = document.createElement("div");
+      const catLabel = document.createElement("label"); catLabel.textContent="Categoria";
+      const cat = document.createElement("input"); cat.type="text"; cat.value=category; cat.setAttribute("list","categoryOptions");
+      cat.addEventListener("change",()=>setField(p.name,"category",cat.value.trim() || "Altri progetti"));
+      cat.addEventListener("input",()=>setField(p.name,"category",cat.value.trim() || "Altri progetti"));
+      catWrap.append(catLabel,cat);
+      const tagWrap = document.createElement("div"); tagWrap.className="tags";
+      const tagLabel = document.createElement("label"); tagLabel.textContent="Tag (separati da virgola)";
+      const tag = document.createElement("input"); tag.type="text"; tag.value=tags;
+      tag.addEventListener("change",()=>setField(p.name,"tags",tag.value.split(",").map(x=>x.trim()).filter(Boolean)));
+      tag.addEventListener("blur",()=>setField(p.name,"tags",tag.value.split(",").map(x=>x.trim()).filter(Boolean)));
+      tagWrap.append(tagLabel,tag);
+      card.append(title,catWrap,tagWrap);
+      root.append(card);
+    }
+    const dl = document.createElement("datalist"); dl.id="categoryOptions";
+    [...new Set([...repositories.map(p=>config[p.name]?.category || p.category),...Object.values(config).map(v=>v?.category)])]
+      .filter(Boolean).sort((a,b)=>a.localeCompare(b,"it")).forEach(value=>{const o=document.createElement("option");o.value=value;dl.append(o);});
+    root.append(dl);
+    if (!visible.length) {const empty=document.createElement("p");empty.className="help";empty.textContent="Nessun progetto corrispondente.";root.append(empty);}
+    updateCounts();
+  }
+  $("search").addEventListener("input",render);
+  $("reload").addEventListener("click",load);
+  $("fileInput").addEventListener("change",async event=>{
+    const file=event.target.files[0]; if(!file)return;
+    try {
+      const imported=JSON.parse(await file.text());
+      if (!imported || typeof imported!=="object" || Array.isArray(imported)) throw new Error("Il file deve contenere un oggetto JSON.");
+      config=imported; dirty=true; render(); status("Configurazione importata. Scarica il file per conservarla.");
+    } catch(e) { status("Importazione non riuscita: "+e.message,true); }
+    event.target.value="";
+  });
+  $("download").addEventListener("click",()=>{
+    // Include only current repositories, keeping category/tag assignments.
+    const output={};
+    for(const p of repositories){
+      const item=config[p.name] || {};
+      const category=(item.category ?? p.category ?? "Altri progetti").trim();
+      const tags=Array.isArray(item.tags)?item.tags:[];
+      output[p.name]={category:category || "Altri progetti",tags:[...new Set(tags.map(t=>String(t).trim()).filter(Boolean))]};
+    }
+    const blob=new Blob([JSON.stringify(output,null,2)+"\n"],{type:"application/json;charset=utf-8"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");a.href=url;a.download="project-categories.json";a.click();
+    URL.revokeObjectURL(url);
+    config=output;dirty=false;updateCounts();status("File generato. Sostituisci project-categories.json nel repository.");
+  });
+  load();
+})();
+</script>
+</body>
+</html>
