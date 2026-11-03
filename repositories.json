@@ -145,6 +145,12 @@
       "repository": "https://github.com/TagtTheSpellcaster/scoundrel"
     },
     {
+      "name": "Senet",
+      "url": "https://tagtthespellcaster.github.io/Senet",
+      "description": "Una versione elettronica online del Senet, antenato del Backgammon e simile al Gioco Reale di Ur, con due set di regole (CEMEA e Kendall & Bell)",
+      "repository": "https://github.com/TagtTheSpellcaster/Senet"
+    },
+    {
       "name": "Street-Crosser",
       "url": "https://tagtthespellcaster.github.io/Street-Crosser",
       "description": "A clone of Frogger",
