@@ -899,11 +899,17 @@ function renderCategories() {
     });
 
     if (activeCategory === null || searchTerm) {
-        resultsSection.remove();
+        // Mantiene il pannello nel DOM: renderProjects() deve poter
+        // continuare a trovare #projects, #projectsTitle e #visibleCount.
+        if (resultsSection.parentElement !== document.querySelector("main")) {
+            container.insertAdjacentElement("afterend", resultsSection);
+        }
+        resultsSection.hidden = true;
     } else {
         const selectedCard = cards.find(card => card.name === activeCategory);
         resultsSection.style.setProperty("--panel-accent", selectedCard?.color || "#234b36");
-        
+        resultsSection.hidden = false;
+
         const columns = window.matchMedia("(max-width: 800px)").matches ? 2 : 3;
         const selectedIndex = activeCategory === "Tutti"
             ? 0
