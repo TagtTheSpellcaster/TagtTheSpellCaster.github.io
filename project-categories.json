@@ -1,22 +1,306 @@
 {
+  "Arcana-Narrativa": {
+    "category": "RPG & Game Master",
+    "tags": [
+      "Ispirazione",
+      "Narrazione",
+      "Carte"
+    ]
+  },
+  "Arcane": {
+    "category": "RPG & Game Master",
+    "tags": [
+      "Game Master",
+      "Strumenti",
+      "GDR"
+    ]
+  },
+  "Aura-432": {
+    "category": "Musica & Audio",
+    "tags": [
+      "Generatore audio",
+      "432 Hz",
+      "Ambient"
+    ]
+  },
+  "BioMetaCalc": {
+    "category": "Utility & Strumenti",
+    "tags": [
+      "BMI",
+      "Composizione corporea",
+      "Nutrizione"
+    ]
+  },
+  "Calcs-Conversions": {
+    "category": "RPG & Game Master",
+    "tags": [
+      "D&D",
+      "Conversioni",
+      "Unità di misura"
+    ]
+  },
+  "Calendario-dell-Astinenza": {
+    "category": "Utility & Strumenti",
+    "tags": [
+      "Calendario",
+      "Recupero",
+      "Monitoraggio"
+    ]
+  },
+  "Conlang-Generator": {
+    "category": "Creatività & Linguaggi",
+    "tags": [
+      "Lingue artificiali",
+      "Generatore",
+      "Linguistica"
+    ]
+  },
+  "convertitore-cartelle": {
+    "category": "Utility & Strumenti",
+    "tags": [
+      "Calcolo",
+      "Cartelle editoriali",
+      "Conversione"
+    ]
+  },
+  "Dust-Racer": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Racing",
+      "Retrogaming",
+      "Arcade"
+    ]
+  },
+  "font-inspector": {
+    "category": "Utility & Strumenti",
+    "tags": [
+      "Tipografia",
+      "Font",
+      "Analisi"
+    ]
+  },
+  "Fortress-Raid": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Zaxxon",
+      "Retrogaming",
+      "Arcade"
+    ]
+  },
+  "Galaxy-Game-1971": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Retrogaming",
+      "Arcade",
+      "1971"
+    ]
+  },
+  "Giallo-alla-Tenuta": {
+    "category": "Giochi da tavolo e di carte",
+    "tags": [
+      "Investigazione",
+      "Deduzione",
+      "Gioco in solitario"
+    ]
+  },
   "Gioco-Reale-di-Ur": {
     "category": "Giochi Antichi",
-    "tags": ["Strategia", "Mesopotamia"]
+    "tags": [
+      "Strategia",
+      "Mesopotamia",
+      "Gioco storico"
+    ]
+  },
+  "GrainLayer": {
+    "category": "Utility & Strumenti",
+    "tags": [
+      "Grafica",
+      "Texture",
+      "Overlay"
+    ]
+  },
+  "Grond-Dazanor-Vakong-": {
+    "category": "Creatività & Linguaggi",
+    "tags": [
+      "Vakongü",
+      "Dizionario",
+      "Lingua artificiale"
+    ]
+  },
+  "i-ching": {
+    "category": "Creatività & Linguaggi",
+    "tags": [
+      "I Ching",
+      "Consultazione",
+      "Tradizione"
+    ]
+  },
+  "Meditation-Timer": {
+    "category": "Utility & Strumenti",
+    "tags": [
+      "Meditazione",
+      "Timer",
+      "PWA"
+    ]
+  },
+  "Nuova-Asterisko": {
+    "category": "Siti & Web",
+    "tags": [
+      "Sito aziendale",
+      "Traduzione",
+      "Localizzazione"
+    ]
+  },
+  "Oblique-Strategies": {
+    "category": "Creatività & Linguaggi",
+    "tags": [
+      "Creatività",
+      "Brian Eno",
+      "Spunti"
+    ]
+  },
+  "PicoMoog": {
+    "category": "Musica & Audio",
+    "tags": [
+      "Sintetizzatore",
+      "Moog",
+      "Web Audio"
+    ]
+  },
+  "Pole-Racer": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Racing",
+      "Pole Position",
+      "Retrogaming"
+    ]
+  },
+  "scorporo-iva": {
+    "category": "Utility & Strumenti",
+    "tags": [
+      "IVA",
+      "Calcolo",
+      "Fiscale"
+    ]
+  },
+  "scoundrel": {
+    "category": "Giochi da tavolo e di carte",
+    "tags": [
+      "Roguelike",
+      "Carte",
+      "Solitario"
+    ]
   },
   "Senet": {
     "category": "Giochi Antichi",
-    "tags": ["Strategia", "Antico Egitto"]
+    "tags": [
+      "Antico Egitto",
+      "Strategia",
+      "Gioco storico"
+    ]
   },
-  "Wari": {
-    "category": "Giochi Antichi",
-    "tags": ["Mancala", "Strategia"]
-  },
-  "Scoundrel": {
-    "category": "Giochi da tavolo e di carte",
-    "tags": ["Roguelike", "Carte"]
+  "Street-Crosser": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Frogger",
+      "Retrogaming",
+      "Arcade"
+    ]
   },
   "StrumPad": {
     "category": "Musica & Audio",
-    "tags": ["Accordi", "Sintetizzatore"]
+    "tags": [
+      "Accordi",
+      "Sintetizzatore",
+      "Strumming"
+    ]
+  },
+  "Syntoneo": {
+    "category": "Musica & Audio",
+    "tags": [
+      "Sintetizzatore",
+      "Monofonico",
+      "Web Audio"
+    ]
+  },
+  "TapTempoPro": {
+    "category": "Musica & Audio",
+    "tags": [
+      "Tap tempo",
+      "BPM",
+      "PWA"
+    ]
+  },
+  "Vector-Cockpit": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Simulatore di volo",
+      "Grafica vettoriale",
+      "Retrogaming"
+    ]
+  },
+  "Vector-Odyssey": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Shooter",
+      "Grafica vettoriale",
+      "Retrogaming"
+    ]
+  },
+  "Web-Defender": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Defender",
+      "Retrogaming",
+      "Arcade"
+    ]
+  },
+  "Web-Invaders": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Space Invaders",
+      "Retrogaming",
+      "Arcade"
+    ]
+  },
+  "WebLaga": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Galaga",
+      "Retrogaming",
+      "Arcade"
+    ]
+  },
+  "WebLander": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Lunar Lander",
+      "Retrogaming",
+      "Arcade"
+    ]
+  },
+  "WebPong": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Pong",
+      "Retrogaming",
+      "Arcade"
+    ]
+  },
+  "Webreakout": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Breakout",
+      "Retrogaming",
+      "Arcade"
+    ]
+  },
+  "WebTank": {
+    "category": "Giochi Arcade",
+    "tags": [
+      "Tank",
+      "Grafica vettoriale",
+      "Retrogaming"
+    ]
   }
 }
