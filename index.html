@@ -11,7 +11,7 @@
 <!-- Font Google: Plus Jakarta Sans -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
     /* 1. TEMA CHIARO (Default) */
@@ -251,6 +251,52 @@
     .search-box input::placeholder {
         color: var(--text-muted);
         opacity: 0.8;
+    }
+
+    .search-results {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+        gap: 14px;
+        margin: 0 0 24px;
+    }
+
+    .search-results[hidden] {
+        display: none;
+    }
+
+    .search-result-panel {
+        min-width: 0;
+        padding: 20px 22px;
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-left: 4px solid var(--panel-accent, var(--primary));
+        border-radius: 9px;
+        box-shadow: var(--card-shadow);
+    }
+
+    .search-result-panel .card-title {
+        margin: 0 0 9px;
+    }
+
+    .search-result-panel .description {
+        margin-bottom: 12px;
+    }
+
+    .search-result-category {
+        margin: 0 0 10px;
+        color: var(--text-muted);
+        font-size: 11px;
+        letter-spacing: 0.35px;
+        text-transform: uppercase;
+    }
+
+    .search-results-empty {
+        grid-column: 1 / -1;
+        padding: 20px 22px;
+        color: var(--text-muted);
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 9px;
     }
 
     .category-grid {
@@ -571,13 +617,24 @@
         }
     }
 
-    /* Tipografia: Roboto Slab 400 per il testo, 900 per i titoli delle schede. */
+    /* Tipografia: Roboto Slab 400 normale, 700 semibold, 900 grassetto. */
     body,
     body * {
         font-family: 'Roboto Slab', Georgia, serif;
         font-weight: 400;
     }
 
+    /* Pesi intermedi per gli elementi già concepiti come semibold. */
+    .theme-selector,
+    .theme-option,
+    #status,
+    .category-count,
+    .projects-heading span,
+    .tag {
+        font-weight: 700;
+    }
+
+    /* Grassetti pieni. */
     h1,
     .category-band,
     .category-name,
@@ -626,6 +683,8 @@
         </label>
     </div>
 
+    <div id="searchResults" class="search-results" aria-live="polite" hidden></div>
+
     <nav id="categories" class="category-grid" aria-label="Categorie dei progetti"></nav>
 
     <section aria-labelledby="projectsTitle">
@@ -646,6 +705,7 @@ const optLight = document.getElementById("optLight");
 const optDark = document.getElementById("optDark");
 const searchInput = document.getElementById("searchInput");
 const resultsSection = document.querySelector('section[aria-labelledby="projectsTitle"]');
+const searchResults = document.getElementById("searchResults");
 
 function getEffectiveTheme() {
     const saved = localStorage.getItem("theme");
@@ -837,7 +897,7 @@ function renderCategories() {
         container.appendChild(button);
     });
 
-    if (activeCategory === null) {
+    if (activeCategory === null || searchTerm) {
         resultsSection.remove();
     } else {
         const selectedCard = cards.find(card => card.name === activeCategory);
@@ -870,7 +930,85 @@ function projectMatchesSearch(project) {
     return searchable.includes(searchTerm);
 }
 
+function renderSearchResults() {
+    const status = document.getElementById("status");
+    searchResults.innerHTML = "";
+
+    if (!searchTerm) {
+        searchResults.hidden = true;
+        status.textContent = `${allProjects.length} progetti pubblicati`;
+        return;
+    }
+
+    searchResults.hidden = false;
+    const matches = allProjects
+        .filter(projectMatchesSearch)
+        .sort((a, b) => (a.name || "").localeCompare(b.name || "", "it"));
+
+    status.textContent = `${matches.length} ${matches.length === 1 ? "programma trovato" : "programmi trovati"}`;
+
+    if (matches.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "search-results-empty";
+        empty.textContent = "Nessun programma corrisponde alla ricerca.";
+        searchResults.appendChild(empty);
+        return;
+    }
+
+    matches.forEach(project => {
+        const category = project.category || "Altri progetti";
+        const panel = document.createElement("article");
+        panel.className = "search-result-panel";
+        panel.style.setProperty("--panel-accent", getCategoryColor(category, getCategories().indexOf(category)));
+
+        const title = document.createElement("div");
+        title.className = "card-title";
+
+        const link = document.createElement("a");
+        link.href = project.url || "#";
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = project.name || "Senza nome";
+        title.appendChild(link);
+        panel.appendChild(title);
+
+        if (project.description) {
+            const description = document.createElement("div");
+            description.className = "description";
+            description.textContent = project.description;
+            panel.appendChild(description);
+        }
+
+        const meta = document.createElement("div");
+        meta.className = "search-result-category";
+        meta.textContent = category;
+        panel.appendChild(meta);
+
+        if (Array.isArray(project.tags) && project.tags.length > 0) {
+            const tagsContainer = document.createElement("div");
+            tagsContainer.className = "tags";
+
+            project.tags.forEach(tagText => {
+                const tag = document.createElement("span");
+                tag.className = "tag";
+                tag.textContent = tagText;
+                tagsContainer.appendChild(tag);
+            });
+
+            panel.appendChild(tagsContainer);
+        }
+
+        searchResults.appendChild(panel);
+    });
+}
+
 function renderProjects() {
+    if (searchTerm) {
+        renderSearchResults();
+        return;
+    }
+
+    searchResults.hidden = true;
     const container = document.getElementById("projects");
     const title = document.getElementById("projectsTitle");
     const count = document.getElementById("visibleCount");
@@ -969,6 +1107,7 @@ function renderProjects() {
 
 searchInput.addEventListener("input", () => {
     searchTerm = searchInput.value.trim().toLocaleLowerCase("it");
+    renderCategories();
     renderProjects();
 });
 
