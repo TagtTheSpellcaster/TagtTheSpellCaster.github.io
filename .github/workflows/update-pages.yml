@@ -29,6 +29,9 @@ jobs:
 
           OWNER = os.environ["OWNER"]
 
+          with open("project-categories.json", "r", encoding="utf-8") as file:
+              categories = json.load(file)
+
           def get_json(url):
               request = urllib.request.Request(
                   url,
@@ -79,11 +82,15 @@ jobs:
                   f"{quote(name)}"
               )
 
+              project_info = categories.get(name, {})
+
               projects.append({
                   "name": name,
                   "url": pages_url,
                   "description": repo.get("description") or "",
-                  "repository": repo["html_url"]
+                  "repository": repo["html_url"],
+                  "category": project_info.get("category", "Altri progetti"),
+                  "tags": project_info.get("tags", [])
               })
 
           projects.sort(key=lambda project: project["name"].lower())
