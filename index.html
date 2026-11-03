@@ -649,12 +649,13 @@
 
 <script>
 let allProjects = [];
-let activeCategory = "Tutti";
+let activeCategory = null;
 let searchTerm = "";
 
 const optLight = document.getElementById("optLight");
 const optDark = document.getElementById("optDark");
 const searchInput = document.getElementById("searchInput");
+const resultsSection = document.querySelector('section[aria-labelledby="projectsTitle"]');
 
 function getEffectiveTheme() {
     const saved = localStorage.getItem("theme");
@@ -725,9 +726,8 @@ function getCategoryMark(category) {
 
 function renderCategories() {
     const container = document.getElementById("categories");
-    // La sezione dei risultati viene inserita nella griglia subito dopo
-    // la riga che contiene la carta selezionata.
-    const resultsSection = document.querySelector('section[aria-labelledby="projectsTitle"]');
+    // La sezione dei risultati viene inserita nella griglia solo quando
+    // una carta è selezionata.
     container.innerHTML = "";
 
     const categories = getCategories();
@@ -781,7 +781,8 @@ function renderCategories() {
         button.append(band, body);
 
         button.addEventListener("click", () => {
-            activeCategory = card.name;
+            // Un secondo clic sulla stessa carta chiude la categoria.
+            activeCategory = activeCategory === card.name ? null : card.name;
             renderCategories();
             renderProjects();
         });
@@ -789,17 +790,21 @@ function renderCategories() {
         container.appendChild(button);
     });
 
-    const columns = window.matchMedia("(max-width: 800px)").matches ? 2 : 3;
-    const selectedIndex = activeCategory === "Tutti"
-        ? 0
-        : categories.indexOf(activeCategory) + 1;
-    const lastIndexInRow = Math.min(
-        cards.length - 1,
-        Math.floor(selectedIndex / columns) * columns + columns - 1
-    );
-    const buttons = container.querySelectorAll(".category-card");
-    const nextCard = buttons[lastIndexInRow]?.nextSibling || null;
-    container.insertBefore(resultsSection, nextCard);
+    if (activeCategory === null) {
+        resultsSection.remove();
+    } else {
+        const columns = window.matchMedia("(max-width: 800px)").matches ? 2 : 3;
+        const selectedIndex = activeCategory === "Tutti"
+            ? 0
+            : categories.indexOf(activeCategory) + 1;
+        const lastIndexInRow = Math.min(
+            cards.length - 1,
+            Math.floor(selectedIndex / columns) * columns + columns - 1
+        );
+        const buttons = container.querySelectorAll(".category-card");
+        const nextCard = buttons[lastIndexInRow]?.nextSibling || null;
+        container.insertBefore(resultsSection, nextCard);
+    }
 }
 
 function projectMatchesSearch(project) {
@@ -822,6 +827,10 @@ function renderProjects() {
     const status = document.getElementById("status");
 
     container.innerHTML = "";
+
+    if (activeCategory === null) {
+        return;
+    }
 
     let filtered = allProjects.filter(project => {
         const category = project.category || "Altri progetti";
