@@ -388,8 +388,28 @@
         border-top: 0;
         border-radius: 0 9px 9px 9px;
         box-shadow: var(--card-shadow-hover);
+        position: relative;
         transform-origin: top center;
         animation: panel-open 280ms cubic-bezier(.2,.75,.25,1) both;
+    }
+
+    .category-grid > section[aria-labelledby="projectsTitle"]::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        pointer-events: none;
+        background: linear-gradient(
+            to right,
+            var(--panel-accent, var(--primary)) 0,
+            var(--panel-accent, var(--primary)) var(--tab-start, 0px),
+            transparent var(--tab-start, 0px),
+            transparent var(--tab-end, 0px),
+            var(--panel-accent, var(--primary)) var(--tab-end, 0px),
+            var(--panel-accent, var(--primary)) 100%
+        );
     }
 
     @keyframes panel-open {
@@ -405,7 +425,7 @@
 
     .category-card.active {
         z-index: 1;
-        border-bottom-color: var(--panel-accent, var(--category-color));
+        border-bottom-color: transparent;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         box-shadow: none;
@@ -845,6 +865,20 @@ function renderCategories() {
         const buttons = container.querySelectorAll(".category-card");
         const nextCard = buttons[lastIndexInRow]?.nextSibling || null;
         container.insertBefore(resultsSection, nextCard);
+
+        // Interrompe la linea superiore del pannello esattamente sotto
+        // la carta attiva: i due tratti laterali arrivano ai suoi bordi.
+        const activeButton = [...buttons].find(button =>
+            button.getAttribute("aria-pressed") === "true"
+        );
+        if (activeButton) {
+            const panelRect = resultsSection.getBoundingClientRect();
+            const tabRect = activeButton.getBoundingClientRect();
+            const start = Math.max(0, tabRect.left - panelRect.left);
+            const end = Math.min(panelRect.width, tabRect.right - panelRect.left);
+            resultsSection.style.setProperty("--tab-start", `${start}px`);
+            resultsSection.style.setProperty("--tab-end", `${end}px`);
+        }
     }
 }
 
