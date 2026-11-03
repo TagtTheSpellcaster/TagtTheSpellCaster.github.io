@@ -373,6 +373,14 @@
       ]
     },
     {
+      "name": "Wari",
+      "url": "https://tagtthespellcaster.github.io/Wari",
+      "description": "Una versione elettronica online del Wari, il più diffuso dei mancala, con due set di regole (Abapa e Caraibi), tre livelli di gioco e strategia avanzata",
+      "repository": "https://github.com/TagtTheSpellcaster/Wari",
+      "category": "Altri progetti",
+      "tags": []
+    },
+    {
       "name": "Web-Defender",
       "url": "https://tagtthespellcaster.github.io/Web-Defender",
       "description": "A clone of the 1981 game Defender",
