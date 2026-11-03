@@ -484,8 +484,17 @@
     }
 
     .category-card.active {
-        outline: 2px solid var(--category-color);
-        outline-offset: 2px;
+        /* La carta selezionata si raccorda al pannello: niente bordo
+           inferiore né contorno esterno sul lato di giunzione. */
+        outline: none;
+        border-bottom-color: transparent;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: none;
+    }
+
+    .category-card.active::before {
+        border-bottom-color: transparent;
     }
 
     .category-band {
