@@ -1115,33 +1115,55 @@ searchInput.addEventListener("input", () => {
 async function loadProjects() {
     const status = document.getElementById("status");
 
+    // FASE 1: recupero e lettura del JSON
+    let data;
+
     try {
-        const cacheBuster = new Date().getTime();
-        const response = await fetch(`./repositories.json?v=${cacheBuster}`);
+        const cacheBuster = Date.now();
+        const response = await fetch(
+            `./repositories.json?v=${cacheBuster}`,
+            { cache: "no-store" }
+        );
 
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}`);
         }
 
-        const data = await response.json();
+        data = await response.json();
 
         if (Array.isArray(data)) {
             allProjects = data;
         } else if (data && Array.isArray(data.projects)) {
             allProjects = data.projects;
         } else {
-            allProjects = [];
+            throw new Error("Formato JSON non riconosciuto");
         }
 
+    } catch (error) {
+        status.textContent =
+            `Errore nel caricamento dei progetti: ${error.message}`;
+        status.className = "error";
+
+        console.error("[CARICAMENTO JSON]", error);
+        return;
+    }
+
+    // FASE 2: rendering della pagina
+    try {
         renderCategories();
         renderProjects();
+
+        status.className = "";
+        status.textContent = `${allProjects.length} progetti pubblicati`;
+
     } catch (error) {
-        status.textContent = "Impossibile recuperare l'elenco dei progetti.";
+        status.textContent =
+            `Errore nella visualizzazione dei progetti: ${error.message}`;
         status.className = "error";
-        console.error("Errore durante il caricamento dei progetti:", error);
+
+        console.error("[RENDERING PROGETTI]", error);
     }
 }
-
 loadProjects();
 </script>
 
