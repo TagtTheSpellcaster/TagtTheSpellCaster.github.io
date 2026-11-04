@@ -6,7 +6,9 @@
       "tags": [
         "Antico Egitto",
         "Strategia",
-        "Gioco storico"
+        "Gioco storico",
+        "IT",
+        "EN"
       ]
     },
     "en": {
@@ -15,7 +17,9 @@
       "tags": [
         "Ancient Egypt",
         "Strategy",
-        "Historical game"
+        "Historical game",
+        "EN",
+        "IT"
       ]
     }
   },
@@ -26,7 +30,9 @@
       "tags": [
         "Africa",
         "Strategia",
-        "Gioco storico"
+        "Gioco storico",
+        "EN",
+        "IT"
       ]
     },
     "en": {
@@ -35,7 +41,31 @@
       "tags": [
         "Africa",
         "Strategy",
-        "Historical game"
+        "Historical game",
+        "EN",
+        "IT"
+      ]
+    }
+  },
+  "Gioco-Reale-di-Ur": {
+    "it": {
+      "tags": [
+        "Strategia",
+        "Mesopotamia",
+        "Gioco storico",
+        "EN",
+        "IT"
+      ]
+    },
+    "en": {
+      "title": "Royal Game of Ur",
+      "description": "An online electronic version of the Royal Game of Ur, an ancestor of Backgammon, featuring two rule sets (Finkel and Bell).",
+      "tags": [
+        "Strategy",
+        "Mesopotamia",
+        "Historical game",
+        "EN",
+        "IT"
       ]
     }
   }
