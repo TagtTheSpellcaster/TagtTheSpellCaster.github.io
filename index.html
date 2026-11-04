@@ -98,6 +98,7 @@ function displayCategory(category){return currentLanguage==="en"?(categoryLabels
 function getProjectTranslation(project){return projectTranslations[project.name]?.[currentLanguage]||{}}
 function getProjectTitle(project){return getProjectTranslation(project).title?.trim()||project.name||"Senza nome"}
 function getProjectDescription(project){return getProjectTranslation(project).description?.trim()||project.description||""}
+function getProjectTags(project){const translated=getProjectTranslation(project).tags;return Array.isArray(translated)&&translated.length?translated:(Array.isArray(project.tags)?project.tags:[])}
 function setLanguage(language){currentLanguage=language;localStorage.setItem("language",language);document.documentElement.lang=language;document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=tr(el.dataset.i18n)});document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{el.placeholder=tr(el.dataset.i18nPlaceholder)});optItalian.classList.toggle("active",language==="it");optEnglish.classList.toggle("active",language==="en");renderCategories();renderProjects();if(!activeTag&&!searchTerm&&activeCategory===null)document.getElementById("status").textContent=`${allProjects.length} ${tr("published")}`}
 function bindLanguageOption(option,language){option.addEventListener("click",()=>setLanguage(language));option.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();option.click()}})}
 bindLanguageOption(optItalian,"it");bindLanguageOption(optEnglish,"en");
@@ -151,7 +152,7 @@ const buttons=container.querySelectorAll(".category-card");const nextCard=button
 }
 function projectMatchesSearch(project){
 if(!searchTerm)return true;
-const searchable=[project.name||"",getProjectTitle(project),project.description||"",getProjectDescription(project),project.category||"",(Array.isArray(project.tags)?project.tags:[])].flat().join(" ").toLocaleLowerCase("it");
+const searchable=[project.name||"",getProjectTitle(project),project.description||"",getProjectDescription(project),project.category||"",...getProjectTags(project)].flat().join(" ").toLocaleLowerCase("it");
 return searchable.includes(searchTerm);
 }
 function normalizeTag(value){return String(value||"").trim().toLocaleLowerCase("it")}
@@ -169,7 +170,7 @@ container.appendChild(tag);
 function renderTagResults(){
 const status=document.getElementById("status");const title=document.getElementById("projectsTitle");const count=document.getElementById("visibleCount");const container=document.getElementById("projects");
 resultsSection.hidden=true;searchResults.hidden=false;searchResults.innerHTML="";container.innerHTML="";
-const matches=allProjects.filter(project=>Array.isArray(project.tags)&&project.tags.some(tag=>normalizeTag(tag)===normalizeTag(activeTag))).sort((a,b)=>(a.name||"").localeCompare(b.name||"","it"));
+const matches=allProjects.filter(project=>getProjectTags(project).some(tag=>normalizeTag(tag)===normalizeTag(activeTag))).sort((a,b)=>(a.name||"").localeCompare(b.name||"","it"));
 status.textContent=`${matches.length} ${matches.length===1?tr("found"):tr("foundMany")}`;
 const heading=document.createElement("div");heading.className="search-results-empty";heading.style.gridColumn="1 / -1";
 const headingText=document.createElement("strong");headingText.textContent=`${tr("tagHeading")} ${activeTag}`;
@@ -181,7 +182,7 @@ const category=project.category||"Altri progetti";const panel=document.createEle
 const titleEl=document.createElement("div");titleEl.className="card-title";const link=document.createElement("a");link.href=project.url||"#";link.target="_blank";link.rel="noopener noreferrer";link.textContent=getProjectTitle(project);titleEl.appendChild(link);panel.appendChild(titleEl);
 const projectDescription=getProjectDescription(project);if(projectDescription){const description=document.createElement("div");description.className="description";description.textContent=projectDescription;panel.appendChild(description)}
 const meta=document.createElement("div");meta.className="search-result-category";meta.textContent=displayCategory(category);panel.appendChild(meta);
-if(Array.isArray(project.tags)&&project.tags.length){const tags=document.createElement("div");tags.className="tags";appendTagButtons(tags,project.tags);panel.appendChild(tags)}
+const projectTags=getProjectTags(project);if(projectTags.length){const tags=document.createElement("div");tags.className="tags";appendTagButtons(tags,projectTags);panel.appendChild(tags)}
 searchResults.appendChild(panel);
 });
 }
@@ -196,7 +197,7 @@ const category=project.category||"Altri progetti";const panel=document.createEle
 const title=document.createElement("div");title.className="card-title";const link=document.createElement("a");link.href=project.url||"#";link.target="_blank";link.rel="noopener noreferrer";link.textContent=getProjectTitle(project);title.appendChild(link);panel.appendChild(title);
 const projectDescription=getProjectDescription(project);if(projectDescription){const description=document.createElement("div");description.className="description";description.textContent=projectDescription;panel.appendChild(description)}
 const meta=document.createElement("div");meta.className="search-result-category";meta.textContent=displayCategory(category);panel.appendChild(meta);
-if(Array.isArray(project.tags)&&project.tags.length){const tags=document.createElement("div");tags.className="tags";appendTagButtons(tags,project.tags);panel.appendChild(tags)}
+const projectTags=getProjectTags(project);if(projectTags.length){const tags=document.createElement("div");tags.className="tags";appendTagButtons(tags,projectTags);panel.appendChild(tags)}
 searchResults.appendChild(panel);
 });
 }
@@ -217,7 +218,7 @@ const list=document.createElement("ul");list.className="project-list";
 grouped.get(category).sort((a,b)=>(a.name||"").localeCompare(b.name||"","it")).forEach(project=>{
 const li=document.createElement("li");const titleEl=document.createElement("div");titleEl.className="card-title";const link=document.createElement("a");link.href=project.url||"#";link.target="_blank";link.rel="noopener noreferrer";link.textContent=getProjectTitle(project);titleEl.appendChild(link);li.appendChild(titleEl);
 const projectDescription=getProjectDescription(project);if(projectDescription){const description=document.createElement("div");description.className="description";description.textContent=projectDescription;li.appendChild(description)}
-if(Array.isArray(project.tags)&&project.tags.length){const tags=document.createElement("div");tags.className="tags";appendTagButtons(tags,project.tags);li.appendChild(tags)}
+const projectTags=getProjectTags(project);if(projectTags.length){const tags=document.createElement("div");tags.className="tags";appendTagButtons(tags,projectTags);li.appendChild(tags)}
 list.appendChild(li);
 });group.appendChild(list);container.appendChild(group);
 });
