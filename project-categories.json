@@ -4,7 +4,8 @@
     "tags": [
       "Ispirazione",
       "Narrazione",
-      "Carte"
+      "Carte",
+      "IT"
     ]
   },
   "Arcane": {
@@ -12,7 +13,8 @@
     "tags": [
       "Game Master",
       "Strumenti",
-      "GDR"
+      "GDR",
+      "IT"
     ]
   },
   "Aura-432": {
@@ -20,7 +22,8 @@
     "tags": [
       "Generatore audio",
       "432 Hz",
-      "Ambient"
+      "Ambient",
+      "EN"
     ]
   },
   "BioMetaCalc": {
@@ -28,7 +31,8 @@
     "tags": [
       "BMI",
       "Composizione corporea",
-      "Nutrizione"
+      "Nutrizione",
+      "EN"
     ]
   },
   "Calcs-Conversions": {
@@ -36,7 +40,8 @@
     "tags": [
       "D&D",
       "Conversioni",
-      "Unità di misura"
+      "Unità di misura",
+      "IT"
     ]
   },
   "Calendario-dell-Astinenza": {
@@ -44,15 +49,17 @@
     "tags": [
       "Calendario",
       "Recupero",
-      "Monitoraggio"
+      "Monitoraggio",
+      "IT"
     ]
   },
   "Conlang-Generator": {
     "category": "Creatività & Linguaggi",
     "tags": [
-      "Lingue artificiali",
+      "Lingua artificiale",
       "Generatore",
-      "Linguistica"
+      "Linguistica",
+      "EN"
     ]
   },
   "convertitore-cartelle": {
@@ -60,7 +67,8 @@
     "tags": [
       "Calcolo",
       "Cartelle editoriali",
-      "Conversione"
+      "Conversione",
+      "IT"
     ]
   },
   "Dust-Racer": {
@@ -68,7 +76,8 @@
     "tags": [
       "Racing",
       "Retrogaming",
-      "Arcade"
+      "Arcade",
+      "EN"
     ]
   },
   "font-inspector": {
@@ -76,7 +85,8 @@
     "tags": [
       "Tipografia",
       "Font",
-      "Analisi"
+      "Analisi",
+      "EN"
     ]
   },
   "Fortress-Raid": {
@@ -84,7 +94,8 @@
     "tags": [
       "Zaxxon",
       "Retrogaming",
-      "Arcade"
+      "Arcade",
+      "EN"
     ]
   },
   "Galaxy-Game-1971": {
@@ -92,7 +103,8 @@
     "tags": [
       "Retrogaming",
       "Arcade",
-      "1971"
+      "1971",
+      "EN"
     ]
   },
   "Giallo-alla-Tenuta": {
@@ -100,7 +112,8 @@
     "tags": [
       "Investigazione",
       "Deduzione",
-      "Gioco in solitario"
+      "Gioco in solitario",
+      "IT"
     ]
   },
   "Gioco-Reale-di-Ur": {
@@ -108,7 +121,8 @@
     "tags": [
       "Strategia",
       "Mesopotamia",
-      "Gioco storico"
+      "Gioco storico",
+      "IT"
     ]
   },
   "GrainLayer": {
@@ -116,7 +130,8 @@
     "tags": [
       "Grafica",
       "Texture",
-      "Overlay"
+      "Overlay",
+      "EN"
     ]
   },
   "Grond-Dazanor-Vakong-": {
@@ -124,7 +139,8 @@
     "tags": [
       "Vakongü",
       "Dizionario",
-      "Lingua artificiale"
+      "Lingua artificiale",
+      "IT"
     ]
   },
   "i-ching": {
@@ -132,7 +148,8 @@
     "tags": [
       "I Ching",
       "Consultazione",
-      "Tradizione"
+      "Tradizione",
+      "IT"
     ]
   },
   "Meditation-Timer": {
@@ -140,7 +157,7 @@
     "tags": [
       "Meditazione",
       "Timer",
-      "PWA"
+      "IT"
     ]
   },
   "Nuova-Asterisko": {
@@ -148,7 +165,8 @@
     "tags": [
       "Sito aziendale",
       "Traduzione",
-      "Localizzazione"
+      "Localizzazione",
+      "IT"
     ]
   },
   "Oblique-Strategies": {
@@ -156,7 +174,9 @@
     "tags": [
       "Creatività",
       "Brian Eno",
-      "Spunti"
+      "Spunti",
+      "IT",
+      "EN"
     ]
   },
   "PicoMoog": {
@@ -164,7 +184,8 @@
     "tags": [
       "Sintetizzatore",
       "Moog",
-      "Web Audio"
+      "Web Audio",
+      "EN"
     ]
   },
   "Pole-Racer": {
@@ -172,7 +193,8 @@
     "tags": [
       "Racing",
       "Pole Position",
-      "Retrogaming"
+      "Retrogaming",
+      "EN"
     ]
   },
   "scorporo-iva": {
@@ -180,7 +202,8 @@
     "tags": [
       "IVA",
       "Calcolo",
-      "Fiscale"
+      "Fiscale",
+      "IT"
     ]
   },
   "scoundrel": {
@@ -188,7 +211,8 @@
     "tags": [
       "Roguelike",
       "Carte",
-      "Solitario"
+      "Solitario",
+      "IT"
     ]
   },
   "Senet": {
@@ -196,7 +220,9 @@
     "tags": [
       "Antico Egitto",
       "Strategia",
-      "Gioco storico"
+      "Gioco storico",
+      "IT",
+      "EN"
     ]
   },
   "Street-Crosser": {
@@ -204,7 +230,8 @@
     "tags": [
       "Frogger",
       "Retrogaming",
-      "Arcade"
+      "Arcade",
+      "EN"
     ]
   },
   "StrumPad": {
@@ -212,7 +239,8 @@
     "tags": [
       "Accordi",
       "Sintetizzatore",
-      "Strumming"
+      "Strumming",
+      "EN"
     ]
   },
   "Syntoneo": {
@@ -220,7 +248,8 @@
     "tags": [
       "Sintetizzatore",
       "Monofonico",
-      "Web Audio"
+      "Web Audio",
+      "EN"
     ]
   },
   "TapTempoPro": {
@@ -228,7 +257,8 @@
     "tags": [
       "Tap tempo",
       "BPM",
-      "PWA"
+      "PWA",
+      "EN"
     ]
   },
   "Vector-Cockpit": {
@@ -236,7 +266,8 @@
     "tags": [
       "Simulatore di volo",
       "Grafica vettoriale",
-      "Retrogaming"
+      "Retrogaming",
+      "EN"
     ]
   },
   "Vector-Odyssey": {
@@ -244,7 +275,8 @@
     "tags": [
       "Shooter",
       "Grafica vettoriale",
-      "Retrogaming"
+      "Retrogaming",
+      "EN"
     ]
   },
   "Wari": {
@@ -252,7 +284,9 @@
     "tags": [
       "Africa",
       "Strategia",
-      "Gioco storico"
+      "Gioco storico",
+      "IT",
+      "EN"
     ]
   },
   "Web-Defender": {
@@ -260,7 +294,8 @@
     "tags": [
       "Defender",
       "Retrogaming",
-      "Arcade"
+      "Arcade",
+      "EN"
     ]
   },
   "Web-Invaders": {
@@ -268,7 +303,8 @@
     "tags": [
       "Space Invaders",
       "Retrogaming",
-      "Arcade"
+      "Arcade",
+      "EN"
     ]
   },
   "WebLaga": {
@@ -276,7 +312,8 @@
     "tags": [
       "Galaga",
       "Retrogaming",
-      "Arcade"
+      "Arcade",
+      "EN"
     ]
   },
   "WebLander": {
@@ -284,7 +321,8 @@
     "tags": [
       "Lunar Lander",
       "Retrogaming",
-      "Arcade"
+      "Arcade",
+      "EN"
     ]
   },
   "WebPong": {
@@ -292,7 +330,8 @@
     "tags": [
       "Pong",
       "Retrogaming",
-      "Arcade"
+      "Arcade",
+      "EN"
     ]
   },
   "Webreakout": {
@@ -300,7 +339,8 @@
     "tags": [
       "Breakout",
       "Retrogaming",
-      "Arcade"
+      "Arcade",
+      "EN"
     ]
   },
   "WebTank": {
@@ -308,7 +348,8 @@
     "tags": [
       "Tank",
       "Grafica vettoriale",
-      "Retrogaming"
+      "Retrogaming",
+      "EN"
     ]
   }
 }
