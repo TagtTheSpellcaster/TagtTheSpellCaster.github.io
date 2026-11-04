@@ -49,14 +49,25 @@ for(const p of visible){const card=document.createElement("article");card.classN
 const name=document.createElement("div");name.className="name";name.textContent=p.name;const desc=document.createElement("div");desc.className="repo";desc.textContent=p.description||"Descrizione originale non disponibile";head.append(name,desc);card.append(head);
 const langs=document.createElement("div");langs.className="languages";
 for(const lang of ["it","en"]){const box=document.createElement("section");box.className="language";const h=document.createElement("h2");h.textContent=lang==="it"?"Italiano":"English";box.append(h);
-for(const [field,labelText] of [["title","Titolo"],["description","Descrizione"]]){const label=document.createElement("label");label.textContent=labelText;const input=field==="description"?document.createElement("textarea"):document.createElement("input");if(field==="title")input.type="text";
-input.value=translations[p.name]?.[lang]?.[field]||"";input.placeholder=field==="title"?p.name:(p.description||"Descrizione originale GitHub");input.addEventListener("input",()=>setValue(p.name,lang,field,input.value));box.append(label,input)}
+for(const [field,labelText] of [["title","Titolo"],["description","Descrizione"],["tags","Tag (separati da virgola)"]]){
+const label=document.createElement("label");label.textContent=labelText;
+const input=field==="title"?document.createElement("input"):document.createElement("textarea");
+if(field==="title")input.type="text";
+const saved=translations[p.name]?.[lang]?.[field];
+input.value=field==="tags"?(Array.isArray(saved)?saved.join(", "):""):(saved||"");
+input.placeholder=field==="title"?p.name:field==="description"?(p.description||"Descrizione originale GitHub"):(Array.isArray(p.tags)?p.tags.join(", "):"Tag originali");
+input.addEventListener("input",()=>setValue(p.name,lang,field,field==="tags"?input.value.split(",").map(x=>x.trim()).filter(Boolean):input.value));
+box.append(label,input)
+}
 langs.append(box)}card.append(langs);root.append(card)}
 if(!visible.length){const empty=document.createElement("p");empty.className="help";empty.textContent="Nessun progetto corrispondente.";root.append(empty)}updateCounts()
 }
 $("search").addEventListener("input",render);$("reload").addEventListener("click",load);
 $("fileInput").addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;try{const parsed=JSON.parse(await file.text());if(!parsed||typeof parsed!=="object"||Array.isArray(parsed))throw new Error("Il file deve contenere un oggetto JSON.");translations=parsed;dirty=true;render();status("JSON importato. Scarica il file per conservare le modifiche.")}catch(err){status("Importazione non riuscita: "+err.message)}e.target.value=""});
-$("download").addEventListener("click",()=>{const out={};for(const [name,langs] of Object.entries(translations)){const item={};for(const lang of ["it","en"]){const fields={};for(const field of ["title","description"]){const v=clean(langs?.[lang]?.[field]);if(v)fields[field]=v}if(Object.keys(fields).length)item[lang]=fields}if(Object.keys(item).length)out[name]=item}
+$("download").addEventListener("click",()=>{const out={};for(const [name,langs] of Object.entries(translations)){const item={};for(const lang of ["it","en"]){const fields={};for(const field of ["title","description"]){const v=clean(langs?.[lang]?.[field]);if(v)fields[field]=v}
+const tags=Array.isArray(langs?.[lang]?.tags)?langs[lang].tags.map(clean).filter(Boolean):[];
+if(tags.length)fields.tags=tags;
+if(Object.keys(fields).length)item[lang]=fields}if(Object.keys(item).length)out[name]=item}
 const blob=new Blob([JSON.stringify(out,null,2)+"\n"],{type:"application/json;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="project-translations.json";a.click();URL.revokeObjectURL(url);translations=out;dirty=false;updateCounts();status("File generato. Sostituisci project-translations.json nel repository.")});
 load()
 })();
