@@ -12,12 +12,14 @@ input[type=search]{flex:1;min-width:210px;padding:10px 12px;border:1px solid var
 .summary{padding:12px 16px;margin-bottom:14px;color:var(--muted)}#status{font-weight:600;color:var(--accent)}
 .projects{display:grid;gap:12px}.project{padding:16px}.project-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:12px}
 .name{font-weight:700;overflow-wrap:anywhere}.repo{font-size:.82rem;color:var(--muted)}
-.languages{display:grid;grid-template-columns:1fr 1fr;gap:14px}.language{border:1px solid var(--line);border-radius:8px;padding:12px;background:#fbfcfb;min-width:0}
-.language h2{font-size:.95rem;margin:0 0 10px;color:var(--accent)}
+.translation-panel{border:1px solid var(--line);border-radius:8px;padding:14px;background:#fbfcfb;min-width:0}
+.language-heads,.field-row{display:grid;grid-template-columns:minmax(0,1fr) 42px minmax(0,1fr);gap:10px;align-items:center}
+.language-heads{margin-bottom:8px}.language-heads h2{font-size:.95rem;margin:0;color:var(--accent)}
+.field-row{margin-top:10px}.field-cell{min-width:0}.field-cell label{margin:0 0 4px}.copy-cell{display:flex;justify-content:center;align-items:center;padding-top:20px}.copy-button{padding:5px 10px;min-width:38px;font-size:1.05rem;line-height:1.2}
 label{display:block;font-size:.78rem;color:var(--muted);margin:9px 0 4px}
 input[type=text],textarea{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;font:inherit;min-width:0;background:white;color:var(--ink)}
 textarea{min-height:78px;resize:vertical}.help{font-size:.85rem;color:var(--muted);margin:14px 2px}
-@media(max-width:720px){.languages{grid-template-columns:1fr}.project-head{display:block}header{padding:20px}}
+@media(max-width:720px){.language-heads,.field-row{grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);gap:6px}.copy-button{padding:5px 7px;min-width:32px}.project-head{display:block}header{padding:20px}}
 </style></head><body>
 <header><h1>Aggiunta traduzioni</h1><p>Gestione dei titoli e delle descrizioni localizzate dei progetti GitHub Pages.</p></header>
 <main>
@@ -45,11 +47,21 @@ function setValue(name,lang,field,value){if(!translations[name]||typeof translat
 function render(){
 const root=$("projects");root.innerHTML="";const term=clean($("search").value).toLocaleLowerCase("it");
 const visible=repositories.filter(p=>(p.name+" "+(p.description||"")).toLocaleLowerCase("it").includes(term));
-for(const p of visible){const card=document.createElement("article");card.className="project";const head=document.createElement("div");head.className="project-head";
-const name=document.createElement("div");name.className="name";name.textContent=p.name;const desc=document.createElement("div");desc.className="repo";desc.textContent=p.description||"Descrizione originale non disponibile";head.append(name,desc);card.append(head);
-const langs=document.createElement("div");langs.className="languages";
-for(const lang of ["it","en"]){const box=document.createElement("section");box.className="language";const h=document.createElement("h2");h.textContent=lang==="it"?"Italiano":"English";box.append(h);
+for(const p of visible){
+const card=document.createElement("article");card.className="project";
+const head=document.createElement("div");head.className="project-head";
+const name=document.createElement("div");name.className="name";name.textContent=p.name;
+const desc=document.createElement("div");desc.className="repo";desc.textContent=p.description||"Descrizione originale non disponibile";head.append(name,desc);card.append(head);
+const panel=document.createElement("section");panel.className="translation-panel";
+const heads=document.createElement("div");heads.className="language-heads";
+const itHead=document.createElement("h2");itHead.textContent="Italiano";
+const spacer=document.createElement("div");
+const enHead=document.createElement("h2");enHead.textContent="English";
+heads.append(itHead,spacer,enHead);panel.append(heads);
 for(const [field,labelText] of [["title","Titolo"],["description","Descrizione"],["tags","Tag (separati da virgola)"]]){
+const row=document.createElement("div");row.className="field-row";
+const makeCell=(lang)=>{
+const cell=document.createElement("div");cell.className="field-cell";
 const label=document.createElement("label");label.textContent=labelText;
 const input=field==="title"?document.createElement("input"):document.createElement("textarea");
 if(field==="title")input.type="text";
@@ -57,9 +69,21 @@ const saved=translations[p.name]?.[lang]?.[field];
 input.value=field==="tags"?(Array.isArray(saved)?saved.join(", "):""):(saved||"");
 input.placeholder=field==="title"?p.name:field==="description"?(p.description||"Descrizione originale GitHub"):(Array.isArray(p.tags)?p.tags.join(", "):"Tag originali");
 input.addEventListener("input",()=>setValue(p.name,lang,field,field==="tags"?input.value.split(",").map(x=>x.trim()).filter(Boolean):input.value));
-box.append(label,input)
+cell.append(label,input);return {cell,input};
+};
+const left=makeCell("it"),right=makeCell("en");
+const copyWrap=document.createElement("div");copyWrap.className="copy-cell";
+const copy=document.createElement("button");copy.type="button";copy.className="secondary copy-button";copy.textContent="→";
+copy.title="Copia il contenuto italiano in inglese";copy.setAttribute("aria-label","Copia "+labelText+" dall'italiano all'inglese");
+copy.addEventListener("click",()=>{
+right.input.value=left.input.value;
+setValue(p.name,"en",field,field==="tags"?left.input.value.split(",").map(x=>x.trim()).filter(Boolean):left.input.value);
+status("Contenuto copiato dall'italiano all'inglese: "+p.name+" — "+labelText+".");
+});
+copyWrap.append(copy);row.append(left.cell,copyWrap,right.cell);panel.append(row);
 }
-langs.append(box)}card.append(langs);root.append(card)}
+card.append(panel);root.append(card)
+}
 if(!visible.length){const empty=document.createElement("p");empty.className="help";empty.textContent="Nessun progetto corrispondente.";root.append(empty)}updateCounts()
 }
 $("search").addEventListener("input",render);$("reload").addEventListener("click",load);
