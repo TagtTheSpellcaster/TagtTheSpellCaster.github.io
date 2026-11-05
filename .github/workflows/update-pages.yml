@@ -89,8 +89,12 @@ jobs:
                   "url": pages_url,
                   "description": repo.get("description") or "",
                   "repository": repo["html_url"],
-                  "category": project_info.get("category", "Altri progetti"),
-                  "tags": project_info.get("tags", [])
+                  "category": (project_info.get("category", {}) or {}).get("it", project_info.get("category", "Altri progetti")) if isinstance(project_info.get("category", {}), dict) else project_info.get("category", "Altri progetti"),
+                  "category_it": (project_info.get("category", {}) or {}).get("it", "Altri progetti") if isinstance(project_info.get("category", {}), dict) else project_info.get("category", "Altri progetti"),
+                  "category_en": (project_info.get("category", {}) or {}).get("en", "Other Projects") if isinstance(project_info.get("category", {}), dict) else project_info.get("category", "Other Projects"),
+                  "tags": (project_info.get("tags", {}) or {}).get("it", []) if isinstance(project_info.get("tags", {}), dict) else project_info.get("tags", []),
+                  "tags_it": (project_info.get("tags", {}) or {}).get("it", []) if isinstance(project_info.get("tags", {}), dict) else project_info.get("tags", []),
+                  "tags_en": (project_info.get("tags", {}) or {}).get("en", []) if isinstance(project_info.get("tags", {}), dict) else []
               })
 
           projects.sort(key=lambda project: project["name"].lower())
