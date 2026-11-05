@@ -68,5 +68,17 @@
         "IT"
       ]
     }
+  },
+  "Tablut": {
+    "en": {
+      "description": "An online electronic version of Tablut, with Linnean rules (retranslated)",
+      "tags": [
+        "Tafl",
+        "Vikings",
+        "Historical game",
+        "EN",
+        "IT"
+      ]
+    }
   }
 }
