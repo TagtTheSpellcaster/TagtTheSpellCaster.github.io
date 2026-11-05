@@ -9,7 +9,8 @@
       "tags": [
         "Ispirazione",
         "Narrazione",
-        "Carte"
+        "Carte",
+        "IT"
       ]
     },
     {
@@ -21,7 +22,8 @@
       "tags": [
         "Game Master",
         "Strumenti",
-        "GDR"
+        "GDR",
+        "IT"
       ]
     },
     {
@@ -33,7 +35,8 @@
       "tags": [
         "Generatore audio",
         "432 Hz",
-        "Ambient"
+        "Ambient",
+        "EN"
       ]
     },
     {
@@ -45,7 +48,8 @@
       "tags": [
         "BMI",
         "Composizione corporea",
-        "Nutrizione"
+        "Nutrizione",
+        "EN"
       ]
     },
     {
@@ -57,7 +61,8 @@
       "tags": [
         "D&D",
         "Conversioni",
-        "Unità di misura"
+        "Unità di misura",
+        "IT"
       ]
     },
     {
@@ -69,7 +74,8 @@
       "tags": [
         "Calendario",
         "Recupero",
-        "Monitoraggio"
+        "Monitoraggio",
+        "IT"
       ]
     },
     {
@@ -79,9 +85,10 @@
       "repository": "https://github.com/TagtTheSpellcaster/Conlang-Generator",
       "category": "Creatività & Linguaggi",
       "tags": [
-        "Lingue artificiali",
+        "Lingua artificiale",
         "Generatore",
-        "Linguistica"
+        "Linguistica",
+        "EN"
       ]
     },
     {
@@ -93,7 +100,8 @@
       "tags": [
         "Calcolo",
         "Cartelle editoriali",
-        "Conversione"
+        "Conversione",
+        "IT"
       ]
     },
     {
@@ -105,7 +113,8 @@
       "tags": [
         "Racing",
         "Retrogaming",
-        "Arcade"
+        "Arcade",
+        "EN"
       ]
     },
     {
@@ -117,7 +126,8 @@
       "tags": [
         "Tipografia",
         "Font",
-        "Analisi"
+        "Analisi",
+        "EN"
       ]
     },
     {
@@ -129,7 +139,8 @@
       "tags": [
         "Zaxxon",
         "Retrogaming",
-        "Arcade"
+        "Arcade",
+        "EN"
       ]
     },
     {
@@ -141,7 +152,8 @@
       "tags": [
         "Retrogaming",
         "Arcade",
-        "1971"
+        "1971",
+        "EN"
       ]
     },
     {
@@ -153,7 +165,8 @@
       "tags": [
         "Investigazione",
         "Deduzione",
-        "Gioco in solitario"
+        "Gioco in solitario",
+        "IT"
       ]
     },
     {
@@ -165,7 +178,8 @@
       "tags": [
         "Strategia",
         "Mesopotamia",
-        "Gioco storico"
+        "Gioco storico",
+        "IT"
       ]
     },
     {
@@ -177,7 +191,8 @@
       "tags": [
         "Grafica",
         "Texture",
-        "Overlay"
+        "Overlay",
+        "EN"
       ]
     },
     {
@@ -189,7 +204,8 @@
       "tags": [
         "Vakongü",
         "Dizionario",
-        "Lingua artificiale"
+        "Lingua artificiale",
+        "IT"
       ]
     },
     {
@@ -201,7 +217,8 @@
       "tags": [
         "I Ching",
         "Consultazione",
-        "Tradizione"
+        "Tradizione",
+        "IT"
       ]
     },
     {
@@ -213,7 +230,7 @@
       "tags": [
         "Meditazione",
         "Timer",
-        "PWA"
+        "IT"
       ]
     },
     {
@@ -225,7 +242,8 @@
       "tags": [
         "Sito aziendale",
         "Traduzione",
-        "Localizzazione"
+        "Localizzazione",
+        "IT"
       ]
     },
     {
@@ -237,7 +255,9 @@
       "tags": [
         "Creatività",
         "Brian Eno",
-        "Spunti"
+        "Spunti",
+        "IT",
+        "EN"
       ]
     },
     {
@@ -249,7 +269,8 @@
       "tags": [
         "Sintetizzatore",
         "Moog",
-        "Web Audio"
+        "Web Audio",
+        "EN"
       ]
     },
     {
@@ -261,7 +282,8 @@
       "tags": [
         "Racing",
         "Pole Position",
-        "Retrogaming"
+        "Retrogaming",
+        "EN"
       ]
     },
     {
@@ -273,7 +295,8 @@
       "tags": [
         "IVA",
         "Calcolo",
-        "Fiscale"
+        "Fiscale",
+        "IT"
       ]
     },
     {
@@ -285,7 +308,8 @@
       "tags": [
         "Roguelike",
         "Carte",
-        "Solitario"
+        "Solitario",
+        "IT"
       ]
     },
     {
@@ -297,7 +321,9 @@
       "tags": [
         "Antico Egitto",
         "Strategia",
-        "Gioco storico"
+        "Gioco storico",
+        "IT",
+        "EN"
       ]
     },
     {
@@ -309,7 +335,8 @@
       "tags": [
         "Frogger",
         "Retrogaming",
-        "Arcade"
+        "Arcade",
+        "EN"
       ]
     },
     {
@@ -321,7 +348,8 @@
       "tags": [
         "Accordi",
         "Sintetizzatore",
-        "Strumming"
+        "Strumming",
+        "EN"
       ]
     },
     {
@@ -333,8 +361,17 @@
       "tags": [
         "Sintetizzatore",
         "Monofonico",
-        "Web Audio"
+        "Web Audio",
+        "EN"
       ]
+    },
+    {
+      "name": "Tablut",
+      "url": "https://tagtthespellcaster.github.io/Tablut",
+      "description": "Una versione elettronica online del Tablut, con le regole di Linneo (ritradotte)",
+      "repository": "https://github.com/TagtTheSpellcaster/Tablut",
+      "category": "Altri progetti",
+      "tags": []
     },
     {
       "name": "TapTempoPro",
@@ -345,7 +382,8 @@
       "tags": [
         "Tap tempo",
         "BPM",
-        "PWA"
+        "PWA",
+        "EN"
       ]
     },
     {
@@ -357,7 +395,8 @@
       "tags": [
         "Simulatore di volo",
         "Grafica vettoriale",
-        "Retrogaming"
+        "Retrogaming",
+        "EN"
       ]
     },
     {
@@ -369,7 +408,8 @@
       "tags": [
         "Shooter",
         "Grafica vettoriale",
-        "Retrogaming"
+        "Retrogaming",
+        "EN"
       ]
     },
     {
@@ -381,7 +421,9 @@
       "tags": [
         "Africa",
         "Strategia",
-        "Gioco storico"
+        "Gioco storico",
+        "IT",
+        "EN"
       ]
     },
     {
@@ -393,7 +435,8 @@
       "tags": [
         "Defender",
         "Retrogaming",
-        "Arcade"
+        "Arcade",
+        "EN"
       ]
     },
     {
@@ -405,7 +448,8 @@
       "tags": [
         "Space Invaders",
         "Retrogaming",
-        "Arcade"
+        "Arcade",
+        "EN"
       ]
     },
     {
@@ -417,7 +461,8 @@
       "tags": [
         "Galaga",
         "Retrogaming",
-        "Arcade"
+        "Arcade",
+        "EN"
       ]
     },
     {
@@ -429,7 +474,8 @@
       "tags": [
         "Lunar Lander",
         "Retrogaming",
-        "Arcade"
+        "Arcade",
+        "EN"
       ]
     },
     {
@@ -441,7 +487,8 @@
       "tags": [
         "Pong",
         "Retrogaming",
-        "Arcade"
+        "Arcade",
+        "EN"
       ]
     },
     {
@@ -453,7 +500,8 @@
       "tags": [
         "Breakout",
         "Retrogaming",
-        "Arcade"
+        "Arcade",
+        "EN"
       ]
     },
     {
@@ -465,7 +513,8 @@
       "tags": [
         "Tank",
         "Grafica vettoriale",
-        "Retrogaming"
+        "Retrogaming",
+        "EN"
       ]
     }
   ]
