@@ -130,7 +130,7 @@ function getCategoryIcon(category){return categoryIcons[category]||categoryIcons
 function renderCategories(){
 const container=document.getElementById("categories");container.innerHTML="";
 const categories=getCategories();const counts={};
-categories.forEach(category=>{counts[category]=allProjects.filter(project=>(project.category||"Altri progetti")===category).length});
+categories.forEach(category=>{counts[category]=allProjects.filter(project=>getProjectCategory(project)===category).length});
 const cards=[{name:"Tutti",count:allProjects.length,color:"#234b36"},...categories.map((category,index)=>({name:category,count:counts[category],color:getCategoryColor(category,index)}))];
 cards.forEach(card=>{
 const button=document.createElement("button");button.type="button";button.className="category-card";button.classList.toggle("active",activeCategory===card.name);button.style.setProperty("--category-color",card.color);button.setAttribute("aria-pressed",String(activeCategory===card.name));
