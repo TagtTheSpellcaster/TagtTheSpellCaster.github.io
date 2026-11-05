@@ -73,7 +73,7 @@ h1,.category-band,.category-name,.card-title,.card-title a,.projects-heading h2,
 <nav id="categories" class="category-grid" aria-label="Categorie dei progetti"></nav>
 <section aria-labelledby="projectsTitle"><div class="projects-heading"><h2 id="projectsTitle" data-i18n="allProjects">Tutti i progetti</h2><span id="visibleCount"></span></div><div id="projects"></div></section>
 </main>
-<footer class="site-footer"><a href="categories-editor.html" data-i18n="categoryEditor">Editor di categorie</a><span aria-hidden="true"> · </span><a href="add-translation.html" data-i18n="translationEditor">Aggiunta traduzioni</a></footer>
+<footer class="site-footer"><a href="categories-editor.html" data-i18n="catalogEditor">Editor del catalogo</a></footer>
 <script>
 let allProjects=[];
 let projectTranslations={};
@@ -88,8 +88,8 @@ const searchResults=document.getElementById("searchResults");
 const optItalian=document.getElementById("optItalian");
 const optEnglish=document.getElementById("optEnglish");
 const translations={
- it:{subtitle:"Progetti, utility e strumenti pubblicati su GitHub Pages",explore:"Esplora i progetti",instruction:"Seleziona una categoria oppure cerca direttamente un programma.",platformNote:"Quasi tutte le applicazioni sono browser-based e utilizzabili su desktop e dispositivi mobili, indipendentemente dal sistema operativo. Alcune, come Giallo alla Tenuta e StrumPad, sono ottimizzate per desktop; diverse sono anche installabili come PWA.",loading:"Ricerca dei progetti...",searchPlaceholder:"Cerca per nome, descrizione o tag...",allProjects:"Tutti i progetti",categoryEditor:"Editor di categorie",translationEditor:"Aggiunta traduzioni",allCollection:"COLLEZIONE COMPLETA",allProjectsLabel:"Tutti i progetti",project:"progetto",projects:"progetti",result:"risultato",results:"risultati",found:"programma trovato",foundMany:"programmi trovati",published:"progetti pubblicati",tagHeading:"Progetti con il tag:",showCategories:"Mostra tutte le categorie",noTag:"Nessun progetto trovato con questo tag.",noSearch:"Nessun programma corrisponde alla ricerca.",noCriteria:"Nessun progetto corrisponde ai criteri di ricerca.",loadError:"Errore nel caricamento dei progetti:",renderError:"Errore nella visualizzazione dei progetti:",tagAria:"Mostra tutti i progetti con il tag"},
- en:{subtitle:"Projects, utilities and tools published on GitHub Pages",explore:"Explore the projects",instruction:"Choose a category or search for a project.",platformNote:"Almost all apps run in the browser and work on desktop and mobile devices, regardless of operating system. Some, such as Giallo alla Tenuta and StrumPad, are desktop-optimized; several are also installable as PWAs.",loading:"Loading projects...",searchPlaceholder:"Search by name, description or tag...",allProjects:"All projects",categoryEditor:"Category editor",translationEditor:"Add translations",allCollection:"COMPLETE COLLECTION",allProjectsLabel:"All projects",project:"project",projects:"projects",result:"result",results:"results",found:"project found",foundMany:"projects found",published:"published projects",tagHeading:"Projects tagged:",showCategories:"Show all categories",noTag:"No projects found with this tag.",noSearch:"No projects match your search.",noCriteria:"No projects match the selected criteria.",loadError:"Error loading projects:",renderError:"Error displaying projects:",tagAria:"Show all projects tagged"}
+ it:{subtitle:"Progetti, utility e strumenti pubblicati su GitHub Pages",explore:"Esplora i progetti",instruction:"Seleziona una categoria oppure cerca direttamente un programma.",platformNote:"Quasi tutte le applicazioni sono browser-based e utilizzabili su desktop e dispositivi mobili, indipendentemente dal sistema operativo. Alcune, come Giallo alla Tenuta e StrumPad, sono ottimizzate per desktop; diverse sono anche installabili come PWA.",loading:"Ricerca dei progetti...",searchPlaceholder:"Cerca per nome, descrizione o tag...",allProjects:"Tutti i progetti",catalogEditor:"Editor del catalogo",allCollection:"COLLEZIONE COMPLETA",allProjectsLabel:"Tutti i progetti",project:"progetto",projects:"progetti",result:"risultato",results:"risultati",found:"programma trovato",foundMany:"programmi trovati",published:"progetti pubblicati",tagHeading:"Progetti con il tag:",showCategories:"Mostra tutte le categorie",noTag:"Nessun progetto trovato con questo tag.",noSearch:"Nessun programma corrisponde alla ricerca.",noCriteria:"Nessun progetto corrisponde ai criteri di ricerca.",loadError:"Errore nel caricamento dei progetti:",renderError:"Errore nella visualizzazione dei progetti:",tagAria:"Mostra tutti i progetti con il tag"},
+ en:{subtitle:"Projects, utilities and tools published on GitHub Pages",explore:"Explore the projects",instruction:"Choose a category or search for a project.",platformNote:"Almost all apps run in the browser and work on desktop and mobile devices, regardless of operating system. Some, such as Giallo alla Tenuta and StrumPad, are desktop-optimized; several are also installable as PWAs.",loading:"Loading projects...",searchPlaceholder:"Search by name, description or tag...",allProjects:"All projects",catalogEditor:"Catalog editor",allCollection:"COMPLETE COLLECTION",allProjectsLabel:"All projects",project:"project",projects:"projects",result:"result",results:"results",found:"project found",foundMany:"projects found",published:"published projects",tagHeading:"Projects tagged:",showCategories:"Show all categories",noTag:"No projects found with this tag.",noSearch:"No projects match your search.",noCriteria:"No projects match the selected criteria.",loadError:"Error loading projects:",renderError:"Error displaying projects:",tagAria:"Show all projects tagged"}
 };
 const categoryLabels={"Tutti":"All","Giochi Antichi":"Ancient Games","Giochi Arcade":"Arcade Games","Arcade":"Arcade","RPG & Game Master":"RPG & Game Master","Giochi da tavolo e di carte":"Board & Card Games","Musica & Audio":"Music & Audio","Utility & Strumenti":"Utilities & Tools","Creatività & Linguaggi":"Creativity & Languages","Altri progetti":"Other Projects"};
 let currentLanguage=localStorage.getItem("language")==="en"?"en":"it";
@@ -98,7 +98,8 @@ function displayCategory(category){return currentLanguage==="en"?(categoryLabels
 function getProjectTranslation(project){return projectTranslations[project.name]?.[currentLanguage]||{}}
 function getProjectTitle(project){return getProjectTranslation(project).title?.trim()||project.name||"Senza nome"}
 function getProjectDescription(project){return getProjectTranslation(project).description?.trim()||project.description||""}
-function getProjectTags(project){const translated=getProjectTranslation(project).tags;return Array.isArray(translated)&&translated.length?translated:(Array.isArray(project.tags)?project.tags:[])}
+function getProjectCategory(project){return project["category_"+currentLanguage]||project.category||"Altri progetti"}
+function getProjectTags(project){const localized=project["tags_"+currentLanguage];return Array.isArray(localized)?localized:(Array.isArray(project.tags)?project.tags:[])}
 function setLanguage(language){currentLanguage=language;localStorage.setItem("language",language);document.documentElement.lang=language;document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=tr(el.dataset.i18n)});document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{el.placeholder=tr(el.dataset.i18nPlaceholder)});optItalian.classList.toggle("active",language==="it");optEnglish.classList.toggle("active",language==="en");renderCategories();renderProjects();if(!activeTag&&!searchTerm&&activeCategory===null)document.getElementById("status").textContent=`${allProjects.length} ${tr("published")}`}
 function bindLanguageOption(option,language){option.addEventListener("click",()=>setLanguage(language));option.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();option.click()}})}
 bindLanguageOption(optItalian,"it");bindLanguageOption(optEnglish,"en");
@@ -111,7 +112,7 @@ applyTheme(getEffectiveTheme());
 
 const categoryColors=["#9a4c3b","#39744e","#416b9b","#a58a43","#76558e","#9a6b36","#527b82","#8a5968"];
 const knownCategoryColors={"Giochi Antichi":"#9a4c3b","Giochi Arcade":"#416b9b","Arcade":"#416b9b","RPG & Game Master":"#a58a43","Giochi da tavolo e di carte":"#76558e","Musica & Audio":"#39744e","Utility & Strumenti":"#527b82","Creatività & Linguaggi":"#9a6b36","Altri progetti":"#777d78"};
-function getCategories(){return [...new Set(allProjects.map(project=>project.category||"Altri progetti"))].sort((a,b)=>a.localeCompare(b,"it"))}
+function getCategories(){return [...new Set(allProjects.map(getProjectCategory))].sort((a,b)=>a.localeCompare(b,currentLanguage))}
 function getCategoryColor(category,index){return knownCategoryColors[category]||categoryColors[index%categoryColors.length]}
 const categoryIcons={
 "Tutti":`<svg viewBox="0 0 80 64" aria-hidden="true" focusable="false"><path d="M13 15h36a7 7 0 0 1 7 7v29H20a7 7 0 0 1-7-7z"/><path d="M20 15v36M56 22h8a4 4 0 0 1 4 4v25H20"/><path d="M25 25h22M25 33h22M25 41h16"/></svg>`,
@@ -152,7 +153,7 @@ const buttons=container.querySelectorAll(".category-card");const nextCard=button
 }
 function projectMatchesSearch(project){
 if(!searchTerm)return true;
-const searchable=[project.name||"",getProjectTitle(project),project.description||"",getProjectDescription(project),project.category||"",...getProjectTags(project)].flat().join(" ").toLocaleLowerCase("it");
+const searchable=[project.name||"",getProjectTitle(project),project.description||"",getProjectDescription(project),getProjectCategory(project),...getProjectTags(project)].flat().join(" ").toLocaleLowerCase("it");
 return searchable.includes(searchTerm);
 }
 function normalizeTag(value){return String(value||"").trim().toLocaleLowerCase("it")}
@@ -178,7 +179,7 @@ const reset=document.createElement("button");reset.type="button";reset.className
 heading.append(headingText,reset);searchResults.appendChild(heading);
 if(!matches.length){const empty=document.createElement("div");empty.className="search-results-empty";empty.textContent=tr("noTag");searchResults.appendChild(empty);return}
 matches.forEach(project=>{
-const category=project.category||"Altri progetti";const panel=document.createElement("article");panel.className="search-result-panel";panel.style.setProperty("--panel-accent",getCategoryColor(category,getCategories().indexOf(category)));
+const category=getProjectCategory(project);const panel=document.createElement("article");panel.className="search-result-panel";panel.style.setProperty("--panel-accent",getCategoryColor(category,getCategories().indexOf(category)));
 const titleEl=document.createElement("div");titleEl.className="card-title";const link=document.createElement("a");link.href=project.url||"#";link.target="_blank";link.rel="noopener noreferrer";link.textContent=getProjectTitle(project);titleEl.appendChild(link);panel.appendChild(titleEl);
 const projectDescription=getProjectDescription(project);if(projectDescription){const description=document.createElement("div");description.className="description";description.textContent=projectDescription;panel.appendChild(description)}
 const meta=document.createElement("div");meta.className="search-result-category";meta.textContent=displayCategory(category);panel.appendChild(meta);
@@ -193,7 +194,7 @@ searchResults.hidden=false;const matches=allProjects.filter(projectMatchesSearch
 status.textContent=`${matches.length} ${matches.length===1?tr("found"):tr("foundMany")}`;
 if(!matches.length){const empty=document.createElement("div");empty.className="search-results-empty";empty.textContent=tr("noSearch");searchResults.appendChild(empty);return}
 matches.forEach(project=>{
-const category=project.category||"Altri progetti";const panel=document.createElement("article");panel.className="search-result-panel";panel.style.setProperty("--panel-accent",getCategoryColor(category,getCategories().indexOf(category)));
+const category=getProjectCategory(project);const panel=document.createElement("article");panel.className="search-result-panel";panel.style.setProperty("--panel-accent",getCategoryColor(category,getCategories().indexOf(category)));
 const title=document.createElement("div");title.className="card-title";const link=document.createElement("a");link.href=project.url||"#";link.target="_blank";link.rel="noopener noreferrer";link.textContent=getProjectTitle(project);title.appendChild(link);panel.appendChild(title);
 const projectDescription=getProjectDescription(project);if(projectDescription){const description=document.createElement("div");description.className="description";description.textContent=projectDescription;panel.appendChild(description)}
 const meta=document.createElement("div");meta.className="search-result-category";meta.textContent=displayCategory(category);panel.appendChild(meta);
@@ -207,10 +208,10 @@ if(searchTerm){resultsSection.hidden=true;renderSearchResults();return}
 searchResults.hidden=true;
 const container=document.getElementById("projects");const title=document.getElementById("projectsTitle");const count=document.getElementById("visibleCount");const status=document.getElementById("status");container.innerHTML="";
 if(activeCategory===null)return;
-let filtered=allProjects.filter(project=>{const category=project.category||"Altri progetti";const categoryMatches=activeCategory==="Tutti"||category===activeCategory;return categoryMatches&&projectMatchesSearch(project)});
+let filtered=allProjects.filter(project=>{const category=getProjectCategory(project);const categoryMatches=activeCategory==="Tutti"||category===activeCategory;return categoryMatches&&projectMatchesSearch(project)});
 title.textContent=activeCategory==="Tutti"?tr("allProjectsLabel"):displayCategory(activeCategory);count.textContent=`${filtered.length} ${filtered.length===1?tr("result"):tr("results")}`;status.textContent=`${allProjects.length} ${tr("published")}`;
 if(!filtered.length){const empty=document.createElement("div");empty.className="empty-state";empty.textContent=tr("noCriteria");container.appendChild(empty);return}
-const grouped=new Map();filtered.forEach(project=>{const category=project.category||"Altri progetti";if(!grouped.has(category))grouped.set(category,[]);grouped.get(category).push(project)});
+const grouped=new Map();filtered.forEach(project=>{const category=getProjectCategory(project);if(!grouped.has(category))grouped.set(category,[]);grouped.get(category).push(project)});
 [...grouped.keys()].sort((a,b)=>a.localeCompare(b,"it")).forEach(category=>{
 const group=document.createElement("section");group.className="project-group";
 if(activeCategory==="Tutti"){const heading=document.createElement("h3");heading.textContent=displayCategory(category);group.appendChild(heading)}
