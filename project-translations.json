@@ -2,83 +2,40 @@
   "Senet": {
     "it": {
       "title": "Senet",
-      "description": "Una versione elettronica online del Senet, antenato del Backgammon e simile al Gioco Reale di Ur, con due set di regole (CEMEA e Kendall & Bell)",
-      "tags": [
-        "Antico Egitto",
-        "Strategia",
-        "Gioco storico",
-        "IT",
-        "EN"
-      ]
+      "description": "Una versione elettronica online del Senet, antenato del Backgammon e simile al Gioco Reale di Ur, con due set di regole (CEMEA e Kendall & Bell)"
     },
     "en": {
       "title": "Senet",
-      "description": "An online version of Senet, an ancestor of Backgammon and similar to the Royal Game of Ur, with two rule sets (CEMEA and Kendall & Bell).",
-      "tags": [
-        "Ancient Egypt",
-        "Strategy",
-        "Historical game",
-        "EN",
-        "IT"
-      ]
+      "description": "An online version of Senet, an ancestor of Backgammon and similar to the Royal Game of Ur, with two rule sets (CEMEA and Kendall & Bell)."
     }
   },
   "Wari": {
     "it": {
       "title": "Wari",
-      "description": "Una versione elettronica online del Wari, il più diffuso dei mancala, con due set di regole (Abapa e Caraibi), tre livelli di gioco e strategia avanzata",
-      "tags": [
-        "Africa",
-        "Strategia",
-        "Gioco storico",
-        "EN",
-        "IT"
-      ]
+      "description": "Una versione elettronica online del Wari, il più diffuso dei mancala, con due set di regole (Abapa e Caraibi), tre livelli di gioco e strategia avanzata"
     },
     "en": {
       "title": "Wari",
-      "description": "An online version of Wari, the most widespread mancala game, with two rule sets (Abapa and Caribbean), three difficulty levels, and advanced strategy.",
-      "tags": [
-        "Africa",
-        "Strategy",
-        "Historical game",
-        "EN",
-        "IT"
-      ]
+      "description": "An online version of Wari, the most widespread mancala game, with two rule sets (Abapa and Caribbean), three difficulty levels, and advanced strategy."
     }
   },
   "Gioco-Reale-di-Ur": {
-    "it": {
-      "tags": [
-        "Strategia",
-        "Mesopotamia",
-        "Gioco storico",
-        "EN",
-        "IT"
-      ]
-    },
     "en": {
       "title": "Royal Game of Ur",
-      "description": "An online electronic version of the Royal Game of Ur, an ancestor of Backgammon, featuring two rule sets (Finkel and Bell).",
-      "tags": [
-        "Strategy",
-        "Mesopotamia",
-        "Historical game",
-        "EN",
-        "IT"
-      ]
+      "description": "An online electronic version of the Royal Game of Ur, an ancestor of Backgammon, featuring two rule sets (Finkel and Bell)."
     }
   },
   "Tablut": {
     "en": {
-      "description": "An online electronic version of Tablut, with Linnean rules (retranslated)",
-      "tags": [
-        "Tafl",
-        "Vikings",
-        "Historical game",
-        "EN",
-        "IT"
-      ]
+      "description": "An online electronic version of Tablut, with Linnean rules (retranslated)"
+    }
+  },
+  "HexWorld": {
+    "it": {
+      "description": "World designer-generator"
+    },
+    "en": {
+      "description": "World designer-generator"
     }
   }
 }

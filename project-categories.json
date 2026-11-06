@@ -625,5 +625,23 @@
         "IT"
       ]
     }
+  },
+  "HexWorld": {
+    "category": {
+      "it": "RPG & Game Master",
+      "en": "RPG & Game Master"
+    },
+    "tags": {
+      "it": [
+        "Design",
+        "Generatore",
+        "IT"
+      ],
+      "en": [
+        "Design",
+        "Generator",
+        "IT"
+      ]
+    }
   }
 }
