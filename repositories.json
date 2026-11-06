@@ -359,6 +359,30 @@
       "tags_en": []
     },
     {
+      "name": "HexWorld",
+      "url": "https://tagtthespellcaster.github.io/HexWorld",
+      "description": "World designer-generator",
+      "repository": "https://github.com/TagtTheSpellcaster/HexWorld",
+      "category": "RPG & Game Master",
+      "category_it": "RPG & Game Master",
+      "category_en": "RPG & Game Master",
+      "tags": [
+        "Design",
+        "Generatore",
+        "IT"
+      ],
+      "tags_it": [
+        "Design",
+        "Generatore",
+        "IT"
+      ],
+      "tags_en": [
+        "Design",
+        "Generator",
+        "IT"
+      ]
+    },
+    {
       "name": "i-ching",
       "url": "https://tagtthespellcaster.github.io/i-ching",
       "description": "Consultazione I-Ching online",
@@ -635,9 +659,9 @@
       "url": "https://tagtthespellcaster.github.io/Tablut",
       "description": "Una versione elettronica online del Tablut, con le regole di Linneo (ritradotte)",
       "repository": "https://github.com/TagtTheSpellcaster/Tablut",
-      "category": "Altri progetti",
-      "category_it": "Altri progetti",
-      "category_en": "Other Projects",
+      "category": "Giochi Antichi",
+      "category_it": "Giochi Antichi",
+      "category_en": "Ancient Games",
       "tags": [
         "Tafl",
         "Vichinghi",
