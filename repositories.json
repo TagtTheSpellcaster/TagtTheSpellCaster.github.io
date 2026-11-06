@@ -6,12 +6,21 @@
       "description": "Quando hai bisogno di un momento di ispirazione, tira fuori le carte.",
       "repository": "https://github.com/TagtTheSpellcaster/Arcana-Narrativa",
       "category": "RPG & Game Master",
+      "category_it": "RPG & Game Master",
+      "category_en": "RPG & Game Master",
       "tags": [
         "Ispirazione",
         "Narrazione",
         "Carte",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "Ispirazione",
+        "Narrazione",
+        "Carte",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "Arcane",
@@ -19,12 +28,21 @@
       "description": "Arcane – Strumenti per il Game Master",
       "repository": "https://github.com/TagtTheSpellcaster/Arcane",
       "category": "RPG & Game Master",
+      "category_it": "RPG & Game Master",
+      "category_en": "RPG & Game Master",
       "tags": [
         "Game Master",
         "Strumenti",
         "GDR",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "Game Master",
+        "Strumenti",
+        "GDR",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "Aura-432",
@@ -32,12 +50,21 @@
       "description": "432-hertz ambient music generator",
       "repository": "https://github.com/TagtTheSpellcaster/Aura-432",
       "category": "Musica & Audio",
+      "category_it": "Musica & Audio",
+      "category_en": "Music & Audio",
       "tags": [
         "Generatore audio",
         "432 Hz",
         "Ambient",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Generatore audio",
+        "432 Hz",
+        "Ambient",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "BioMetaCalc",
@@ -45,12 +72,21 @@
       "description": "Offline web app for BMI, body composition, calorie needs, weight-loss planning, training logs, and nutrition calculators.",
       "repository": "https://github.com/TagtTheSpellcaster/BioMetaCalc",
       "category": "Utility & Strumenti",
+      "category_it": "Utility & Strumenti",
+      "category_en": "Utilities & Tools",
       "tags": [
         "BMI",
         "Composizione corporea",
         "Nutrizione",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "BMI",
+        "Composizione corporea",
+        "Nutrizione",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Calcs-Conversions",
@@ -58,12 +94,21 @@
       "description": "Convertitore online di misure per Dungeons & Dragons",
       "repository": "https://github.com/TagtTheSpellcaster/Calcs-Conversions",
       "category": "RPG & Game Master",
+      "category_it": "RPG & Game Master",
+      "category_en": "RPG & Game Master",
       "tags": [
         "D&D",
         "Conversioni",
         "Unità di misura",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "D&D",
+        "Conversioni",
+        "Unità di misura",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "Calendario-dell-Astinenza",
@@ -71,12 +116,21 @@
       "description": "Un calendario dell'astinenza per i membri di Overeaters Anonymous",
       "repository": "https://github.com/TagtTheSpellcaster/Calendario-dell-Astinenza",
       "category": "Utility & Strumenti",
+      "category_it": "Utility & Strumenti",
+      "category_en": "Utilities & Tools",
       "tags": [
         "Calendario",
         "Recupero",
         "Monitoraggio",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "Calendario",
+        "Recupero",
+        "Monitoraggio",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "Conlang-Generator",
@@ -84,12 +138,21 @@
       "description": "A simple yet useful parametric ConLang (Constructed Language) generator",
       "repository": "https://github.com/TagtTheSpellcaster/Conlang-Generator",
       "category": "Creatività & Linguaggi",
+      "category_it": "Creatività & Linguaggi",
+      "category_en": "Creativity & Languages",
       "tags": [
         "Lingua artificiale",
         "Generatore",
         "Linguistica",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Lingua artificiale",
+        "Generatore",
+        "Linguistica",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "convertitore-cartelle",
@@ -97,12 +160,21 @@
       "description": "Convertitore cartelle->parole e parole->cartelle",
       "repository": "https://github.com/TagtTheSpellcaster/convertitore-cartelle",
       "category": "Utility & Strumenti",
+      "category_it": "Utility & Strumenti",
+      "category_en": "Utilities & Tools",
       "tags": [
         "Calcolo",
         "Cartelle editoriali",
         "Conversione",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "Calcolo",
+        "Cartelle editoriali",
+        "Conversione",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "Dust-Racer",
@@ -110,12 +182,21 @@
       "description": "An offroad car racer, inspired by 1982 Pole Position",
       "repository": "https://github.com/TagtTheSpellcaster/Dust-Racer",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Racing",
         "Retrogaming",
         "Arcade",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Racing",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "font-inspector",
@@ -123,12 +204,21 @@
       "description": "An easy font inspector and glyph analyzer",
       "repository": "https://github.com/TagtTheSpellcaster/font-inspector",
       "category": "Utility & Strumenti",
+      "category_it": "Utility & Strumenti",
+      "category_en": "Utilities & Tools",
       "tags": [
         "Tipografia",
         "Font",
         "Analisi",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Tipografia",
+        "Font",
+        "Analisi",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Fortress-Raid",
@@ -136,12 +226,21 @@
       "description": "A Zaxxon clone (sort of)",
       "repository": "https://github.com/TagtTheSpellcaster/Fortress-Raid",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Zaxxon",
         "Retrogaming",
         "Arcade",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Zaxxon",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Galaxy-Game-1971",
@@ -149,12 +248,21 @@
       "description": "A clone of the first coin-op videogame of history.",
       "repository": "https://github.com/TagtTheSpellcaster/Galaxy-Game-1971",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Retrogaming",
         "Arcade",
         "1971",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Retrogaming",
+        "Arcade",
+        "1971",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Giallo-alla-Tenuta",
@@ -162,12 +270,21 @@
       "description": "Un gioco di investigazione per un giocatore contro il computer",
       "repository": "https://github.com/TagtTheSpellcaster/Giallo-alla-Tenuta",
       "category": "Giochi da tavolo e di carte",
+      "category_it": "Giochi da tavolo e di carte",
+      "category_en": "Board & Card Games",
       "tags": [
         "Investigazione",
         "Deduzione",
         "Gioco in solitario",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "Investigazione",
+        "Deduzione",
+        "Gioco in solitario",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "Gioco-Reale-di-Ur",
@@ -175,10 +292,25 @@
       "description": "Una versione elettronica online del Gioco Reale di Ur, antenato del Backgammon, con due set di regole (Finkel e Bell)",
       "repository": "https://github.com/TagtTheSpellcaster/Gioco-Reale-di-Ur",
       "category": "Giochi Antichi",
+      "category_it": "Giochi Antichi",
+      "category_en": "Ancient Games",
       "tags": [
         "Strategia",
         "Mesopotamia",
         "Gioco storico",
+        "IT"
+      ],
+      "tags_it": [
+        "Strategia",
+        "Mesopotamia",
+        "Gioco storico",
+        "IT"
+      ],
+      "tags_en": [
+        "Strategy",
+        "Mesopotamia",
+        "Historical game",
+        "EN",
         "IT"
       ]
     },
@@ -188,12 +320,21 @@
       "description": "A grain layer overlay inspired by Deckle by Akshat Katiyar",
       "repository": "https://github.com/TagtTheSpellcaster/GrainLayer",
       "category": "Utility & Strumenti",
+      "category_it": "Utility & Strumenti",
+      "category_en": "Utilities & Tools",
       "tags": [
         "Grafica",
         "Texture",
         "Overlay",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Grafica",
+        "Texture",
+        "Overlay",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Grond-Dazanor-Vakong-",
@@ -201,12 +342,21 @@
       "description": "Dizionario italiano-vakongü",
       "repository": "https://github.com/TagtTheSpellcaster/Grond-Dazanor-Vakong-",
       "category": "Creatività & Linguaggi",
+      "category_it": "Creatività & Linguaggi",
+      "category_en": "Creativity & Languages",
       "tags": [
         "Vakongü",
         "Dizionario",
         "Lingua artificiale",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "Vakongü",
+        "Dizionario",
+        "Lingua artificiale",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "i-ching",
@@ -214,12 +364,21 @@
       "description": "Consultazione I-Ching online",
       "repository": "https://github.com/TagtTheSpellcaster/i-ching",
       "category": "Creatività & Linguaggi",
+      "category_it": "Creatività & Linguaggi",
+      "category_en": "Creativity & Languages",
       "tags": [
         "I Ching",
         "Consultazione",
         "Tradizione",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "I Ching",
+        "Consultazione",
+        "Tradizione",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "Meditation-Timer",
@@ -227,11 +386,19 @@
       "description": "A simple, Open Source meditation timer.",
       "repository": "https://github.com/TagtTheSpellcaster/Meditation-Timer",
       "category": "Utility & Strumenti",
+      "category_it": "Utility & Strumenti",
+      "category_en": "Utilities & Tools",
       "tags": [
         "Meditazione",
         "Timer",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "Meditazione",
+        "Timer",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "Nuova-Asterisko",
@@ -239,12 +406,21 @@
       "description": "Sito istituzionale statico di Nuova Asterisko SRLs",
       "repository": "https://github.com/TagtTheSpellcaster/Nuova-Asterisko",
       "category": "Siti & Web",
+      "category_it": "Siti & Web",
+      "category_en": "Websites & Web",
       "tags": [
         "Sito aziendale",
         "Traduzione",
         "Localizzazione",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "Sito aziendale",
+        "Traduzione",
+        "Localizzazione",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "Oblique-Strategies",
@@ -252,13 +428,23 @@
       "description": "A method to promote your creativity. English and Italian.",
       "repository": "https://github.com/TagtTheSpellcaster/Oblique-Strategies",
       "category": "Creatività & Linguaggi",
+      "category_it": "Creatività & Linguaggi",
+      "category_en": "Creativity & Languages",
       "tags": [
         "Creatività",
         "Brian Eno",
         "Spunti",
         "IT",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Creatività",
+        "Brian Eno",
+        "Spunti",
+        "IT",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "PicoMoog",
@@ -266,12 +452,21 @@
       "description": "A pico moog emulator. Very pico.",
       "repository": "https://github.com/TagtTheSpellcaster/PicoMoog",
       "category": "Musica & Audio",
+      "category_it": "Musica & Audio",
+      "category_en": "Music & Audio",
       "tags": [
         "Sintetizzatore",
         "Moog",
         "Web Audio",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Sintetizzatore",
+        "Moog",
+        "Web Audio",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Pole-Racer",
@@ -279,12 +474,21 @@
       "description": "A clone of Pole Position, 1982 car race game",
       "repository": "https://github.com/TagtTheSpellcaster/Pole-Racer",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Racing",
         "Pole Position",
         "Retrogaming",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Racing",
+        "Pole Position",
+        "Retrogaming",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "scorporo-iva",
@@ -292,12 +496,21 @@
       "description": "Calcolatrice per lo scorporo dell'IVA.",
       "repository": "https://github.com/TagtTheSpellcaster/scorporo-iva",
       "category": "Utility & Strumenti",
+      "category_it": "Utility & Strumenti",
+      "category_en": "Utilities & Tools",
       "tags": [
         "IVA",
         "Calcolo",
         "Fiscale",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "IVA",
+        "Calcolo",
+        "Fiscale",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "scoundrel",
@@ -305,12 +518,21 @@
       "description": "Gioco di carte roguelike per giocatore singolo",
       "repository": "https://github.com/TagtTheSpellcaster/scoundrel",
       "category": "Giochi da tavolo e di carte",
+      "category_it": "Giochi da tavolo e di carte",
+      "category_en": "Board & Card Games",
       "tags": [
         "Roguelike",
         "Carte",
         "Solitario",
         "IT"
-      ]
+      ],
+      "tags_it": [
+        "Roguelike",
+        "Carte",
+        "Solitario",
+        "IT"
+      ],
+      "tags_en": []
     },
     {
       "name": "Senet",
@@ -318,12 +540,28 @@
       "description": "Una versione elettronica online del Senet, antenato del Backgammon e simile al Gioco Reale di Ur, con due set di regole (CEMEA e Kendall & Bell)",
       "repository": "https://github.com/TagtTheSpellcaster/Senet",
       "category": "Giochi Antichi",
+      "category_it": "Giochi Antichi",
+      "category_en": "Ancient Games",
       "tags": [
         "Antico Egitto",
         "Strategia",
         "Gioco storico",
         "IT",
         "EN"
+      ],
+      "tags_it": [
+        "Antico Egitto",
+        "Strategia",
+        "Gioco storico",
+        "IT",
+        "EN"
+      ],
+      "tags_en": [
+        "Ancient Egypt",
+        "Strategy",
+        "Historical game",
+        "EN",
+        "IT"
       ]
     },
     {
@@ -332,12 +570,21 @@
       "description": "A clone of Frogger",
       "repository": "https://github.com/TagtTheSpellcaster/Street-Crosser",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Frogger",
         "Retrogaming",
         "Arcade",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Frogger",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "StrumPad",
@@ -345,12 +592,21 @@
       "description": "A browser-based vintage chord machine & analog synthesizer for harmonic exploration.",
       "repository": "https://github.com/TagtTheSpellcaster/StrumPad",
       "category": "Musica & Audio",
+      "category_it": "Musica & Audio",
+      "category_en": "Music & Audio",
       "tags": [
         "Accordi",
         "Sintetizzatore",
         "Strumming",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Accordi",
+        "Sintetizzatore",
+        "Strumming",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Syntoneo",
@@ -358,12 +614,21 @@
       "description": "A very (VERY) simple monophonic synth.",
       "repository": "https://github.com/TagtTheSpellcaster/Syntoneo",
       "category": "Musica & Audio",
+      "category_it": "Musica & Audio",
+      "category_en": "Music & Audio",
       "tags": [
         "Sintetizzatore",
         "Monofonico",
         "Web Audio",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Sintetizzatore",
+        "Monofonico",
+        "Web Audio",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Tablut",
@@ -371,7 +636,29 @@
       "description": "Una versione elettronica online del Tablut, con le regole di Linneo (ritradotte)",
       "repository": "https://github.com/TagtTheSpellcaster/Tablut",
       "category": "Altri progetti",
-      "tags": []
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [
+        "Tafl",
+        "Vichinghi",
+        "Gioco storico",
+        "EN",
+        "IT"
+      ],
+      "tags_it": [
+        "Tafl",
+        "Vichinghi",
+        "Gioco storico",
+        "EN",
+        "IT"
+      ],
+      "tags_en": [
+        "Tafl",
+        "Vikings",
+        "Historical game",
+        "EN",
+        "IT"
+      ]
     },
     {
       "name": "TapTempoPro",
@@ -379,12 +666,21 @@
       "description": "Very simple and straightforward Tap Tempo app. Can be played in browser or installed as a PWA.",
       "repository": "https://github.com/TagtTheSpellcaster/TapTempoPro",
       "category": "Musica & Audio",
+      "category_it": "Musica & Audio",
+      "category_en": "Music & Audio",
       "tags": [
         "Tap tempo",
         "BPM",
         "PWA",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Tap tempo",
+        "BPM",
+        "PWA",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Vector-Cockpit",
@@ -392,12 +688,21 @@
       "description": "A wireframe flight simulator inspired by Sublogic's 1980 Flight Simulator",
       "repository": "https://github.com/TagtTheSpellcaster/Vector-Cockpit",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Simulatore di volo",
         "Grafica vettoriale",
         "Retrogaming",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Simulatore di volo",
+        "Grafica vettoriale",
+        "Retrogaming",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Vector-Odyssey",
@@ -405,12 +710,21 @@
       "description": "1980s wireframe vector-style space shooter",
       "repository": "https://github.com/TagtTheSpellcaster/Vector-Odyssey",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Shooter",
         "Grafica vettoriale",
         "Retrogaming",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Shooter",
+        "Grafica vettoriale",
+        "Retrogaming",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Wari",
@@ -418,12 +732,28 @@
       "description": "Una versione elettronica online del Wari, il più diffuso dei mancala, con due set di regole (Abapa e Caraibi), tre livelli di gioco e strategia avanzata",
       "repository": "https://github.com/TagtTheSpellcaster/Wari",
       "category": "Giochi Antichi",
+      "category_it": "Giochi Antichi",
+      "category_en": "Ancient Games",
       "tags": [
         "Africa",
         "Strategia",
         "Gioco storico",
         "IT",
         "EN"
+      ],
+      "tags_it": [
+        "Africa",
+        "Strategia",
+        "Gioco storico",
+        "IT",
+        "EN"
+      ],
+      "tags_en": [
+        "Africa",
+        "Strategy",
+        "Historical game",
+        "EN",
+        "IT"
       ]
     },
     {
@@ -432,12 +762,21 @@
       "description": "A clone of the 1981 game Defender",
       "repository": "https://github.com/TagtTheSpellcaster/Web-Defender",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Defender",
         "Retrogaming",
         "Arcade",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Defender",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Web-Invaders",
@@ -445,12 +784,21 @@
       "description": "Another clone of Space 🌌 Invaders ",
       "repository": "https://github.com/TagtTheSpellcaster/Web-Invaders",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Space Invaders",
         "Retrogaming",
         "Arcade",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Space Invaders",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "WebLaga",
@@ -458,12 +806,21 @@
       "description": "A clone of the classic Galaga videogame",
       "repository": "https://github.com/TagtTheSpellcaster/WebLaga",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Galaga",
         "Retrogaming",
         "Arcade",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Galaga",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "WebLander",
@@ -471,12 +828,21 @@
       "description": "A more or less precise clone of Lunar Lander",
       "repository": "https://github.com/TagtTheSpellcaster/WebLander",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Lunar Lander",
         "Retrogaming",
         "Arcade",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Lunar Lander",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "WebPong",
@@ -484,12 +850,21 @@
       "description": "A Pong clone",
       "repository": "https://github.com/TagtTheSpellcaster/WebPong",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Pong",
         "Retrogaming",
         "Arcade",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Pong",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "Webreakout",
@@ -497,12 +872,21 @@
       "description": "A Breakout clone",
       "repository": "https://github.com/TagtTheSpellcaster/Webreakout",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Breakout",
         "Retrogaming",
         "Arcade",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Breakout",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ],
+      "tags_en": []
     },
     {
       "name": "WebTank",
@@ -510,12 +894,21 @@
       "description": "A clone of the classic \"Tank\" wireframe videogame",
       "repository": "https://github.com/TagtTheSpellcaster/WebTank",
       "category": "Giochi Arcade",
+      "category_it": "Giochi Arcade",
+      "category_en": "Arcade Games",
       "tags": [
         "Tank",
         "Grafica vettoriale",
         "Retrogaming",
         "EN"
-      ]
+      ],
+      "tags_it": [
+        "Tank",
+        "Grafica vettoriale",
+        "Retrogaming",
+        "EN"
+      ],
+      "tags_en": []
     }
   ]
 }
