@@ -37,5 +37,13 @@
     "en": {
       "description": "World designer-generator"
     }
+  },
+  "Assistente-Vocale-Arpa-Celtica": {
+    "it": {
+      "description": "Un assistente vocale per il posizionamento delle levette dell'arpa celtica in funzione della tonalità. Per non vedenti. Testato per Android. ***NON FUNZIONA SOTTO WINDOWS*** Solo in italiano."
+    },
+    "en": {
+      "description": "A voice assistant for positioning the levers on a Celtic harp according to the key. For the visually impaired. Tested on Android. ***DOES NOT WORK ON WINDOWS*** Available only in Italian."
+    }
   }
 }

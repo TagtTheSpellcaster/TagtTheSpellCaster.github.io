@@ -643,5 +643,23 @@
         "IT"
       ]
     }
+  },
+  "Assistente-Vocale-Arpa-Celtica": {
+    "category": {
+      "it": "Musica & Audio",
+      "en": "Music & Audio"
+    },
+    "tags": {
+      "it": [
+        "Accessibilità",
+        "Arpa celtica",
+        "IT"
+      ],
+      "en": [
+        "Accessibility",
+        "Celtic Harp",
+        "IT"
+      ]
+    }
   }
 }
