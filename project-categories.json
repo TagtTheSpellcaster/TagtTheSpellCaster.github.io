@@ -679,5 +679,27 @@
         "IT"
       ]
     }
+  },
+  "Dadi-Vocali-Accessibili": {
+    "category": {
+      "it": "RPG & Game Master",
+      "en": "RPG & Game Master"
+    },
+    "tags": {
+      "it": [
+        "Dadi",
+        "Accessibilità",
+        "Giochi",
+        "RPG",
+        "IT"
+      ],
+      "en": [
+        "Dice",
+        "Accessibility",
+        "Games",
+        "RPG",
+        "IT"
+      ]
+    }
   }
 }

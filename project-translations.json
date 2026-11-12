@@ -50,5 +50,10 @@
     "en": {
       "description": "An accessible vocal tuner for the blind and visually impaired. It features a large, high-contrast gauge and note indicator, as well as a voice output that reads the notes aloud, indicating whether they are low or high—a useful feature for the blind. Only available in Italian"
     }
+  },
+  "Dadi-Vocali-Accessibili": {
+    "en": {
+      "description": "A simple app for rolling dice. It responds to voice commands and announces the results using text-to-speech. It does NOT work on Windows. Tested on Android and iPhone. Only available in Italian"
+    }
   }
 }
