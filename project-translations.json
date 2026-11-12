@@ -45,5 +45,10 @@
     "en": {
       "description": "A voice assistant for positioning the levers on a Celtic harp according to the key. For the visually impaired. Tested on Android. ***DOES NOT WORK ON WINDOWS*** Available only in Italian."
     }
+  },
+  "Accordatore-Vocale-Accessibile": {
+    "en": {
+      "description": "An accessible vocal tuner for the blind and visually impaired. It features a large, high-contrast gauge and note indicator, as well as a voice output that reads the notes aloud, indicating whether they are low or high—a useful feature for the blind. Only available in Italian"
+    }
   }
 }

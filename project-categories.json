@@ -661,5 +661,23 @@
         "IT"
       ]
     }
+  },
+  "Accordatore-Vocale-Accessibile": {
+    "category": {
+      "it": "Musica & Audio",
+      "en": "Music & Audio"
+    },
+    "tags": {
+      "it": [
+        "Accessibilità",
+        "Musica",
+        "IT"
+      ],
+      "en": [
+        "Accessibility",
+        "Music",
+        "IT"
+      ]
+    }
   }
 }
