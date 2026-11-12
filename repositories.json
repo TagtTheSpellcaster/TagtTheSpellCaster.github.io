@@ -1,6 +1,18 @@
 {
   "projects": [
     {
+      "name": "Accordatore-Vocale-Accessibile",
+      "url": "https://tagtthespellcaster.github.io/Accordatore-Vocale-Accessibile",
+      "description": "Un accordatore vocale accessibile per non vedenti e ipovedenti. Con indicatore di gauge e di note grande e contrastato e motore vocale che legge le note, indicando se sono basse o alte, utile per i non vedenti.",
+      "repository": "https://github.com/TagtTheSpellcaster/Accordatore-Vocale-Accessibile",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
+      "tags_en": []
+    },
+    {
       "name": "Arcana-Narrativa",
       "url": "https://tagtthespellcaster.github.io/Arcana-Narrativa",
       "description": "Quando hai bisogno di un momento di ispirazione, tira fuori le carte.",
@@ -43,6 +55,30 @@
         "IT"
       ],
       "tags_en": []
+    },
+    {
+      "name": "Assistente-Vocale-Arpa-Celtica",
+      "url": "https://tagtthespellcaster.github.io/Assistente-Vocale-Arpa-Celtica",
+      "description": "Un assistente vocale per il posizionamento delle levette dell'arpa celtica in funzione della tonalità. Per non vedenti. Solo in italiano.",
+      "repository": "https://github.com/TagtTheSpellcaster/Assistente-Vocale-Arpa-Celtica",
+      "category": "Musica & Audio",
+      "category_it": "Musica & Audio",
+      "category_en": "Music & Audio",
+      "tags": [
+        "Accessibilità",
+        "Arpa celtica",
+        "IT"
+      ],
+      "tags_it": [
+        "Accessibilità",
+        "Arpa celtica",
+        "IT"
+      ],
+      "tags_en": [
+        "Accessibility",
+        "Celtic Harp",
+        "IT"
+      ]
     },
     {
       "name": "Aura-432",
