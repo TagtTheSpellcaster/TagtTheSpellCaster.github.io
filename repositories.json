@@ -5,12 +5,24 @@
       "url": "https://tagtthespellcaster.github.io/Accordatore-Vocale-Accessibile",
       "description": "Un accordatore vocale accessibile per non vedenti e ipovedenti. Con indicatore di gauge e di note grande e contrastato e motore vocale che legge le note, indicando se sono basse o alte, utile per i non vedenti.",
       "repository": "https://github.com/TagtTheSpellcaster/Accordatore-Vocale-Accessibile",
-      "category": "Altri progetti",
-      "category_it": "Altri progetti",
-      "category_en": "Other Projects",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "category": "Musica & Audio",
+      "category_it": "Musica & Audio",
+      "category_en": "Music & Audio",
+      "tags": [
+        "Accessibilità",
+        "Musica",
+        "IT"
+      ],
+      "tags_it": [
+        "Accessibilità",
+        "Musica",
+        "IT"
+      ],
+      "tags_en": [
+        "Accessibility",
+        "Music",
+        "IT"
+      ]
     },
     {
       "name": "Arcana-Narrativa",
@@ -169,6 +181,18 @@
       "tags_en": []
     },
     {
+      "name": "Celtic-Harp-Levers",
+      "url": "https://tagtthespellcaster.github.io/Celtic-Harp-Levers",
+      "description": "A harp lever guide for celtic/folk harp: choose the key, see the levers to move.",
+      "repository": "https://github.com/TagtTheSpellcaster/Celtic-Harp-Levers",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
+      "tags_en": []
+    },
+    {
       "name": "Conlang-Generator",
       "url": "https://tagtthespellcaster.github.io/Conlang-Generator",
       "description": "A simple yet useful parametric ConLang (Constructed Language) generator",
@@ -211,6 +235,36 @@
         "IT"
       ],
       "tags_en": []
+    },
+    {
+      "name": "Dadi-Vocali-Accessibili",
+      "url": "https://tagtthespellcaster.github.io/Dadi-Vocali-Accessibili",
+      "description": "Una piccola app per lanciare i dadi. Risponde ai comandi vocali e restituisce i risultati con una sintesi vocale. NON funziona sotto Windows. Testata in Android e iPhone.",
+      "repository": "https://github.com/TagtTheSpellcaster/Dadi-Vocali-Accessibili",
+      "category": "RPG & Game Master",
+      "category_it": "RPG & Game Master",
+      "category_en": "RPG & Game Master",
+      "tags": [
+        "Dadi",
+        "Accessibilità",
+        "Giochi",
+        "RPG",
+        "IT"
+      ],
+      "tags_it": [
+        "Dadi",
+        "Accessibilità",
+        "Giochi",
+        "RPG",
+        "IT"
+      ],
+      "tags_en": [
+        "Dice",
+        "Accessibility",
+        "Games",
+        "RPG",
+        "IT"
+      ]
     },
     {
       "name": "Dust-Racer",
