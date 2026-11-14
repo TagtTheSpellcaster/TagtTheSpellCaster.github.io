@@ -701,5 +701,25 @@
         "IT"
       ]
     }
+  },
+  "Celtic-Harp-Levers": {
+    "category": {
+      "it": "Musica & Audio",
+      "en": "Music & Audio"
+    },
+    "tags": {
+      "it": [
+        "Musica",
+        "Arpa",
+        "IT",
+        "EN"
+      ],
+      "en": [
+        "Music",
+        "Harp",
+        "EN",
+        "IT"
+      ]
+    }
   }
 }

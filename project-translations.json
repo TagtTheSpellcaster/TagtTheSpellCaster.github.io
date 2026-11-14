@@ -55,5 +55,11 @@
     "en": {
       "description": "A simple app for rolling dice. It responds to voice commands and announces the results using text-to-speech. It does NOT work on Windows. Tested on Android and iPhone. Only available in Italian"
     }
+  },
+  "Celtic-Harp-Levers": {
+    "it": {
+      "title": "Levette Arpa Celtica",
+      "description": "Una guida per l'impostazione delle levette delle arpe celtiche: scegli la tonalità, scopri quali levette muovere."
+    }
   }
 }
