@@ -185,12 +185,27 @@
       "url": "https://tagtthespellcaster.github.io/Celtic-Harp-Levers",
       "description": "A harp lever guide for celtic/folk harp: choose the key, see the levers to move.",
       "repository": "https://github.com/TagtTheSpellcaster/Celtic-Harp-Levers",
-      "category": "Altri progetti",
-      "category_it": "Altri progetti",
-      "category_en": "Other Projects",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "category": "Musica & Audio",
+      "category_it": "Musica & Audio",
+      "category_en": "Music & Audio",
+      "tags": [
+        "Musica",
+        "Arpa",
+        "IT",
+        "EN"
+      ],
+      "tags_it": [
+        "Musica",
+        "Arpa",
+        "IT",
+        "EN"
+      ],
+      "tags_en": [
+        "Music",
+        "Harp",
+        "EN",
+        "IT"
+      ]
     },
     {
       "name": "Conlang-Generator",
