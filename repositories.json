@@ -208,28 +208,6 @@
       ]
     },
     {
-      "name": "Conlang-Generator",
-      "url": "https://tagtthespellcaster.github.io/Conlang-Generator",
-      "description": "A simple yet useful parametric ConLang (Constructed Language) generator",
-      "repository": "https://github.com/TagtTheSpellcaster/Conlang-Generator",
-      "category": "Creatività & Linguaggi",
-      "category_it": "Creatività & Linguaggi",
-      "category_en": "Creativity & Languages",
-      "tags": [
-        "Lingua artificiale",
-        "Generatore",
-        "Linguistica",
-        "EN"
-      ],
-      "tags_it": [
-        "Lingua artificiale",
-        "Generatore",
-        "Linguistica",
-        "EN"
-      ],
-      "tags_en": []
-    },
-    {
       "name": "convertitore-cartelle",
       "url": "https://tagtthespellcaster.github.io/convertitore-cartelle",
       "description": "Convertitore cartelle->parole e parole->cartelle",
@@ -809,6 +787,18 @@
         "PWA",
         "EN"
       ],
+      "tags_en": []
+    },
+    {
+      "name": "Tutlayin",
+      "url": "https://tagtthespellcaster.github.io/Tutlayin",
+      "description": "A simple yet useful parametric ConLang (Constructed Language) generator",
+      "repository": "https://github.com/TagtTheSpellcaster/Tutlayin",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
       "tags_en": []
     },
     {
