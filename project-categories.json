@@ -724,12 +724,22 @@
   },
   "Machina-Ballistica": {
     "category": {
-      "it": "Altri progetti",
-      "en": "Other Projects"
+      "it": "Machinarium",
+      "en": "Machinarium"
     },
     "tags": {
-      "it": [],
-      "en": []
+      "it": [
+        "Steampunk",
+        "Giochi",
+        "Vintage",
+        "IT"
+      ],
+      "en": [
+        "Steampunk",
+        "Games",
+        "Vintage",
+        "IT"
+      ]
     }
   },
   "Tutlayin": {
