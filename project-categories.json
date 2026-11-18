@@ -748,8 +748,18 @@
       "en": "Other Projects"
     },
     "tags": {
-      "it": [],
-      "en": []
+      "it": [
+        "Linguistica",
+        "Creatività",
+        "GDR",
+        "EN"
+      ],
+      "en": [
+        "Linguistics",
+        "Creativity",
+        "RPG",
+        "EN"
+      ]
     }
   }
 }
