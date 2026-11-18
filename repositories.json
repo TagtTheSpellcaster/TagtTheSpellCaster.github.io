@@ -821,12 +821,27 @@
       "url": "https://tagtthespellcaster.github.io/Tutlayin",
       "description": "A simple yet useful parametric ConLang (Constructed Language) generator",
       "repository": "https://github.com/TagtTheSpellcaster/Tutlayin",
-      "category": "Altri progetti",
-      "category_it": "Altri progetti",
-      "category_en": "Other Projects",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "category": "Creatività & Linguaggi",
+      "category_it": "Creatività & Linguaggi",
+      "category_en": "Creativity & Languages",
+      "tags": [
+        "Linguistica",
+        "Creatività",
+        "GDR",
+        "EN"
+      ],
+      "tags_it": [
+        "Linguistica",
+        "Creatività",
+        "GDR",
+        "EN"
+      ],
+      "tags_en": [
+        "Linguistics",
+        "Creativity",
+        "RPG",
+        "EN"
+      ]
     },
     {
       "name": "Vector-Cockpit",
