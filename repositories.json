@@ -488,6 +488,18 @@
       "tags_en": []
     },
     {
+      "name": "Machina-Ballistica",
+      "url": "https://tagtthespellcaster.github.io/Machina-Ballistica",
+      "description": "A vintage steampunk pinball game",
+      "repository": "https://github.com/TagtTheSpellcaster/Machina-Ballistica",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
+      "tags_en": []
+    },
+    {
       "name": "Meditation-Timer",
       "url": "https://tagtthespellcaster.github.io/Meditation-Timer",
       "description": "A simple, Open Source meditation timer.",
