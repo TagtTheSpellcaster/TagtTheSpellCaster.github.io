@@ -61,5 +61,21 @@
       "title": "Levette Arpa Celtica",
       "description": "Una guida per l'impostazione delle levette delle arpe celtiche: scegli la tonalità, scopri quali levette muovere."
     }
+  },
+  "Machina-Ballistica": {
+    "it": {
+      "description": "Un flipper in stile steampunk"
+    },
+    "en": {
+      "description": "A vintage steampunk pinball game"
+    }
+  },
+  "Tutlayin": {
+    "it": {
+      "description": "Un generatore di ConLang (Constructed Language) (non troppo) semplice e molto utile"
+    },
+    "en": {
+      "description": "A (not so) simple yet useful parametric ConLang (Constructed Language) generator"
+    }
   }
 }

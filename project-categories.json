@@ -721,5 +721,25 @@
         "IT"
       ]
     }
+  },
+  "Machina-Ballistica": {
+    "category": {
+      "it": "Altri progetti",
+      "en": "Other Projects"
+    },
+    "tags": {
+      "it": [],
+      "en": []
+    }
+  },
+  "Tutlayin": {
+    "category": {
+      "it": "Altri progetti",
+      "en": "Other Projects"
+    },
+    "tags": {
+      "it": [],
+      "en": []
+    }
   }
 }
