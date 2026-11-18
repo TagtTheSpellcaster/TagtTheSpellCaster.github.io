@@ -761,5 +761,45 @@
         "EN"
       ]
     }
+  },
+  "Machina-Stochastica": {
+    "category": {
+      "it": "Machinarium",
+      "en": "Machinarium"
+    },
+    "tags": {
+      "it": [
+        "Dadi",
+        "GDR",
+        "Giochi",
+        "IT"
+      ],
+      "en": [
+        "Dice",
+        "RPG",
+        "Games",
+        "IT"
+      ]
+    }
+  },
+  "Apparatus-Tricolumnis": {
+    "category": {
+      "it": "Machinarium",
+      "en": "Machinarium"
+    },
+    "tags": {
+      "it": [
+        "Giochi",
+        "Steampunk",
+        "Vintage",
+        "IT"
+      ],
+      "en": [
+        "Games",
+        "Steampunk",
+        "Vintage",
+        "IT"
+      ]
+    }
   }
 }

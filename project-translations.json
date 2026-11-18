@@ -77,5 +77,21 @@
     "en": {
       "description": "A (not so) simple yet useful parametric ConLang (Constructed Language) generator"
     }
+  },
+  "Machina-Stochastica": {
+    "it": {
+      "description": "Un lanciadadi... con un tocco steampunk."
+    },
+    "en": {
+      "description": "A dice roller... with a steampunk twist."
+    }
+  },
+  "Apparatus-Tricolumnis": {
+    "it": {
+      "description": "La classica Torre di Hanoi, in salsa steampunk"
+    },
+    "en": {
+      "description": "The classical Tower of Hanoi, with a steampunk twist"
+    }
   }
 }
