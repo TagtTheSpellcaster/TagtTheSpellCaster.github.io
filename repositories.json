@@ -492,12 +492,27 @@
       "url": "https://tagtthespellcaster.github.io/Machina-Ballistica",
       "description": "A vintage steampunk pinball game",
       "repository": "https://github.com/TagtTheSpellcaster/Machina-Ballistica",
-      "category": "Altri progetti",
-      "category_it": "Altri progetti",
-      "category_en": "Other Projects",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "category": "Machinarium",
+      "category_it": "Machinarium",
+      "category_en": "Machinarium",
+      "tags": [
+        "Steampunk",
+        "Giochi",
+        "Vintage",
+        "IT"
+      ],
+      "tags_it": [
+        "Steampunk",
+        "Giochi",
+        "Vintage",
+        "IT"
+      ],
+      "tags_en": [
+        "Steampunk",
+        "Games",
+        "Vintage",
+        "IT"
+      ]
     },
     {
       "name": "Meditation-Timer",
