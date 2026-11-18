@@ -93,5 +93,13 @@
     "en": {
       "description": "The classical Tower of Hanoi, with a steampunk twist"
     }
+  },
+  "Machina-Cryptica": {
+    "it": {
+      "description": "Apri il Cryptex e trova il messaggio... se ci riesci!"
+    },
+    "en": {
+      "description": "Open the Cryptex and find the message... if you can!"
+    }
   }
 }

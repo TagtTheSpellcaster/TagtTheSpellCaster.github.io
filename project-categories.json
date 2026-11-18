@@ -801,5 +801,25 @@
         "IT"
       ]
     }
+  },
+  "Machina-Cryptica": {
+    "category": {
+      "it": "Machinarium",
+      "en": "Machinarium"
+    },
+    "tags": {
+      "it": [
+        "Giochi",
+        "Steampunk",
+        "Vintage",
+        "IT"
+      ],
+      "en": [
+        "Games",
+        "Steampunk",
+        "Vintage",
+        "IT"
+      ]
+    }
   }
 }
