@@ -542,6 +542,33 @@
       ]
     },
     {
+      "name": "Machina-Cryptica",
+      "url": "https://tagtthespellcaster.github.io/Machina-Cryptica",
+      "description": "Apri il Cryptex e trova il messaggio... se ci riesci!",
+      "repository": "https://github.com/TagtTheSpellcaster/Machina-Cryptica",
+      "category": "Machinarium",
+      "category_it": "Machinarium",
+      "category_en": "Machinarium",
+      "tags": [
+        "Giochi",
+        "Steampunk",
+        "Vintage",
+        "IT"
+      ],
+      "tags_it": [
+        "Giochi",
+        "Steampunk",
+        "Vintage",
+        "IT"
+      ],
+      "tags_en": [
+        "Games",
+        "Steampunk",
+        "Vintage",
+        "IT"
+      ]
+    },
+    {
       "name": "Machina-Stochastica",
       "url": "https://tagtthespellcaster.github.io/Machina-Stochastica",
       "description": "Un lanciadadi... con un tocco steampunk.",
