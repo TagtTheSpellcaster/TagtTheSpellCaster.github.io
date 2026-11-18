@@ -25,6 +25,33 @@
       ]
     },
     {
+      "name": "Apparatus-Tricolumnis",
+      "url": "https://tagtthespellcaster.github.io/Apparatus-Tricolumnis",
+      "description": "La classica Torre di Hanoi, in salsa steampunk",
+      "repository": "https://github.com/TagtTheSpellcaster/Apparatus-Tricolumnis",
+      "category": "Machinarium",
+      "category_it": "Machinarium",
+      "category_en": "Machinarium",
+      "tags": [
+        "Giochi",
+        "Steampunk",
+        "Vintage",
+        "IT"
+      ],
+      "tags_it": [
+        "Giochi",
+        "Steampunk",
+        "Vintage",
+        "IT"
+      ],
+      "tags_en": [
+        "Games",
+        "Steampunk",
+        "Vintage",
+        "IT"
+      ]
+    },
+    {
       "name": "Arcana-Narrativa",
       "url": "https://tagtthespellcaster.github.io/Arcana-Narrativa",
       "description": "Quando hai bisogno di un momento di ispirazione, tira fuori le carte.",
@@ -511,6 +538,33 @@
         "Steampunk",
         "Games",
         "Vintage",
+        "IT"
+      ]
+    },
+    {
+      "name": "Machina-Stochastica",
+      "url": "https://tagtthespellcaster.github.io/Machina-Stochastica",
+      "description": "Un lanciadadi... con un tocco steampunk.",
+      "repository": "https://github.com/TagtTheSpellcaster/Machina-Stochastica",
+      "category": "Machinarium",
+      "category_it": "Machinarium",
+      "category_en": "Machinarium",
+      "tags": [
+        "Dadi",
+        "GDR",
+        "Giochi",
+        "IT"
+      ],
+      "tags_it": [
+        "Dadi",
+        "GDR",
+        "Giochi",
+        "IT"
+      ],
+      "tags_en": [
+        "Dice",
+        "RPG",
+        "Games",
         "IT"
       ]
     },
