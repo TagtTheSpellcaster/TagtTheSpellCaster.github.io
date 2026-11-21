@@ -608,6 +608,18 @@
       ]
     },
     {
+      "name": "Machinamentum-Anisocyclicum",
+      "url": "https://tagtthespellcaster.github.io/Machinamentum-Anisocyclicum",
+      "description": "Incastra gli ingranaggi",
+      "repository": "https://github.com/TagtTheSpellcaster/Machinamentum-Anisocyclicum",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
+      "tags_en": []
+    },
+    {
       "name": "Meditation-Timer",
       "url": "https://tagtthespellcaster.github.io/Meditation-Timer",
       "description": "A simple, Open Source meditation timer.",
