@@ -828,8 +828,18 @@
       "en": "Machinarium"
     },
     "tags": {
-      "it": [],
-      "en": []
+      "it": [
+        "Giochi",
+        "Steampunk",
+        "Platform",
+        "IT"
+      ],
+      "en": [
+        "Games",
+        "Steampunk",
+        "Platform",
+        "IT"
+      ]
     }
   },
   "Machinamentum-Anisocyclicum": {
@@ -838,8 +848,18 @@
       "en": "Machinarium"
     },
     "tags": {
-      "it": [],
-      "en": []
+      "it": [
+        "Giochi",
+        "Steampunk",
+        "Logica",
+        "IT"
+      ],
+      "en": [
+        "Games",
+        "Steampunk",
+        "Logic",
+        "IT"
+      ]
     }
   },
   "Organum-Vaporarium": {
