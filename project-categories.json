@@ -821,5 +821,35 @@
         "IT"
       ]
     }
+  },
+  "Machina-Fugitiva": {
+    "category": {
+      "it": "Machinarium",
+      "en": "Machinarium"
+    },
+    "tags": {
+      "it": [],
+      "en": []
+    }
+  },
+  "Machinamentum-Anisocyclicum": {
+    "category": {
+      "it": "Machinarium",
+      "en": "Machinarium"
+    },
+    "tags": {
+      "it": [],
+      "en": []
+    }
+  },
+  "Organum-Vaporarium": {
+    "category": {
+      "it": "Machinarium",
+      "en": "Machinarium"
+    },
+    "tags": {
+      "it": [],
+      "en": []
+    }
   }
 }
