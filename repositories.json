@@ -686,6 +686,18 @@
       "tags_en": []
     },
     {
+      "name": "Organum-Vaporarium",
+      "url": "https://tagtthespellcaster.github.io/Organum-Vaporarium",
+      "description": "Riuscirai a ricordare la sequenza di suoni, colori e lunghezza delle canne? Quanto sarà lunga la sequenza che ricordi?",
+      "repository": "https://github.com/TagtTheSpellcaster/Organum-Vaporarium",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
+      "tags_en": []
+    },
+    {
       "name": "PicoMoog",
       "url": "https://tagtthespellcaster.github.io/PicoMoog",
       "description": "A pico moog emulator. Very pico.",
