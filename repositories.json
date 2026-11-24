@@ -142,6 +142,18 @@
       "tags_en": []
     },
     {
+      "name": "Automaton-Analyticum",
+      "url": "https://tagtthespellcaster.github.io/Automaton-Analyticum",
+      "description": "Componi una fila di schede perforate per guidare un automa a vapore su una plancia isometrica e aprire tutte le valvole.",
+      "repository": "https://github.com/TagtTheSpellcaster/Automaton-Analyticum",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
+      "tags_en": []
+    },
+    {
       "name": "BioMetaCalc",
       "url": "https://tagtthespellcaster.github.io/BioMetaCalc",
       "description": "Offline web app for BMI, body composition, calorie needs, weight-loss planning, training logs, and nutrition calculators.",
@@ -161,6 +173,18 @@
         "Nutrizione",
         "EN"
       ],
+      "tags_en": []
+    },
+    {
+      "name": "Calamus-Automaticus",
+      "url": "https://tagtthespellcaster.github.io/Calamus-Automaticus",
+      "description": "Interprete Logo in un unico file HTML, con grafica a tartaruga in versione steampunk: un automa-pantografo traccia su un foglio le figure descritte da un programma.",
+      "repository": "https://github.com/TagtTheSpellcaster/Calamus-Automaticus",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
       "tags_en": []
     },
     {
@@ -306,6 +330,18 @@
         "Arcade",
         "EN"
       ],
+      "tags_en": []
+    },
+    {
+      "name": "Enigma",
+      "url": "https://tagtthespellcaster.github.io/Enigma",
+      "description": "Emulatore delle macchine crittografiche Enigma 3 e 4 utilizzate dall'esercito e dalla marina tedeschi durante la II guerra mondiale.",
+      "repository": "https://github.com/TagtTheSpellcaster/Enigma",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
       "tags_en": []
     },
     {
@@ -576,9 +612,24 @@
       "category": "Machinarium",
       "category_it": "Machinarium",
       "category_en": "Machinarium",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "tags": [
+        "Giochi",
+        "Steampunk",
+        "Platform",
+        "IT"
+      ],
+      "tags_it": [
+        "Giochi",
+        "Steampunk",
+        "Platform",
+        "IT"
+      ],
+      "tags_en": [
+        "Games",
+        "Steampunk",
+        "Platform",
+        "IT"
+      ]
     },
     {
       "name": "Machina-Stochastica",
@@ -615,9 +666,24 @@
       "category": "Machinarium",
       "category_it": "Machinarium",
       "category_en": "Machinarium",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "tags": [
+        "Giochi",
+        "Steampunk",
+        "Logica",
+        "IT"
+      ],
+      "tags_it": [
+        "Giochi",
+        "Steampunk",
+        "Logica",
+        "IT"
+      ],
+      "tags_en": [
+        "Games",
+        "Steampunk",
+        "Logic",
+        "IT"
+      ]
     },
     {
       "name": "Meditation-Timer",
