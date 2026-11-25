@@ -91,7 +91,7 @@
       "description": "La classica Torre di Hanoi, in salsa steampunk"
     },
     "en": {
-      "description": "The classical Tower of Hanoi, with a steampunk twist"
+      "description": "The classic Tower of Hanoi, with a steampunk twist"
     }
   },
   "Machina-Cryptica": {
@@ -100,6 +100,26 @@
     },
     "en": {
       "description": "Open the Cryptex and find the message... if you can!"
+    }
+  },
+  "Arcana-Narrativa": {
+    "en": {
+      "description": "When you need a moment of inspiration, pull out the cards."
+    }
+  },
+  "Automaton-Analyticum": {
+    "en": {
+      "description": "Arrange a row of punch cards to guide a steam-powered automaton along an isometric board and open all the valves."
+    }
+  },
+  "Calendario-dell-Astinenza": {
+    "en": {
+      "description": "An Abstinence Calendar for Members of Overeaters Anonymous"
+    }
+  },
+  "Enigma": {
+    "en": {
+      "description": "An emulator of the Enigma 3 and 4 cipher machines used by the German Army and Navy during World War II."
     }
   }
 }
