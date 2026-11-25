@@ -71,7 +71,12 @@
         "Carte",
         "IT"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Inspiration",
+        "Narrative",
+        "Cards",
+        "IT"
+      ]
     },
     {
       "name": "Arcane",
@@ -146,12 +151,27 @@
       "url": "https://tagtthespellcaster.github.io/Automaton-Analyticum",
       "description": "Componi una fila di schede perforate per guidare un automa a vapore su una plancia isometrica e aprire tutte le valvole.",
       "repository": "https://github.com/TagtTheSpellcaster/Automaton-Analyticum",
-      "category": "Altri progetti",
-      "category_it": "Altri progetti",
-      "category_en": "Other Projects",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "category": "Machinarium",
+      "category_it": "Machinarium",
+      "category_en": "Machinarium",
+      "tags": [
+        "Steampunk",
+        "Logica",
+        "Programmazione",
+        "IT"
+      ],
+      "tags_it": [
+        "Steampunk",
+        "Logica",
+        "Programmazione",
+        "IT"
+      ],
+      "tags_en": [
+        "Steampunk",
+        "Logic",
+        "Programming",
+        "IT"
+      ]
     },
     {
       "name": "BioMetaCalc",
@@ -173,19 +193,39 @@
         "Nutrizione",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "BMI",
+        "Body composition",
+        "Nutrition",
+        "EN"
+      ]
     },
     {
       "name": "Calamus-Automaticus",
       "url": "https://tagtthespellcaster.github.io/Calamus-Automaticus",
       "description": "Interprete Logo in un unico file HTML, con grafica a tartaruga in versione steampunk: un automa-pantografo traccia su un foglio le figure descritte da un programma.",
       "repository": "https://github.com/TagtTheSpellcaster/Calamus-Automaticus",
-      "category": "Altri progetti",
-      "category_it": "Altri progetti",
-      "category_en": "Other Projects",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "category": "Machinarium",
+      "category_it": "Machinarium",
+      "category_en": "Machinarium",
+      "tags": [
+        "Steampunk",
+        "Logica",
+        "Programmazione",
+        "IT"
+      ],
+      "tags_it": [
+        "Steampunk",
+        "Logica",
+        "Programmazione",
+        "IT"
+      ],
+      "tags_en": [
+        "Steampunk",
+        "Logic",
+        "Programming",
+        "IT"
+      ]
     },
     {
       "name": "Calcs-Conversions",
@@ -207,7 +247,12 @@
         "Unità di misura",
         "IT"
       ],
-      "tags_en": []
+      "tags_en": [
+        "D&D",
+        "Conversions",
+        "Units of measurement",
+        "IT"
+      ]
     },
     {
       "name": "Calendario-dell-Astinenza",
@@ -229,7 +274,12 @@
         "Monitoraggio",
         "IT"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Calendar",
+        "Recovery",
+        "Monitoring",
+        "IT"
+      ]
     },
     {
       "name": "Celtic-Harp-Levers",
@@ -337,12 +387,27 @@
       "url": "https://tagtthespellcaster.github.io/Enigma",
       "description": "Emulatore delle macchine crittografiche Enigma 3 e 4 utilizzate dall'esercito e dalla marina tedeschi durante la II guerra mondiale.",
       "repository": "https://github.com/TagtTheSpellcaster/Enigma",
-      "category": "Altri progetti",
-      "category_it": "Altri progetti",
-      "category_en": "Other Projects",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "category": "Istruzione",
+      "category_it": "Istruzione",
+      "category_en": "Education",
+      "tags": [
+        "Logica",
+        "Crittografia",
+        "Istruzione",
+        "IT"
+      ],
+      "tags_it": [
+        "Logica",
+        "Crittografia",
+        "Istruzione",
+        "IT"
+      ],
+      "tags_en": [
+        "Logic",
+        "Cryptography",
+        "Instruction",
+        "IT"
+      ]
     },
     {
       "name": "font-inspector",
