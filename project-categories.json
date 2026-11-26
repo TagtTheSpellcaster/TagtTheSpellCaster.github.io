@@ -1049,14 +1049,14 @@
   },
   "Enigma": {
     "category": {
-      "it": "Istruzione",
-      "en": "Education"
+      "it": "Didattica",
+      "en": "Educational"
     },
     "tags": {
       "it": [
         "Logica",
         "Crittografia",
-        "Istruzione",
+        "Didattica",
         "IT"
       ],
       "en": [
