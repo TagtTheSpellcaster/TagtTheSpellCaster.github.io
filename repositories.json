@@ -616,6 +616,18 @@
       "tags_en": []
     },
     {
+      "name": "Machina-Analytica",
+      "url": "https://tagtthespellcaster.github.io/Machina-Analytica",
+      "description": "Un emulatore della macchina analitica di Charles Babbage. Con tutorial, presentazione, esercizi e calcolo libero.",
+      "repository": "https://github.com/TagtTheSpellcaster/Machina-Analytica",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
+      "tags_en": []
+    },
+    {
       "name": "Machina-Ballistica",
       "url": "https://tagtthespellcaster.github.io/Machina-Ballistica",
       "description": "A vintage steampunk pinball game",
@@ -668,6 +680,18 @@
         "Vintage",
         "IT"
       ]
+    },
+    {
+      "name": "Machina-Differentialis",
+      "url": "https://tagtthespellcaster.github.io/Machina-Differentialis",
+      "description": "Un emulatore della macchina differenziale di Charles Babbage. Con tutorial, presentazione, esercizi e calcolo libero.",
+      "repository": "https://github.com/TagtTheSpellcaster/Machina-Differentialis",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
+      "tags_en": []
     },
     {
       "name": "Machina-Fugitiva",
