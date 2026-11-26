@@ -397,19 +397,19 @@
       "url": "https://tagtthespellcaster.github.io/Enigma",
       "description": "Emulatore delle macchine crittografiche Enigma 3 e 4 utilizzate dall'esercito e dalla marina tedeschi durante la II guerra mondiale.",
       "repository": "https://github.com/TagtTheSpellcaster/Enigma",
-      "category": "Istruzione",
-      "category_it": "Istruzione",
-      "category_en": "Education",
+      "category": "Didattica",
+      "category_it": "Didattica",
+      "category_en": "Educational",
       "tags": [
         "Logica",
         "Crittografia",
-        "Istruzione",
+        "Didattica",
         "IT"
       ],
       "tags_it": [
         "Logica",
         "Crittografia",
-        "Istruzione",
+        "Didattica",
         "IT"
       ],
       "tags_en": [
