@@ -144,7 +144,12 @@
         "Ambient",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Audio generation",
+        "432 Hz",
+        "Ambient music",
+        "EN"
+      ]
     },
     {
       "name": "Automaton-Analyticum",
@@ -380,7 +385,12 @@
         "Arcade",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Racing",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     },
     {
       "name": "Enigma",
@@ -429,7 +439,12 @@
         "Analisi",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Typography",
+        "Font",
+        "Analysis",
+        "EN"
+      ]
     },
     {
       "name": "Fortress-Raid",
@@ -451,7 +466,12 @@
         "Arcade",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Zaxxon",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     },
     {
       "name": "Galaxy-Game-1971",
@@ -473,7 +493,12 @@
         "1971",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Retrogaming",
+        "Arcade",
+        "1971",
+        "EN"
+      ]
     },
     {
       "name": "Giallo-alla-Tenuta",
@@ -545,7 +570,12 @@
         "Overlay",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Graphics",
+        "Texture",
+        "Overlay",
+        "EN"
+      ]
     },
     {
       "name": "Grond-Dazanor-Vakong-",
@@ -620,12 +650,30 @@
       "url": "https://tagtthespellcaster.github.io/Machina-Analytica",
       "description": "Un emulatore della macchina analitica di Charles Babbage. Con tutorial, presentazione, esercizi e calcolo libero.",
       "repository": "https://github.com/TagtTheSpellcaster/Machina-Analytica",
-      "category": "Altri progetti",
-      "category_it": "Altri progetti",
-      "category_en": "Other Projects",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "category": "Machinarium",
+      "category_it": "Machinarium",
+      "category_en": "Machinarium",
+      "tags": [
+        "Programmazione",
+        "Logica",
+        "Informatica",
+        "Babbage",
+        "IT"
+      ],
+      "tags_it": [
+        "Programmazione",
+        "Logica",
+        "Informatica",
+        "Babbage",
+        "IT"
+      ],
+      "tags_en": [
+        "Programming",
+        "Logic",
+        "Computer Science",
+        "Babbage",
+        "IT"
+      ]
     },
     {
       "name": "Machina-Ballistica",
@@ -686,12 +734,30 @@
       "url": "https://tagtthespellcaster.github.io/Machina-Differentialis",
       "description": "Un emulatore della macchina differenziale di Charles Babbage. Con tutorial, presentazione, esercizi e calcolo libero.",
       "repository": "https://github.com/TagtTheSpellcaster/Machina-Differentialis",
-      "category": "Altri progetti",
-      "category_it": "Altri progetti",
-      "category_en": "Other Projects",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "category": "Machinarium",
+      "category_it": "Machinarium",
+      "category_en": "Machinarium",
+      "tags": [
+        "Programmazione",
+        "Logica",
+        "Informatica",
+        "Babbage",
+        "IT"
+      ],
+      "tags_it": [
+        "Programmazione",
+        "Logica",
+        "Informatica",
+        "Babbage",
+        "IT"
+      ],
+      "tags_en": [
+        "Programmazione",
+        "Logica",
+        "Informatica",
+        "Babbage",
+        "IT"
+      ]
     },
     {
       "name": "Machina-Fugitiva",
@@ -792,7 +858,11 @@
         "Timer",
         "IT"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Meditation",
+        "Timer",
+        "IT"
+      ]
     },
     {
       "name": "Nuova-Asterisko",
@@ -814,7 +884,12 @@
         "Localizzazione",
         "IT"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Company Site",
+        "Translation",
+        "Localization",
+        "IT"
+      ]
     },
     {
       "name": "Oblique-Strategies",
@@ -838,7 +913,13 @@
         "IT",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Creativity",
+        "Brian Eno",
+        "Insights",
+        "IT",
+        "EN"
+      ]
     },
     {
       "name": "Organum-Vaporarium",
@@ -848,9 +929,24 @@
       "category": "Machinarium",
       "category_it": "Machinarium",
       "category_en": "Machinarium",
-      "tags": [],
-      "tags_it": [],
-      "tags_en": []
+      "tags": [
+        "Memoria",
+        "Steampunk",
+        "Giochi",
+        "IT"
+      ],
+      "tags_it": [
+        "Memoria",
+        "Steampunk",
+        "Giochi",
+        "IT"
+      ],
+      "tags_en": [
+        "Memory",
+        "Steampunk",
+        "Games",
+        "IT"
+      ]
     },
     {
       "name": "PicoMoog",
@@ -894,7 +990,12 @@
         "Retrogaming",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Racing",
+        "Pole Position",
+        "Retrogaming",
+        "EN"
+      ]
     },
     {
       "name": "scorporo-iva",
@@ -938,7 +1039,12 @@
         "Solitario",
         "IT"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Roguelike",
+        "Cards",
+        "Solitaire",
+        "IT"
+      ]
     },
     {
       "name": "Senet",
@@ -990,7 +1096,12 @@
         "Arcade",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Frogger",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     },
     {
       "name": "StrumPad",
@@ -1012,7 +1123,12 @@
         "Strumming",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Chords",
+        "Synthesizer",
+        "Strumming",
+        "EN"
+      ]
     },
     {
       "name": "Syntoneo",
@@ -1034,7 +1150,12 @@
         "Web Audio",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Synthesizer",
+        "Monophonic",
+        "Web Audio",
+        "EN"
+      ]
     },
     {
       "name": "Tablut",
@@ -1086,7 +1207,12 @@
         "PWA",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Tap tempo",
+        "BPM",
+        "PWA",
+        "EN"
+      ]
     },
     {
       "name": "Tutlayin",
@@ -1135,7 +1261,12 @@
         "Retrogaming",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Flight simulator",
+        "Vector graphics",
+        "Retrogaming",
+        "EN"
+      ]
     },
     {
       "name": "Vector-Odyssey",
@@ -1157,7 +1288,12 @@
         "Retrogaming",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Shooter",
+        "Vector graphics",
+        "Retrogaming",
+        "EN"
+      ]
     },
     {
       "name": "Wari",
@@ -1209,7 +1345,12 @@
         "Arcade",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Defender",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     },
     {
       "name": "Web-Invaders",
@@ -1231,7 +1372,12 @@
         "Arcade",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Space Invaders",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     },
     {
       "name": "WebLaga",
@@ -1253,7 +1399,12 @@
         "Arcade",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Galaga",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     },
     {
       "name": "WebLander",
@@ -1275,7 +1426,12 @@
         "Arcade",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Lunar Lander",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     },
     {
       "name": "WebPong",
@@ -1297,7 +1453,12 @@
         "Arcade",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Pong",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     },
     {
       "name": "Webreakout",
@@ -1319,7 +1480,12 @@
         "Arcade",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Breakout",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     },
     {
       "name": "WebTank",
@@ -1341,7 +1507,12 @@
         "Retrogaming",
         "EN"
       ],
-      "tags_en": []
+      "tags_en": [
+        "Tank",
+        "Vector graphics",
+        "Retrogaming",
+        "EN"
+      ]
     }
   ]
 }
