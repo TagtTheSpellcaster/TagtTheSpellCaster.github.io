@@ -46,7 +46,12 @@
         "Ambient",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Audio generation",
+        "432 Hz",
+        "Ambient music",
+        "EN"
+      ]
     }
   },
   "BioMetaCalc": {
@@ -109,21 +114,6 @@
       ]
     }
   },
-  "Conlang-Generator": {
-    "category": {
-      "it": "Creatività & Linguaggi",
-      "en": "Creativity & Languages"
-    },
-    "tags": {
-      "it": [
-        "Lingua artificiale",
-        "Generatore",
-        "Linguistica",
-        "EN"
-      ],
-      "en": []
-    }
-  },
   "convertitore-cartelle": {
     "category": {
       "it": "Utility & Strumenti",
@@ -151,7 +141,12 @@
         "Arcade",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Racing",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     }
   },
   "font-inspector": {
@@ -166,7 +161,12 @@
         "Analisi",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Typography",
+        "Font",
+        "Analysis",
+        "EN"
+      ]
     }
   },
   "Fortress-Raid": {
@@ -181,7 +181,12 @@
         "Arcade",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Zaxxon",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     }
   },
   "Galaxy-Game-1971": {
@@ -196,7 +201,12 @@
         "1971",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Retrogaming",
+        "Arcade",
+        "1971",
+        "EN"
+      ]
     }
   },
   "Giallo-alla-Tenuta": {
@@ -247,7 +257,12 @@
         "Overlay",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Graphics",
+        "Texture",
+        "Overlay",
+        "EN"
+      ]
     }
   },
   "Grond-Dazanor-Vakong-": {
@@ -291,7 +306,11 @@
         "Timer",
         "IT"
       ],
-      "en": []
+      "en": [
+        "Meditation",
+        "Timer",
+        "IT"
+      ]
     }
   },
   "Nuova-Asterisko": {
@@ -306,7 +325,12 @@
         "Localizzazione",
         "IT"
       ],
-      "en": []
+      "en": [
+        "Company Site",
+        "Translation",
+        "Localization",
+        "IT"
+      ]
     }
   },
   "Oblique-Strategies": {
@@ -322,7 +346,13 @@
         "IT",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Creativity",
+        "Brian Eno",
+        "Insights",
+        "IT",
+        "EN"
+      ]
     }
   },
   "PicoMoog": {
@@ -352,7 +382,12 @@
         "Retrogaming",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Racing",
+        "Pole Position",
+        "Retrogaming",
+        "EN"
+      ]
     }
   },
   "scorporo-iva": {
@@ -382,7 +417,12 @@
         "Solitario",
         "IT"
       ],
-      "en": []
+      "en": [
+        "Roguelike",
+        "Cards",
+        "Solitaire",
+        "IT"
+      ]
     }
   },
   "Senet": {
@@ -419,7 +459,12 @@
         "Arcade",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Frogger",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     }
   },
   "StrumPad": {
@@ -434,7 +479,12 @@
         "Strumming",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Chords",
+        "Synthesizer",
+        "Strumming",
+        "EN"
+      ]
     }
   },
   "Syntoneo": {
@@ -449,7 +499,12 @@
         "Web Audio",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Synthesizer",
+        "Monophonic",
+        "Web Audio",
+        "EN"
+      ]
     }
   },
   "TapTempoPro": {
@@ -464,7 +519,12 @@
         "PWA",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Tap tempo",
+        "BPM",
+        "PWA",
+        "EN"
+      ]
     }
   },
   "Vector-Cockpit": {
@@ -479,7 +539,12 @@
         "Retrogaming",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Flight simulator",
+        "Vector graphics",
+        "Retrogaming",
+        "EN"
+      ]
     }
   },
   "Vector-Odyssey": {
@@ -494,7 +559,12 @@
         "Retrogaming",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Shooter",
+        "Vector graphics",
+        "Retrogaming",
+        "EN"
+      ]
     }
   },
   "Wari": {
@@ -531,7 +601,12 @@
         "Arcade",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Defender",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     }
   },
   "Web-Invaders": {
@@ -546,7 +621,12 @@
         "Arcade",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Space Invaders",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     }
   },
   "WebLaga": {
@@ -561,7 +641,12 @@
         "Arcade",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Galaga",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     }
   },
   "WebLander": {
@@ -576,7 +661,12 @@
         "Arcade",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Lunar Lander",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     }
   },
   "WebPong": {
@@ -591,7 +681,12 @@
         "Arcade",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Pong",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     }
   },
   "Webreakout": {
@@ -606,7 +701,12 @@
         "Arcade",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Breakout",
+        "Retrogaming",
+        "Arcade",
+        "EN"
+      ]
     }
   },
   "WebTank": {
@@ -621,7 +721,12 @@
         "Retrogaming",
         "EN"
       ],
-      "en": []
+      "en": [
+        "Tank",
+        "Vector graphics",
+        "Retrogaming",
+        "EN"
+      ]
     }
   },
   "Tablut": {
@@ -888,8 +993,18 @@
       "en": "Machinarium"
     },
     "tags": {
-      "it": [],
-      "en": []
+      "it": [
+        "Memoria",
+        "Steampunk",
+        "Giochi",
+        "IT"
+      ],
+      "en": [
+        "Memory",
+        "Steampunk",
+        "Games",
+        "IT"
+      ]
     }
   },
   "Automaton-Analyticum": {
@@ -948,6 +1063,50 @@
         "Logic",
         "Cryptography",
         "Instruction",
+        "IT"
+      ]
+    }
+  },
+  "Machina-Analytica": {
+    "category": {
+      "it": "Machinarium",
+      "en": "Machinarium"
+    },
+    "tags": {
+      "it": [
+        "Programmazione",
+        "Logica",
+        "Informatica",
+        "Babbage",
+        "IT"
+      ],
+      "en": [
+        "Programming",
+        "Logic",
+        "Computer Science",
+        "Babbage",
+        "IT"
+      ]
+    }
+  },
+  "Machina-Differentialis": {
+    "category": {
+      "it": "Machinarium",
+      "en": "Machinarium"
+    },
+    "tags": {
+      "it": [
+        "Programmazione",
+        "Logica",
+        "Informatica",
+        "Babbage",
+        "IT"
+      ],
+      "en": [
+        "Programmazione",
+        "Logica",
+        "Informatica",
+        "Babbage",
         "IT"
       ]
     }

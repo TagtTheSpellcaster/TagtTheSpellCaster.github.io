@@ -121,5 +121,15 @@
     "en": {
       "description": "An emulator of the Enigma 3 and 4 cipher machines used by the German Army and Navy during World War II."
     }
+  },
+  "Machina-Analytica": {
+    "en": {
+      "description": "An emulator of Charles Babbage's Analytical Engine. Includes tutorials, a presentation, exercises, and free computation."
+    }
+  },
+  "Machina-Differentialis": {
+    "en": {
+      "description": "An emulator of Charles Babbage's Differential Engine. Includes tutorials, a presentation, exercises, and free computation."
+    }
   }
 }
