@@ -113,7 +113,8 @@ applyTheme(getEffectiveTheme());
 const categoryColors=["#9a4c3b","#39744e","#416b9b","#a58a43","#76558e","#9a6b36","#527b82","#8a5968"];
 const knownCategoryColors={"Giochi Antichi":"#9a4c3b","Giochi Arcade":"#416b9b","Arcade":"#416b9b","RPG & Game Master":"#a58a43","Machinarium":"#a66b32","Giochi da tavolo e di carte":"#76558e","Musica & Audio":"#39744e","Utility & Strumenti":"#527b82","Creatività & Linguaggi":"#9a6b36","Didattica":"#5369A8","Altri progetti":"#777d78"};
 function getCategories(){return [...new Set(allProjects.map(getProjectCategory))].sort((a,b)=>a.localeCompare(b,currentLanguage))}
-function getCategoryColor(category,index){return knownCategoryColors[category]||categoryColors[index%categoryColors.length]}
+function getCategoryKey(category){if(currentLanguage==="en"){const entry=Object.entries(categoryLabels).find(([,english])=>english===category);if(entry)return entry[0]}return category}
+function getCategoryColor(category,index){const key=getCategoryKey(category);return knownCategoryColors[key]||categoryColors[index%categoryColors.length]}
 const categoryIcons={
 "Tutti":`<svg viewBox="0 0 80 64" aria-hidden="true" focusable="false"><path d="M13 15h36a7 7 0 0 1 7 7v29H20a7 7 0 0 1-7-7z"/><path d="M20 15v36M56 22h8a4 4 0 0 1 4 4v25H20"/><path d="M25 25h22M25 33h22M25 41h16"/></svg>`,
 "Giochi Antichi":`<svg viewBox="0 0 80 64" aria-hidden="true" focusable="false"><rect x="12" y="9" width="56" height="46" rx="4"/><path d="M26 9v46M40 9v46M54 9v46M12 24h56M12 40h56"/><circle cx="19" cy="17" r="3.5" fill="currentColor" stroke="none"/><circle cx="47" cy="32" r="3.5" fill="currentColor" stroke="none"/><circle cx="61" cy="47" r="3.5" fill="currentColor" stroke="none"/></svg>`,
@@ -126,7 +127,7 @@ const categoryIcons={
 "Creatività & Linguaggi":`<svg viewBox="0 0 80 64" aria-hidden="true" focusable="false"><path d="M40 17c-9-7-20-7-29-4v37c10-3 20-2 29 5 9-7 19-8 29-5V13c-9-3-20-3-29 4z"/><path d="M40 18v37M18 22c6-1 12 0 17 3M18 31c6-1 12 0 17 3M62 22c-6-1-12 0-17 3M62 31c-6-1-12 0-17 3"/><path d="m51 7 9-4-3 10-9 4z"/></svg>`,
 "Didattica":`<svg viewBox="0 0 80 64" aria-hidden="true" focusable="false"><rect x="10" y="7" width="60" height="40" rx="3"/><path d="M16 14h19M16 21h12M16 28h16M20 47l-5 12M60 47l5 12M40 47v12M12 59h56"/><circle cx="51" cy="26" r="10"/><ellipse cx="51" cy="26" rx="4" ry="10" transform="rotate(45 51 26)"/><ellipse cx="51" cy="26" rx="4" ry="10" transform="rotate(-45 51 26)"/><circle cx="51" cy="26" r="2" fill="currentColor" stroke="none"/></svg>`,
 "Altri progetti":`<svg viewBox="0 0 80 64" aria-hidden="true" focusable="false"><circle cx="40" cy="32" r="25"/><circle cx="40" cy="32" r="16"/><path d="m40 11 5 17-5 25-5-25z"/><path d="m19 32 17-5 25 5-25 5z"/></svg>`};
-function getCategoryIcon(category){return categoryIcons[category]||categoryIcons["Altri progetti"]}
+function getCategoryIcon(category){const key=getCategoryKey(category);return categoryIcons[key]||categoryIcons["Altri progetti"]}
 
 function renderCategories(){
 const container=document.getElementById("categories");container.innerHTML="";
