@@ -366,6 +366,30 @@
       ]
     },
     {
+      "name": "De-Bello-Civili",
+      "url": "https://tagtthespellcaster.github.io/De-Bello-Civili",
+      "description": "Un gioco di strategia da tavolo per giocatore singolo vs IA di gioco, ambientato nell'antica Roma. Vinceranno i Cesariani o i Pompeiani?",
+      "repository": "https://github.com/TagtTheSpellcaster/De-Bello-Civili",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
+      "tags_en": []
+    },
+    {
+      "name": "Dou-Shou-Qi",
+      "url": "https://tagtthespellcaster.github.io/Dou-Shou-Qi",
+      "description": "Dou Shou Qi (anche noto come Jungle Chess) è un gioco di strategia cinese, simile a Stratego. Pensato per i bambini, è divertente e veloce anche per gli adulti!",
+      "repository": "https://github.com/TagtTheSpellcaster/Dou-Shou-Qi",
+      "category": "Altri progetti",
+      "category_it": "Altri progetti",
+      "category_en": "Other Projects",
+      "tags": [],
+      "tags_it": [],
+      "tags_en": []
+    },
+    {
       "name": "Dust-Racer",
       "url": "https://tagtthespellcaster.github.io/Dust-Racer",
       "description": "An offroad car racer, inspired by 1982 Pole Position",
